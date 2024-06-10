@@ -1,15 +1,16 @@
 from azure.cosmos import CosmosClient
 from azure.identity import DefaultAzureCredential
 from azure.keyvault.secrets import SecretClient
-import Adafruit_DHT
 import json
 import uuid
 import time
 import socket
+import board
+import adafruit_dht
+
 
 # Define the sensor type and the pin it's connected to
-DHT_SENSOR = Adafruit_DHT.DHT11
-DHT_PIN = 4  # Change this to the GPIO pin you've connected the sensor to
+dhtDevice = adafruit_dht.DHT11(board.D22)
 
 credential = DefaultAzureCredential()
 key_vault_uri = "https://cosmo-key-vault.vault.azure.net/"
@@ -32,7 +33,11 @@ s.close()
 def post_data():
     while True:
         # Read the temperature and humidity from the DHT11 sensor
-        humidity, temperature = Adafruit_DHT.read_retry(DHT_SENSOR, DHT_PIN)
+        temperature = dhtDevice.temperature
+        humidity = dhtDevice.humidity
+
+        print(f"Temperature: {temperature} C")
+        print(f"Humidity: {humidity}%")
 
         if humidity is not None and temperature is not None:
             # Define the data you want to send in the POST request
