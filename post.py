@@ -12,7 +12,7 @@ import adafruit_dht
 load_dotenv()
 
 # Define the sensor type and the pin it's connected to
-dhtDevice = adafruit_dht.DHT11(board.D16)
+dhtDevice = adafruit_dht.DHT11(board.D23)
 
 cosmos_connection_string = os.getenv("COSMOS_CONNECTION_STRING")
 
