@@ -41,7 +41,8 @@ def post_data():
                 "id": str(uuid.uuid4()),
                 "temperature": temperature,
                 "humidity": humidity,
-                "ip_address": local_ip_address
+                "ip_address": local_ip_address,
+                "timestamp": time.time(),
             }
 
             # Convert the data to JSON format
