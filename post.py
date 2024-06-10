@@ -29,32 +29,35 @@ local_ip_address = s.getsockname()[0]
 s.close()
 def post_data():
     while True:
-        # Read the temperature and humidity from the DHT11 sensor
-        temperature = dhtDevice.temperature
-        humidity = dhtDevice.humidity
+        try:
+            # Read the temperature and humidity from the DHT11 sensor
+            temperature = dhtDevice.temperature
+            humidity = dhtDevice.humidity
 
-        
+            if humidity is not None and temperature is not None:
+                # Define the data you want to send in the POST request
+                data = {
+                    "id": str(uuid.uuid4()),
+                    "temperature": temperature,
+                    "humidity": humidity,
+                    "ip_address": local_ip_address,
+                    "timestamp": time.time(),
+                }
 
-        if humidity is not None and temperature is not None:
-            # Define the data you want to send in the POST request
-            data = {
-                "id": str(uuid.uuid4()),
-                "temperature": temperature,
-                "humidity": humidity,
-                "ip_address": local_ip_address,
-                "timestamp": time.time(),
-            }
+                # Convert the data to JSON format
+                data_json = json.dumps(data)
 
-            # Convert the data to JSON format
-            data_json = json.dumps(data)
+                # Add the item to the container
+                container.upsert_item(body=data)
+            else:
+                print("Failed to retrieve data from humidity and temperature sensor")
 
-            # Add the item to the container
-            container.upsert_item(body=data)
-        else:
-            print("Failed to retrieve data from humidity and temperature sensor")
-
-        print(f"Temperature: {temperature} C")
-        print(f"Humidity: {humidity}%")
-        print(f"Local IP Address: {local_ip_address}")
-        # Wait for 5 seconds before the next upload
-        time.sleep(5)
+            print(f"Temperature: {temperature} C")
+            print(f"Humidity: {humidity}%")
+            print(f"Local IP Address: {local_ip_address}")
+            # Wait for 5 seconds before the next upload
+            time.sleep(5)
+        except RuntimeError as error:
+            # If a RuntimeError is raised, print the error message and continue with the next iteration
+            print(f"An error occurred: {error}")
+            continue
