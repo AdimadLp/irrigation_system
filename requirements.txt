@@ -2,4 +2,4 @@ RPi.GPIO
 schedule
 azure-cosmos
 python-dotenv
-Adafruit-DHT
+adafruit-circuitpython-dht
