@@ -1,5 +1,6 @@
 RPi.GPIO
 schedule
+azure-identity
 azure-cosmos
-python-dotenv
+azure-keyvault-secrets
 adafruit-circuitpython-dht
