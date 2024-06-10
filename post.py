@@ -29,27 +29,27 @@ s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.connect(("8.8.8.8", 80))
 local_ip_address = s.getsockname()[0]
 s.close()
+def post_data():
+    while True:
+        # Read the temperature and humidity from the DHT11 sensor
+        humidity, temperature = Adafruit_DHT.read_retry(DHT_SENSOR, DHT_PIN)
 
-while True:
-    # Read the temperature and humidity from the DHT11 sensor
-    humidity, temperature = Adafruit_DHT.read_retry(DHT_SENSOR, DHT_PIN)
+        if humidity is not None and temperature is not None:
+            # Define the data you want to send in the POST request
+            data = {
+                "id": str(uuid.uuid4()),
+                "temperature": temperature,
+                "humidity": humidity,
+                "ip_address": local_ip_address
+            }
 
-    if humidity is not None and temperature is not None:
-        # Define the data you want to send in the POST request
-        data = {
-            "id": str(uuid.uuid4()),
-            "temperature": temperature,
-            "humidity": humidity,
-            "ip_address": local_ip_address
-        }
+            # Convert the data to JSON format
+            data_json = json.dumps(data)
 
-        # Convert the data to JSON format
-        data_json = json.dumps(data)
+            # Add the item to the container
+            container.upsert_item(body=data)
+        else:
+            print("Failed to retrieve data from humidity and temperature sensor")
 
-        # Add the item to the container
-        container.upsert_item(body=data)
-    else:
-        print("Failed to retrieve data from humidity and temperature sensor")
-
-    # Wait for 5 seconds before the next upload
-    time.sleep(5)
+        # Wait for 5 seconds before the next upload
+        time.sleep(5)

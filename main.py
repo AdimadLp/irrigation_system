@@ -57,6 +57,7 @@ def irrigate_plants():
         save_last_irrigation_time()
 
 if __name__ == "__main__":
+    '''
     GPIO.setmode(GPIO.BCM)
 
     for i in range(2, 10):
@@ -68,3 +69,10 @@ if __name__ == "__main__":
     while True:
         schedule.run_pending()
         time.sleep(1)
+    '''
+    import post
+    import threading
+
+    post_thread = threading.Thread(target=post.post_data)
+    post_thread.start()
+    logging.info(f'Started post thread at {datetime.datetime.now()}')
