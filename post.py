@@ -7,6 +7,7 @@ import time
 import socket
 import board
 import adafruit_dht
+from datetime import datetime
 
 # Load environment variables from .env file
 load_dotenv()
@@ -41,7 +42,7 @@ def post_data():
                     "temperature": temperature,
                     "humidity": humidity,
                     "ip_address": local_ip_address,
-                    "timestamp": time.time(),
+                    "timestamp": datetime.now().isoformat(),
                 }
 
                 # Convert the data to JSON format
