@@ -33,8 +33,7 @@ def post_data():
         temperature = dhtDevice.temperature
         humidity = dhtDevice.humidity
 
-        print(f"Temperature: {temperature} C")
-        print(f"Humidity: {humidity}%")
+        
 
         if humidity is not None and temperature is not None:
             # Define the data you want to send in the POST request
@@ -53,5 +52,8 @@ def post_data():
         else:
             print("Failed to retrieve data from humidity and temperature sensor")
 
+        print(f"Temperature: {temperature} C")
+        print(f"Humidity: {humidity}%")
+        print(f"Local IP Address: {local_ip_address}")
         # Wait for 5 seconds before the next upload
         time.sleep(5)
