@@ -1,6 +1,6 @@
 from azure.cosmos import CosmosClient
-from azure.identity import DefaultAzureCredential
-from azure.keyvault.secrets import SecretClient
+from dotenv import load_dotenv
+import os
 import json
 import uuid
 import time
@@ -8,18 +8,15 @@ import socket
 import board
 import adafruit_dht
 
+# Load environment variables from .env file
+load_dotenv()
 
 # Define the sensor type and the pin it's connected to
 dhtDevice = adafruit_dht.DHT11(board.D22)
 
-credential = DefaultAzureCredential()
-key_vault_uri = "https://cosmo-key-vault.vault.azure.net/"
-secret_client = SecretClient(vault_url=key_vault_uri, credential=credential)
+cosmos_connection_string = os.getenv("COSMOS_CONNECTION_STRING")
 
-cosmos_url = secret_client.get_secret("cosmos-endpoint").value
-cosmos_credential = secret_client.get_secret("cosmos-readwrite-key").value
-
-client = CosmosClient(cosmos_url, credential=cosmos_credential)
+client = CosmosClient.from_connection_string(cosmos_connection_string)
 
 # Get the container
 database = client.get_database_client("PublicMonitorData")
