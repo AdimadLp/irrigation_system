@@ -74,6 +74,7 @@ def post_humidity_temperature(temperature, humidity):
         logging.error(f"An error occurred while trying to post the humidity and temperature data to the database: {e}")
 
 def post_data():
+    update_ip_address()
     while True:
         try:
             # Read the temperature and humidity from the DHT11 sensor

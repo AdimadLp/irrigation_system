@@ -1,5 +1,5 @@
 RPi.GPIO
 schedule
 adafruit-circuitpython-dht
-dotenv
+python-dotenv
 pymongo[srv]
