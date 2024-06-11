@@ -22,12 +22,14 @@ jobs:
         with:
             cache: 'pipenv'
 
-      - name: Install dependencies
-        run: pipenv install -r requirements.txt
-      
       - name: Install pipenv
         run: curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
       - run: pipenv install
+
+      - name: Install dependencies
+        run: pipenv install -r requirements.txt
+      
+      
     
 
   deploy:
