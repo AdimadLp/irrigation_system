@@ -43,6 +43,7 @@ def post_data():
                     "humidity": humidity,
                     "ip_address": local_ip_address,
                     "timestamp": datetime.now().isoformat(),
+                    "device": "Raspberry Pi 4",
                 }
 
                 # Convert the data to JSON format
