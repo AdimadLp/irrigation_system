@@ -14,7 +14,6 @@ update_repo() {
 }
 
 check_and_update_repo() {
-    cd /home/adrian/irrigation_system/
     while true; do
         if has_repo_changed; then
             update_repo

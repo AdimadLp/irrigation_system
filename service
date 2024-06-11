@@ -1,0 +1,13 @@
+[Unit]
+Description=Update Repo Service
+After=network.target
+
+[Service]
+Type=simple
+User=adrian
+WorkingDirectory=/home/adrian/irrigation_system/
+ExecStart=/bin/bash update_repo.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
