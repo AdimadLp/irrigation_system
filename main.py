@@ -8,7 +8,6 @@ import pickle
 from plant import Plant
 import post
 import threading
-from update_repo import check_and_update_repo
 
 PLANTS = [ Plant("Efeu", 0.05, 2),
            Plant("Einblatt", 0.1, 3),
