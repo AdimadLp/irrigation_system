@@ -1,12 +1,8 @@
 # update_repo.py
 import time
-import os
 import subprocess
 
-REPO_PATH = "/"  # replace with your repository path
-
 def has_repo_changed():
-    os.chdir(REPO_PATH)
     # Fetch updates from the remote repository
     subprocess.run(["git", "fetch"])
     # Compare the local and remote repositories
@@ -14,7 +10,6 @@ def has_repo_changed():
     return len(result.stdout) > 0
 
 def update_repo():
-    os.chdir(REPO_PATH)
     # Pull updates from the remote repository
     subprocess.run(["git", "pull"])
 
