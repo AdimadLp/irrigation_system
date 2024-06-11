@@ -8,6 +8,7 @@ import pickle
 from plant import Plant
 import post
 import threading
+import subprocess
 
 PLANTS = [ Plant("Efeu", 0.05, 2),
            Plant("Einblatt", 0.1, 3),
@@ -19,7 +20,7 @@ LAST_IRRIGATED_PLANT_FILE = "last_irrigated_plant.pkl"
 logging.basicConfig(filename='irrigation.log', level=logging.INFO)
 
 def start_update_repo():
-    os.system("/irrigation_system/update_repo.py")
+    subprocess.run(["python", "update_repo.py"])
 
 def get_last_irrigation_time():
     if os.path.exists(LAST_IRRIGATION_FILE):
