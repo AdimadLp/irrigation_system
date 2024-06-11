@@ -25,8 +25,5 @@ jobs:
     steps:
       - name: Kill systemd irrigation service
         run: |
-          source env/bin/activate
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
           sudo systemctl stop irrigation.service
           python irrigation.py
