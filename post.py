@@ -38,7 +38,7 @@ def post_data():
             if humidity is not None and temperature is not None:
                 # Define the data you want to send in the POST request
                 data = {
-                    "id": str(uuid.uuid4()),
+                    #"id": str(uuid.uuid4()),
                     "temperature": temperature,
                     "humidity": humidity,
                     "ip_address": local_ip_address,
