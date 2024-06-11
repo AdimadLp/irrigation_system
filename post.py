@@ -68,7 +68,7 @@ def post_humidity_temperature(temperature, humidity):
         collection = database["TemperatureHumiditySensor"]
 
         result = collection.insert_one(data)
-        logging.info(f'Data upload acknowledged: {result.acknowledged}')
+        logging.info(f'Humidity and temperature data upload acknowledged: {result.acknowledged}')
 
     except Exception as e:
         logging.error(f"An error occurred while trying to post the humidity and temperature data to the database: {e}")
