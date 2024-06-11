@@ -1,23 +1,24 @@
 # update_repo.py
 import time
-import os
+from git import Repo
 
-def has_repo_changed():
+def has_repo_changed(repo):
     # Fetch updates from the remote repository
-    os.system("git fetch")
+    repo.remotes.origin.fetch()
     # Compare the local and remote repositories
-    result = os.popen("git diff HEAD origin").read()
-    return len(result) > 0
+    diff = repo.git.diff('HEAD..origin')
+    return len(diff) > 0
 
-def update_repo():
+def update_repo(repo):
     # Pull updates from the remote repository
-    os.system("git pull")
+    repo.remotes.origin.pull()
 
-def check_and_update_repo():
+def check_and_update_repo(repo):
     while True:
-        if has_repo_changed():
-            update_repo()
+        if has_repo_changed(repo):
+            update_repo(repo)
         time.sleep(5)  # wait for 5 seconds
 
 if __name__ == "__main__":
-    check_and_update_repo()
+    repo = Repo('.')
+    check_and_update_repo(repo)
