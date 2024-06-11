@@ -25,5 +25,4 @@ jobs:
     steps:
       - name: Kill systemd irrigation service
         run: |
-          sudo systemctl stop irrigation.service
-          python main.py
+          sudo systemctl restart irrigation.service
