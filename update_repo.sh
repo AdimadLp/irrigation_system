@@ -10,11 +10,7 @@ has_repo_changed() {
 
 update_repo() {
     # Pull updates from the remote repository
-      git status
-      echo "Fetching"
-      git fetch
-      echo "Pulling"
-      git pull
+      /usr/bin/git pull
 }
 
 check_and_update_repo() {
