@@ -1,4 +1,3 @@
-from azure.cosmos import CosmosClient
 from dotenv import load_dotenv
 import os
 import json
@@ -8,26 +7,72 @@ import socket
 import board
 import adafruit_dht
 from datetime import datetime
+from pymongo.mongo_client import MongoClient
+from pymongo.server_api import ServerApi
+import logging
 
+logging.basicConfig(filename='database_upload.log', level=logging.INFO)
 # Load environment variables from .env file
 load_dotenv()
+
+ATLAS_KEY = os.getenv("ATLAS_KEY")
+ATLAS_USERNAME = os.getenv("ATLAS_USERNAME")
+DEVICE_ID = os.getenv("DEVICE_ID")
 
 # Define the sensor type and the pin it's connected to
 dhtDevice = adafruit_dht.DHT11(board.D23)
 
-cosmos_connection_string = os.getenv("COSMOS_CONNECTION_STRING")
+try:
+    uri = f"mongodb+srv://{ATLAS_USERNAME}:{ATLAS_KEY}@cluster0.pdaqcm3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    client = MongoClient(uri, server_api=ServerApi('1'))
+except Exception as e:
+    logging.error(f"An error occurred while trying to connect to the database: {e}")
 
-client = CosmosClient.from_connection_string(cosmos_connection_string)
+def update_ip_address():
+    # Get the local network IP address
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.connect(("8.8.8.8", 80))
+    local_ip_address = s.getsockname()[0]
+    s.close()
 
-# Get the container
-database = client.get_database_client("PublicMonitorData")
-container = database.get_container_client("PublicMonitorDataContainer")
+    database = client["DeviceList"]
+    collection = database["DeviceIPAddresses"]
 
-# Get the local network IP address
-s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-s.connect(("8.8.8.8", 80))
-local_ip_address = s.getsockname()[0]
-s.close()
+    query_filter = { "deviceid" : DEVICE_ID }
+    result = collection.update_one(query_filter, { "$set": { "ip_address": local_ip_address } })
+
+    if result.modified_count == 0:
+        data = {
+            "deviceid": DEVICE_ID,
+            "ip_address": local_ip_address,
+            "timestamp": datetime.now().isoformat(),
+        }
+
+        result = collection.insert_one(data)
+        logging.info(f'IP address upload acknowledged: {result.acknowledged}')
+    
+    logging.info(f'IP address updated to {local_ip_address}')
+
+
+
+def post_humidity_temperature(temperature, humidity):
+    data = {
+        "temperature": temperature,
+        "humidity": humidity,
+        
+        "timestamp": datetime.now().isoformat(),
+    }
+
+    try:
+        database = client["SensorData"]
+        collection = database["TemperatureHumiditySensor"]
+
+        result = collection.insert_one(data)
+        logging.info(f'Data upload acknowledged: {result.acknowledged}')
+
+    except Exception as e:
+        logging.error(f"An error occurred while trying to post the humidity and temperature data to the database: {e}")
+
 def post_data():
     while True:
         try:
@@ -37,29 +82,13 @@ def post_data():
 
             if humidity is not None and temperature is not None:
                 # Define the data you want to send in the POST request
-                data = {
-                    "id": str(uuid.uuid4()),
-                    "temperature": temperature,
-                    "humidity": humidity,
-                    "ip_address": local_ip_address,
-                    "timestamp": datetime.now().isoformat(),
-                    "type": "temperature_humidity_sensor"
-                }
-
-                # Convert the data to JSON format
-                data_json = json.dumps(data)
-
-                # Add the item to the container
-                container.upsert_item(body=data)
+                post_humidity_temperature(temperature, humidity)
             else:
                 print("Failed to retrieve data from humidity and temperature sensor")
 
-            print(f"Temperature: {temperature} C")
-            print(f"Humidity: {humidity}%")
-            print(f"Local IP Address: {local_ip_address}")
             # Wait for 5 seconds before the next upload
             time.sleep(5)
         except RuntimeError as error:
             # If a RuntimeError is raised, print the error message and continue with the next iteration
-            print(f"An error occurred: {error}")
+            logging.error(f"An error occurred while trying to read the humidity and temperature data: {error}")
             continue
