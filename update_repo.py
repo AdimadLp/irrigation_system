@@ -1,17 +1,17 @@
 # update_repo.py
 import time
-import subprocess
+import os
 
 def has_repo_changed():
     # Fetch updates from the remote repository
-    subprocess.run(["git", "fetch"])
+    os.system("git fetch")
     # Compare the local and remote repositories
-    result = subprocess.run(["git", "diff", "HEAD", "origin"], stdout=subprocess.PIPE)
-    return len(result.stdout) > 0
+    result = os.popen("git diff HEAD origin").read()
+    return len(result) > 0
 
 def update_repo():
     # Pull updates from the remote repository
-    subprocess.run(["git", "pull"])
+    os.system("git pull")
 
 def check_and_update_repo():
     while True:
