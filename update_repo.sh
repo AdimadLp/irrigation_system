@@ -13,6 +13,11 @@ update_repo() {
       /usr/bin/git pull
 }
 
+restart_service() {
+    # Restart the service
+    /usr/bin/systemctl restart irrigation
+}
+
 check_and_update_repo() {
     while true; do
         if has_repo_changed; then
