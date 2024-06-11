@@ -17,6 +17,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Set up Python environment
+        run: |
+          if [ ! -d "env" ]; then
+            python3 -m venv env
+          fi
+          source env/bin/activate
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
           
   deploy:
     runs-on: self-hosted

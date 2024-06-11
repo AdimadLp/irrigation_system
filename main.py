@@ -73,11 +73,6 @@ if __name__ == "__main__":
         schedule.run_pending()
         time.sleep(1)
     '''
- 
-
-    # Start the repository update task in a separate thread
-    repo_update_thread = threading.Thread(target=check_and_update_repo)
-    repo_update_thread.start()
 
     post_thread = threading.Thread(target=post.post_data)
     post_thread.start()
