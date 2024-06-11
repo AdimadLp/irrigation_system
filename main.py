@@ -73,7 +73,7 @@ if __name__ == "__main__":
         schedule.run_pending()
         time.sleep(1)
     '''
-
+#test
     post_thread = threading.Thread(target=post.post_data)
     post_thread.start()
     logging.info(f'Started post thread at {datetime.datetime.now()}')
