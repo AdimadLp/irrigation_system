@@ -19,7 +19,7 @@ LAST_IRRIGATED_PLANT_FILE = "last_irrigated_plant.pkl"
 logging.basicConfig(filename='irrigation.log', level=logging.INFO)
 
 def start_update_repo():
-    os.system("./update_repo.sh")
+    os.system("python update_repo.py")
 
 def get_last_irrigation_time():
     if os.path.exists(LAST_IRRIGATION_FILE):
