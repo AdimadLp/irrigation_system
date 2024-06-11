@@ -11,7 +11,7 @@ from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 import logging
 
-logging.basicConfig(filename='database_upload.log', level=logging.INFO)
+logging.basicConfig(filename='database_upload.log', level=logging.INFO, format='%(asctime)s %(message)s')
 # Load environment variables from .env file
 load_dotenv()
 
