@@ -26,4 +26,4 @@ jobs:
       - name: Kill systemd irrigation service
         run: |
           sudo systemctl stop irrigation.service
-          python irrigation.py
+          python main.py
