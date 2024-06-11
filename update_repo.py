@@ -3,7 +3,7 @@ import time
 import os
 import subprocess
 
-REPO_PATH = "/irrigation_system/"  # replace with your repository path
+REPO_PATH = "/"  # replace with your repository path
 
 def has_repo_changed():
     os.chdir(REPO_PATH)
