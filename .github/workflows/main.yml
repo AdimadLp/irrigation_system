@@ -20,17 +20,15 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-            cache: 'pip'
-
-      - name: Set up Python environment
-        run: |
-          python -m venv env
-          source env/bin/activate
+            cache: 'pipenv'
 
       - name: Install dependencies
-        run: |
-          source env/bin/activate
-          pip install -r requirements.txt
+        run: pipenv install -r requirements.txt
+      
+      - name: Install pipenv
+        run: curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
+      - run: pipenv install
+    
 
   deploy:
     runs-on: self-hosted
@@ -39,4 +37,5 @@ jobs:
     steps:
       - name: Kill systemd irrigation service
         run: |
-          sudo systemctl restart irrigation.service
+          sudo systemctl stop irrigation.service
+          python irrigation.py
