@@ -22,6 +22,7 @@ check_and_update_repo() {
     while true; do
         if has_repo_changed; then
             update_repo
+            restart_service
         fi
         /bin/sleep 5  # wait for 5 seconds
     done
