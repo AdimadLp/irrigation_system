@@ -38,7 +38,7 @@ def update_ip_address():
     database = client["DeviceList"]
     collection = database["DeviceIPAddresses"]
 
-    query_filter = { "deviceid" : DEVICE_ID }
+    query_filter = { "deviceid" : str(DEVICE_ID) }
     result = collection.update_one(query_filter, { "$set": { "ip_address": local_ip_address } })
 
     if result.modified_count == 0:
