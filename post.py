@@ -43,7 +43,7 @@ def post_data():
                     "humidity": humidity,
                     "ip_address": local_ip_address,
                     "timestamp": datetime.now().isoformat(),
-                    "type": "temperature_humidity_sensor
+                    "type": "temperature_humidity_sensor"
                 }
 
                 # Convert the data to JSON format
