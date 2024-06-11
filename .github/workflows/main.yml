@@ -17,13 +17,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
-      - name: Install dependencies
-        run: |
-          source env/bin/activate
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
+          
   deploy:
     runs-on: self-hosted
     needs: build
@@ -32,5 +26,7 @@ jobs:
       - name: Kill systemd irrigation service
         run: |
           source env/bin/activate
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
           sudo systemctl stop irrigation.service
           python irrigation.py
