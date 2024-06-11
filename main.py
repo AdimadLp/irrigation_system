@@ -8,7 +8,7 @@ import pickle
 from plant import Plant
 import post
 import threading
-import subprocess
+from update_repo import check_and_update_repo
 
 PLANTS = [ Plant("Efeu", 0.05, 2),
            Plant("Einblatt", 0.1, 3),
@@ -18,9 +18,6 @@ LAST_IRRIGATION_FILE = "last_irrigation.pkl"
 LAST_IRRIGATED_PLANT_FILE = "last_irrigated_plant.pkl"
 
 logging.basicConfig(filename='irrigation.log', level=logging.INFO)
-
-def start_update_repo():
-    subprocess.run(["python", "update_repo.py"])
 
 def get_last_irrigation_time():
     if os.path.exists(LAST_IRRIGATION_FILE):
@@ -79,7 +76,7 @@ if __name__ == "__main__":
  
 
     # Start the repository update task in a separate thread
-    repo_update_thread = threading.Thread(target=start_update_repo)
+    repo_update_thread = threading.Thread(target=check_and_update_repo)
     repo_update_thread.start()
 
     post_thread = threading.Thread(target=post.post_data)
