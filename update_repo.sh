@@ -10,8 +10,8 @@ has_repo_changed() {
 
 update_repo() {
     # Pull updates from the remote repository
-    /usr/bin/git -C irrigation_system reset --hard main
-    /usr/bin/git -C irrigation_system pull
+    /usr/bin/git -C reset --hard main
+    /usr/bin/git -C pull
 }
 
 check_and_update_repo() {
