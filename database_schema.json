@@ -1,0 +1,79 @@
+{
+    "plants": [
+        {
+            "_id": "ObjectId",
+            "plantID": "Number",
+            "plantName": "String",
+            "plantType": "String",
+            "controllerID": "Number",
+            "sensorIDs": ["Number"],
+            "pumpIDs": ["Number"],
+            "waterRequirement": "Number",
+            "lastWatered": "Date",
+            "imagePath": "String"            
+        }
+    ],
+    "irrigationController": [
+        {
+            "_id": "ObjectId",
+            "controllerID": "Number",
+            "deviceName": "String",
+            "ipAddress": "String",
+            "status": "String"
+        }
+    ],
+    "environment_sensors": [
+        {
+            "_id": "ObjectId",
+            "sensorID": "Number",
+            "sensorName": "String",
+            "controllerID": "Number",
+            "gpioPort": "Number",
+            "readings": [
+                {
+                    "type": "String",
+                    "value": "Number",
+                    "timestamp": "Date"
+                }
+            ]
+        }
+    ],
+    "plant_sensors": [
+        {
+            "_id": "ObjectId",
+            "sensorID": "Number",
+            "sensorName": "String",
+            "controllerID": "Number",
+            "gpioPort": "Number",
+            "readings": [
+                {
+                    "type": "String",
+                    "value": "Number",
+                    "timestamp": "Date"
+                }
+            ]
+        }
+    ],
+    "pumps": [
+        {
+            "_id": "ObjectId",
+            "pumpID": "Number",
+            "pumpName": "String",
+            "controllerID": "Number",
+            "gpioPort": "Number",
+            "type": "String",
+            "status": "String",
+            "flowRate": "Number"
+        }
+    ],
+    "schedule": [
+        {
+            "_id": "ObjectId",
+            "startTime": "Date",
+            "endTime": "Date",
+            "type": "String",
+            "plantID": "Number",
+            "threshold": "Number" 
+        }
+    ]
+}
