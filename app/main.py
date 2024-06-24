@@ -29,6 +29,7 @@ def main():
                     irrigation_service.logger.warning("Irrigation service is not healthy!")
                     irrigation_service.restart()
             else:
+                # Process sensor data every second
                 sensor_data = sensor_service.get_data()
                 irrigation_service.process_sensor_data(sensor_data)
 

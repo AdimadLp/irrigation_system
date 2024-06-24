@@ -1,7 +1,7 @@
 import time
 import RPi.GPIO as GPIO
 
-LPM = 0.1 # liters per minute
+LPM = 100 # milliliters per minute
 
 class Plant:
     def __init__(self, name, water_needed, port):

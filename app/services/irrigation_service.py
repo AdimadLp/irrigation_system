@@ -5,24 +5,30 @@ import time
 class IrrigationService:
     def __init__(self):
         self.logger = logging.getLogger(__name__)
-        self.stop_event = threading.Event()
+        self.stop_event = threading.Event()        
 
     def start(self):
-        self.logger.info("Starting sensor service")
-        self.thread = threading.Thread(target=self.update_data)
+        self.logger.info("Starting irrigation service")
+        self.thread = threading.Thread(target=self.check_for_irrigation)
         self.thread.start()
     
     def stop(self):
         self.stop_event.set()
         self.thread.join()
-        self.logger.info("Stopped sensor service")
+        self.logger.info("Stopped irrigation service")
 
-    def update_data(self):
-        while not self.stop_event.is_set():
-            new_data = self.read_sensor_data()
-            with self.data_lock:
-                self.data.append(new_data)
-            time.sleep(1)  # Sleep for a while to simulate reading sensor data
+    def check_for_irrigation(self):
+        while True:
+            if self.stop_event.is_set():
+                break
+            if self.is_irrigation_needed():
+                self.logger.info("Irrigation needed!")
+                # Here you would trigger the irrigation process
+            time.sleep(1)
+
+    def is_irrigation_needed(self):
+        # Here you would check if irrigation is needed
+        return True
 
     def process_sensor_data(self, sensor_data):
         # Here you would process the sensor data

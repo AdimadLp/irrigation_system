@@ -3,3 +3,4 @@ schedule
 adafruit-circuitpython-dht
 python-dotenv
 pymongo[srv]
+pydantic

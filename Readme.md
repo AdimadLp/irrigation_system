@@ -9,19 +9,23 @@ irrigation_system/
 |
 ├── app/
 │   ├── database/
+|   |   ├── models
+|   │   │   ├── __init__.py
+|   │   │   ├── irrigation_controller.py
+|   │   │   ├── plant.py
+|   │   │   ├── pump.py
+|   │   │   ├── realtime_sensor_data.py
+|   │   │   ├── schedule.py
+|   │   │   ├── sensor.py
+|   │   │   └── watering_log.py
+|   |   |
 │   │   ├── __init__.py
-│   │   ├── connection.py
-│   │   └── queries.py
+│   │   └── connection.py
 │   │
-│   ├── models
-│   │   ├── __init__.py
-│   │   ├── environment_sensor.py
-│   │   ├── irrigation_controller.py
-│   │   ├── plant_sensor.py
-│   │   ├── plant.py
-│   │   ├── pump.py
-│   │   └── schedule.py
-│   │
+│   ├── helpers/
+|   |   ├── __init__.py
+│   │   └── create_plant.py
+|   |
 │   ├── services/
 │   │   ├── __init__.py
 │   │   ├── irrigation_service.py

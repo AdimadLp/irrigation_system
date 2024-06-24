@@ -5,6 +5,7 @@
             "plantID": "Number",
             "plantName": "String",
             "plantType": "String",
+            "location": "String",
             "controllerID": "Number",
             "sensorIDs": ["Number"],
             "pumpIDs": ["Number"],
@@ -22,36 +23,28 @@
             "status": "String"
         }
     ],
-    "environment_sensors": [
+    "sensors": [
         {
             "_id": "ObjectId",
             "sensorID": "Number",
             "sensorName": "String",
             "controllerID": "Number",
             "gpioPort": "Number",
+            "type": "String",
             "readings": [
                 {
-                    "type": "String",
                     "value": "Number",
                     "timestamp": "Date"
                 }
             ]
         }
     ],
-    "plant_sensors": [
+    "realtime_sensor_data": [
         {
             "_id": "ObjectId",
             "sensorID": "Number",
-            "sensorName": "String",
-            "controllerID": "Number",
-            "gpioPort": "Number",
-            "readings": [
-                {
-                    "type": "String",
-                    "value": "Number",
-                    "timestamp": "Date"
-                }
-            ]
+            "value": "Number",
+            "timestamp": "Date"
         }
     ],
     "pumps": [
@@ -69,11 +62,24 @@
     "schedule": [
         {
             "_id": "ObjectId",
+            "scheduleID": "Number",
+            "weekdays": ["String"],
             "startTime": "Date",
             "endTime": "Date",
             "type": "String",
             "plantID": "Number",
             "threshold": "Number" 
         }
-    ]
+    ],
+    "watering_logs": [
+        {
+            "_id": "ObjectId",
+            "plantID": "Number",
+            "pumpIDs": ["Number"],
+            "amount": "Number",
+            "timestamp": "Date",
+            "trigger": "String",
+            "scheduleID": "Number"
+        }
+    ]    
 }

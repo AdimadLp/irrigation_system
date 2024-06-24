@@ -1,0 +1,318 @@
+2024-06-25 00:16:13,890 - services.sensor_service - INFO - Starting sensor service
+2024-06-25 00:16:13,890 - services.irrigation_service - INFO - Starting irrigation service
+2024-06-25 00:16:13,891 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:13,891 - services.irrigation_service - INFO - Processing sensor data: []
+2024-06-25 00:16:14,892 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:14,892 - services.irrigation_service - INFO - Processing sensor data: []
+2024-06-25 00:16:14,938 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:16:14,938 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:16:14,938 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:16:15,892 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:15,893 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:16,893 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:16,893 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:17,169 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:16:17,170 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:16:17,170 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:16:17,893 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:17,894 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:18,894 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:18,894 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:19,306 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:16:19,306 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:16:19,306 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:16:19,895 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:19,895 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:20,895 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:20,895 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:21,439 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:16:21,439 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:16:21,439 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:16:21,896 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:21,896 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:22,897 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:22,897 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:23,571 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:16:23,571 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:16:23,571 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:16:23,897 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:23,898 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:24,898 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:24,898 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:25,705 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:16:25,705 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:16:25,705 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:16:25,899 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:25,899 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:26,899 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:26,900 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:27,837 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:16:27,837 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:16:27,837 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:16:27,900 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:27,900 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:28,900 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:28,901 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:29,901 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:29,901 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:29,971 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:16:29,972 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:16:29,972 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:16:30,902 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:30,902 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:31,902 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:31,903 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:32,114 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:16:32,114 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:16:32,114 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:16:32,903 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:32,903 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:33,904 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:33,904 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:34,251 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:16:34,251 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:16:34,251 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:16:34,904 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:34,905 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:35,905 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:35,905 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:36,388 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:16:36,389 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:16:36,389 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:16:36,906 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:36,906 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:37,906 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:37,906 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:38,522 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:16:38,522 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:16:38,522 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:16:38,906 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:38,907 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:39,907 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:39,907 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:40,657 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:16:40,657 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:16:40,657 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:16:40,908 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:40,908 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:41,908 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:41,908 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:42,791 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:16:42,791 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:16:42,791 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:16:42,908 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:42,909 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:43,909 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:43,909 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:44,909 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:44,910 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:44,923 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:16:44,923 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:16:44,923 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:16:45,910 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:45,910 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:46,911 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:46,911 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:47,066 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:16:47,066 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:16:47,066 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:16:47,911 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:47,911 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:48,911 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:48,912 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:49,206 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:16:49,206 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:16:49,206 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:16:49,912 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:49,912 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:50,913 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:50,913 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:51,378 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:16:51,378 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:16:51,378 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:16:51,913 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:51,914 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:52,914 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:52,914 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:53,515 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:16:53,515 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:16:53,515 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:16:53,914 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:53,915 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:54,915 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:54,915 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:55,696 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:16:55,696 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:16:55,696 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:16:55,916 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:55,916 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:56,916 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:56,916 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:57,833 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:16:57,833 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:16:57,833 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:16:57,917 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:57,917 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:58,917 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:58,918 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:59,918 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:16:59,918 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:16:59,975 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:16:59,975 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:16:59,975 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:17:00,918 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:00,919 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:01,919 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:01,919 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:02,113 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:17:02,113 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:17:02,113 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:17:02,919 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:02,919 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:03,920 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:03,920 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:04,257 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:17:04,257 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:17:04,257 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:17:04,920 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:04,921 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:05,921 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:05,921 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:06,396 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:17:06,396 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:17:06,396 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:17:06,921 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:06,922 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:07,922 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:07,922 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:08,532 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:17:08,532 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:17:08,532 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:17:08,922 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:08,923 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:09,923 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:09,923 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:10,665 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:17:10,665 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:17:10,665 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:17:10,923 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:10,924 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:11,924 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:11,924 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:12,804 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:17:12,804 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:17:12,804 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:17:12,924 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:12,925 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:13,925 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:14,017 - services.sensor_service - INFO - Sensor data saved to database.
+2024-06-25 00:17:14,017 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:14,925 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:14,941 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:17:14,941 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:17:14,941 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:17:15,017 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:15,925 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:16,018 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:16,926 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:17,018 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:17,082 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:17:17,082 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:17:17,082 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:17:17,926 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:18,018 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:18,926 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:19,018 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:19,229 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:17:19,229 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:17:19,229 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:17:19,927 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:20,019 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:20,927 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:21,019 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:21,364 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:17:21,364 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:17:21,364 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:17:21,927 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:22,019 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:22,928 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:23,020 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:23,495 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:17:23,495 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:17:23,495 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:17:23,928 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:24,020 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:24,928 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:25,020 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:25,632 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:17:25,632 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:17:25,632 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:17:25,929 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:26,021 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:26,929 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:27,021 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:27,777 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:17:27,777 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:17:27,777 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:17:27,929 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:28,021 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:28,930 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:29,021 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:29,910 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:17:29,910 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:17:29,910 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:17:29,930 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:30,022 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:30,930 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:31,022 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:31,930 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:32,022 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:32,041 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:17:32,041 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:17:32,041 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:17:32,931 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:33,023 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:33,931 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:34,023 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:34,178 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:17:34,178 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:17:34,178 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:17:34,931 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:35,023 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:35,932 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:36,024 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:36,311 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:17:36,311 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:17:36,311 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:17:36,932 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:37,024 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:37,932 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:38,024 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:38,443 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:17:38,443 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:17:38,443 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:17:38,933 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:39,025 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:39,933 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:40,025 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:40,574 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:17:40,574 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:17:40,575 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:17:40,934 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:41,025 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:41,934 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:42,025 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:42,708 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:17:42,708 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:17:42,708 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:17:42,934 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:43,026 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:43,935 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:44,026 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:44,842 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
+2024-06-25 00:17:44,842 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
+2024-06-25 00:17:44,842 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
+2024-06-25 00:17:44,935 - services.irrigation_service - INFO - Irrigation needed!
+2024-06-25 00:17:45,026 - services.irrigation_service - INFO - Processing sensor data: [{'sensorID': 1, 'value': 1}, {'sensorID': 2, 'value': 1}, {'sensorID': 3, 'value': 1}]
+2024-06-25 00:17:45,712 - services.sensor_service - INFO - Stopped sensor service
+2024-06-25 00:17:45,935 - services.irrigation_service - INFO - Stopped irrigation service

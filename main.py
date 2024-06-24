@@ -9,9 +9,9 @@ from plant import Plant
 import post
 import threading
 
-PLANTS = [ Plant("Efeu", 0.05, 2),
-           Plant("Einblatt", 0.1, 3),
-           Plant("Aloe Vera", 0.05, 4) ]
+PLANTS = [ Plant("Efeu", 50, 2),
+           Plant("Einblatt", 100, 3),
+           Plant("Aloe Vera", 50, 4) ]
 
 LAST_IRRIGATION_FILE = "last_irrigation.pkl"
 LAST_IRRIGATED_PLANT_FILE = "last_irrigated_plant.pkl"
