@@ -1,5 +1,8 @@
 from mongoengine import Document, IntField, DateTimeField
 from datetime import datetime
+import logging
+
+logger = logging.getLogger(__name__)
 
 class RealtimeSensorData(Document):
     sensorID = IntField(required=True)
@@ -13,19 +16,24 @@ class RealtimeSensorData(Document):
             sensorID = data.get('sensorID')
             value = data.get('value')
             timestamp = datetime.now()
-            
+
             # Validate the data
-            if sensorID is None or value is None:
-                print(f"Missing data for sensorID: {sensorID}, value: {value}")
+            if sensorID is None:
+                logger.error(f"Missing sensorID")
+                continue
+            if value is None:
+                logger.error(f"Missing value for sensor {sensorID}")
                 continue
             
-            # Check if a record with the same sensorID and timestamp exists
+            # Check if a record with the same sensorID exists
             existing_record = RealtimeSensorData.objects(sensorID=sensorID).first()
             
             if existing_record:
                 # Update the existing record
                 existing_record.update(value=value, timestamp=timestamp)
+                logger.info(f"Updated value with {value} of existing sensor {sensorID} at {timestamp}")
             else:
                 # Create a new record
                 new_record = RealtimeSensorData(sensorID=sensorID, value=value, timestamp=timestamp)
                 new_record.save()
+                logger.info(f"Created new sensor {sensorID} and saved value {value} at {timestamp}")

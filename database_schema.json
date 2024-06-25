@@ -10,6 +10,7 @@
             "sensorIDs": ["Number"],
             "pumpIDs": ["Number"],
             "waterRequirement": "Number",
+            "lowerMoistureLimit": "Number",
             "lastWatered": "Date",
             "imagePath": "String"            
         }

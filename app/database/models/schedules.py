@@ -9,3 +9,6 @@ class Schedules(Document):
     plantID = IntField(required=True)
     threshold = IntField(required=True)
     meta = {'indexes': [{'fields': ['scheduleID'], 'unique': True}]}
+
+    def get_schedules_by_plant_id(plant_id):
+        return Schedules.objects(plantID=plant_id)

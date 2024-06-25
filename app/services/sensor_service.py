@@ -1,19 +1,20 @@
 import logging
 import threading
-import time
 import database.connection
 from database.models import IrrigationControllers
 from database.models import Sensors
 from database.models import RealtimeSensorData
 
 class SensorService:
-    def __init__(self):
+    def __init__(self, controller_id):
         self.logger = logging.getLogger(__name__)
         self.data = []
-        self.data_lock = threading.Lock()
+        self.new_data_lock = threading.Lock() # For updating the incoming data list
+        self.sensors_lock = threading.Lock() # For finding new sensors and updating the sensor list
         self.stop_event = threading.Event()
-        self.controller_id = IrrigationControllers.check_and_save_controller()
+        self.controller_id = controller_id
         self.sensors = Sensors.get_all_sensors_by_controller(self.controller_id)
+
 
     def start(self):
         self.logger.info("Starting sensor service")
@@ -42,39 +43,40 @@ class SensorService:
 
         if current_sensors != new_sensors:
             self.logger.info("New sensor(s) found. Updating sensor list.")
-            with self.data_lock:
+            with self.sensors_lock:
                 self.sensors = new_sensors_list
 
     def update_data(self):
         while not self.stop_event.is_set():
             new_data = self.read_sensor_data()
-            with self.data_lock:
+            with self.new_data_lock:
                 self.data = new_data
-            RealtimeSensorData.update_sensor_data(self.data)
+            RealtimeSensorData.update_sensor_data(new_data)
             self.stop_event.wait(1)
 
     def save_data_periodically(self):
         while not self.stop_event.is_set():
-            with self.data_lock:
+            with self.new_data_lock:
                 if self.data:
                     Sensors.save_sensor_data(self.data)
                     self.logger.info("Sensor data saved to database.")
-            self.stop_event.wait(60)
+            self.stop_event.wait(300)
 
     def read_sensor_data(self):
-        time.sleep(1)  # Sleep for a while to simulate reading sensor data
-        if self.sensors:
-            sensor_data = []
-            for sensor in self.sensors:
-                self.logger.info(f"Reading data from sensor {sensor.sensorID} with GPIO port {sensor.gpioPort}")
-                sensor_data.append({"sensorID": sensor.sensorID, "value": 1})
-            return sensor_data
-        else:
-            logging.warning("No sensors found for this controller.")
-            return []
+        self.stop_event.wait(1)  # Sleep for a while to simulate reading sensor data
+        with self.sensors_lock:
+            if self.sensors:
+                sensor_data = []
+                for sensor in self.sensors:
+                    self.logger.info(f"Reading data from sensor {sensor.sensorID} with GPIO port {sensor.gpioPort}")
+                    sensor_data.append({"sensorID": sensor.sensorID, "value": 1})
+                return sensor_data
+            else:
+                logging.warning("No sensors found for this controller.")
+                return []
 
     def get_data(self):
-        with self.data_lock:
+        with self.new_data_lock:
             return self.data.copy()
 
 

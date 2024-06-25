@@ -1,11 +1,17 @@
 import logging
 import threading
 import time
+from database.models import Plants
+from database.models import Pumps
+from database.models import Schedules
+from database.models import WateringLogs
+from services.sensor_service import SensorService
 
 class IrrigationService:
-    def __init__(self):
+    def __init__(self, controller_id):
         self.logger = logging.getLogger(__name__)
-        self.stop_event = threading.Event()        
+        self.stop_event = threading.Event()
+        self.controller_id = controller_id 
 
     def start(self):
         self.logger.info("Starting irrigation service")
@@ -26,9 +32,26 @@ class IrrigationService:
                 # Here you would trigger the irrigation process
             time.sleep(1)
 
-    def is_irrigation_needed(self):
-        # Here you would check if irrigation is needed
+    def is_schedule_active(self, schedule):
+        # Implement logic to check if the schedule is active
+        # For this example, we'll just return True
         return True
+    
+    def is_threshold_met(self, lower_moisture_limit, sensor_data):
+        # Implement logic to check if the threshold is met
+        # For this example, we'll just return True
+        self.logger.info(f"Checking if threshold is met. Lower limit: {lower_moisture_limit}, Sensor data: {sensor_data}")
+        return True
+
+    def is_irrigation_needed(self):
+        plants = Plants.get_plants_by_controller_id(self.controller_id)
+        for plant in plants:
+            schedules = Schedules.get_schedules_by_plant_id(plant["plantID"])
+            for schedule in schedules:
+                if self.is_schedule_active(schedule):
+                    sensor_data = SensorService.get_data()
+                    if self.is_threshold_met(plant["lowerMoistureLimit"], sensor_data):
+                        return True
 
     def process_sensor_data(self, sensor_data):
         # Here you would process the sensor data

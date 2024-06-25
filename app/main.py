@@ -2,6 +2,8 @@ import logging
 from services.irrigation_service import IrrigationService
 from services.sensor_service import SensorService
 import time
+from queue import Queue
+import threading
 
 # Configure logging to write to a file, include timestamps, and include the logger's name
 logging.basicConfig(
@@ -12,11 +14,19 @@ logging.basicConfig(
 )
 
 def main():
-    sensor_service = SensorService()
+    controller_id = None
+    try:
+        from database.models import IrrigationControllers
+        controller_id = IrrigationControllers.check_and_save_controller()
+    except Exception as e:
+        logging.error(f"Error initializing controller: {e}")
+
+    sensor_service = SensorService(controller_id)
     sensor_service.start()
 
-    irrigation_service = IrrigationService()
+    irrigation_service = IrrigationService(controller_id)
     irrigation_service.start()
+    
 
     try:
         while True:
