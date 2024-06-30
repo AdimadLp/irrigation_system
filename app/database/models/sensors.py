@@ -44,3 +44,24 @@ class Sensors(Document):
                 sensor.save()
             else:
                 logger.error(f"Sensor with ID {sensorID} not found")
+    
+    @staticmethod
+    def get_sensor_type(sensorID):
+        sensor = Sensors.objects(sensorID=sensorID).first()
+        if sensor:
+            return sensor.type
+        else:
+            logger.error(f"Sensor with ID {sensorID} not found")
+            return None
+        
+    @staticmethod
+    def get_new_sensors(since_date):
+        """
+        Retrieves sensors that have been added to the database since a specified date.
+
+        :param since_date: A datetime object representing the point in time from which new sensors should be identified.
+        :return: A list of Sensors documents that were added to the database after the specified date.
+        """
+        # Use the __raw__ query to leverage MongoDB's $gt (greater than) operator on the _id field.
+        # ObjectId creation times can be used to approximate document creation times.
+        return Sensors.objects(__raw__={'_id': {'$gt': ObjectId.from_datetime(since_date)}})

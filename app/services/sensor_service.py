@@ -6,14 +6,13 @@ from database.models import Sensors
 from database.models import RealtimeSensorData
 
 class SensorService:
-    def __init__(self, controller_id):
+    def __init__(self, controller_id, shared_data):
         self.logger = logging.getLogger(__name__)
-        self.data = []
-        self.new_data_lock = threading.Lock() # For updating the incoming data list
-        self.sensors_lock = threading.Lock() # For finding new sensors and updating the sensor list
         self.stop_event = threading.Event()
         self.controller_id = controller_id
+        self.sensors_lock = threading.Lock() # For finding new sensors and updating the sensor list
         self.sensors = Sensors.get_all_sensors_by_controller(self.controller_id)
+        self.shared_data = shared_data # Shared data between irrigation and sensor services
 
 
     def start(self):
@@ -49,17 +48,15 @@ class SensorService:
     def update_data(self):
         while not self.stop_event.is_set():
             new_data = self.read_sensor_data()
-            with self.new_data_lock:
-                self.data = new_data
+            self.shared_data.overwrite(new_data)
             RealtimeSensorData.update_sensor_data(new_data)
             self.stop_event.wait(1)
 
     def save_data_periodically(self):
         while not self.stop_event.is_set():
-            with self.new_data_lock:
-                if self.data:
-                    Sensors.save_sensor_data(self.data)
-                    self.logger.info("Sensor data saved to database.")
+            if len(self.shared_data) > 0:
+                Sensors.save_sensor_data(self.shared_data.get())
+                self.logger.info("Sensor data saved to database.")
             self.stop_event.wait(300)
 
     def read_sensor_data(self):
@@ -74,10 +71,6 @@ class SensorService:
             else:
                 logging.warning("No sensors found for this controller.")
                 return []
-
-    def get_data(self):
-        with self.new_data_lock:
-            return self.data.copy()
 
 
     def is_healthy(self):

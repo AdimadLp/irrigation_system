@@ -28,6 +28,7 @@ irrigation_system/
 |   |
 │   ├── services/
 │   │   ├── __init__.py
+|   |   ├── database_monitoring_service.py
 │   │   ├── irrigation_service.py
 │   │   └── sensor_service.py
 │   │

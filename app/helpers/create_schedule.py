@@ -4,10 +4,10 @@ from datetime import datetime
 
 # Create a new plant instance
 new_schedule = Schedules(
-    scheduleID = 1,
-    weekdays = ["Monday", "Wednesday", "Friday"],
-    startTime = datetime.strptime("08:00", "%H:%M"),
-    endTime = datetime.strptime("10:00", "%H:%M"),
+    scheduleID = 2,
+    weekdays = ["Monday", "Wednesday", "Friday", "Sunday"],
+    startTime = datetime.strptime("17:00", "%H:%M"),
+    endTime = datetime.strptime("18:00", "%H:%M"),
     type = "Interval",
     plantID = 1,
     threshold = 40,
