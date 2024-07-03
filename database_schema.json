@@ -1,86 +1,89 @@
 {
     "plants": [
-        {
-            "_id": "ObjectId",
-            "plantID": "Number",
-            "plantName": "String",
-            "plantType": "String",
-            "location": "String",
-            "controllerID": "Number",
-            "sensorIDs": ["Number"],
-            "pumpIDs": ["Number"],
-            "waterRequirement": "Number",
-            "lowerMoistureLimit": "Number",
-            "lastWatered": "Date",
-            "imagePath": "String"            
-        }
+      {
+        "_id": "ObjectId",
+        "plantID": "Number",
+        "name": "String",
+        "type": "String",
+        "location": "String",
+        "controllerID": "ObjectId",
+        "waterRequirement": "Number",
+        "lowerMoistureLimit": "Number",
+        "lastWatered": "Date",
+        "imagePath": "String"
+      }
     ],
-    "irrigationController": [
-        {
-            "_id": "ObjectId",
-            "controllerID": "Number",
-            "deviceName": "String",
-            "ipAddress": "String",
-            "status": "String"
-        }
+    "irrigationControllers": [
+      {
+        "_id": "ObjectId",
+        "name": "String",
+        "ipAddress": "String",
+        "status": "String"
+      }
     ],
     "sensors": [
-        {
-            "_id": "ObjectId",
-            "sensorID": "Number",
-            "sensorName": "String",
-            "controllerID": "Number",
-            "gpioPort": "Number",
-            "type": "String",
-            "readings": [
-                {
-                    "value": "Number",
-                    "timestamp": "Date"
-                }
-            ]
-        }
+      {
+        "_id": "ObjectId",
+        "name": "String",
+        "controllerID": "ObjectId",
+        "plantID": "ObjectId",
+        "gpioPort": "Number",
+        "type": "String"
+      }
     ],
-    "realtime_sensor_data": [
-        {
-            "_id": "ObjectId",
-            "sensorID": "Number",
-            "value": "Number",
-            "timestamp": "Date"
-        }
+    "sensorReadings": [
+      {
+        "_id": "ObjectId",
+        "sensorID": "ObjectId",
+        "value": "Number",
+        "timestamp": "Date"
+      }
+    ],
+    "realtimeSensorData": [
+      {
+        "sensorID": "ObjectId",
+        "value": "Number",
+        "timestamp": "Date"
+      }
     ],
     "pumps": [
-        {
-            "_id": "ObjectId",
-            "pumpID": "Number",
-            "pumpName": "String",
-            "controllerID": "Number",
-            "gpioPort": "Number",
-            "type": "String",
-            "status": "String",
-            "flowRate": "Number"
-        }
+      {
+        "_id": "ObjectId",
+        "name": "String",
+        "controllerID": "ObjectId",
+        "plantID": "ObjectId",
+        "gpioPort": "Number",
+        "type": "String",
+        "status": "String",
+        "flowRate": "Number"
+      }
     ],
-    "schedule": [
-        {
-            "_id": "ObjectId",
-            "scheduleID": "Number",
-            "weekdays": ["String"],
-            "startTime": "Date",
-            "endTime": "Date",
-            "type": "String",
-            "plantID": "Number",
-            "threshold": "Number" 
-        }
+    "schedules": [
+      {
+        "_id": "ObjectId",
+        "plantID": "ObjectId",
+        "type": "String",
+        "weekdays": ["Number"],
+        "startTime": {
+          "hour": "Number",
+          "minute": "Number"
+        },
+        "endTime": {
+          "hour": "Number",
+          "minute": "Number"
+        },
+        "threshold": "Number"
+      }
     ],
-    "watering_logs": [
-        {
-            "_id": "ObjectId",
-            "plantID": "Number",
-            "pumpIDs": ["Number"],
-            "amount": "Number",
-            "timestamp": "Date",
-            "trigger": "String",
-            "scheduleID": "Number"
-        }
-    ]    
-}
+    "wateringLogs": [
+      {
+        "_id": "ObjectId",
+        "plantID": "ObjectId",
+        "pumpID": "ObjectId",
+        "amount": "Number",
+        "timestamp": "Date",
+        "trigger": "String",
+        "scheduleID": "ObjectId"
+      }
+    ]
+  }
