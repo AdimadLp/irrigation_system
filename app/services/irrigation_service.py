@@ -7,6 +7,7 @@ from database.models import Pumps
 from database.models import Schedules
 from database.models import WateringLogs
 from services.sensor_service import SensorService
+from helpers.thread_safe_list import ThreadSafeList
 
 
 class IrrigationService:
@@ -15,6 +16,7 @@ class IrrigationService:
         self.stop_event = threading.Event()
         self.controller_id = controller_id
         self.shared_data = shared_data
+        self.schedules = []
 
     def start(self):
         self.logger.info("Starting irrigation service")
