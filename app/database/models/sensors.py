@@ -1,4 +1,4 @@
-import logging
+from logging_config import setup_logger
 from mongoengine import Document, EmbeddedDocument
 from mongoengine.fields import (
     StringField,
@@ -12,7 +12,7 @@ from mongoengine.errors import ValidationError
 from datetime import datetime
 from bson import ObjectId  # Add this import statement
 
-logger = logging.getLogger(__name__)
+logger = setup_logger(__name__)
 
 
 class SensorReading(EmbeddedDocument):

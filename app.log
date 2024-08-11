@@ -1,652 +1,980 @@
-2024-07-03 23:33:28,945 - services.sensor_service - INFO - Starting sensor service
-2024-07-03 23:33:28,946 - services.irrigation_service - INFO - Starting irrigation service
-2024-07-03 23:33:28,948 - services.database_monitoring_service - INFO - Starting monitor service
-2024-07-03 23:33:29,317 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:33:29,375 - services.database_monitoring_service - INFO - New plant(s) found. Updating plant list.
-2024-07-03 23:33:29,438 - services.database_monitoring_service - INFO - New sensor(s) found. Updating sensor list.
-2024-07-03 23:33:29,461 - services.database_monitoring_service - INFO - New schedule(s) found. Updating schedule list.
-2024-07-03 23:33:30,026 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:33:30,026 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:33:30,026 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:33:30,026 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:33:30,196 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:33:30.026314
-2024-07-03 23:33:30,240 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:33:30.196806
-2024-07-03 23:33:30,288 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:33:30.240586
-2024-07-03 23:33:30,347 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:33:30.288647
-2024-07-03 23:33:30,444 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:33:31,601 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:33:32,436 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:33:32,436 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:33:32,436 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:33:32,436 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:33:32,494 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:33:32.436879
-2024-07-03 23:33:32,572 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:33:32.495262
-2024-07-03 23:33:32,850 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:33:32.572807
-2024-07-03 23:33:32,917 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:33:32,994 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:33:32.850551
-2024-07-03 23:33:34,027 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:33:35,157 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:33:35,157 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:33:35,158 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:33:35,158 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:33:35,324 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:33:35.158075
-2024-07-03 23:33:35,420 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:33:35,445 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:33:35.324877
-2024-07-03 23:33:35,617 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:33:35.445868
-2024-07-03 23:33:35,759 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:33:35.617659
-2024-07-03 23:33:37,512 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:33:37,848 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:33:37,848 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:33:37,848 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:33:37,848 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:33:38,023 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:33:37.848366
-2024-07-03 23:33:38,136 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:33:38.024169
-2024-07-03 23:33:38,373 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:33:38.137123
-2024-07-03 23:33:38,527 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:33:38.373480
-2024-07-03 23:33:38,827 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:33:40,114 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:33:40,605 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:33:40,605 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:33:40,605 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:33:40,605 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:33:40,688 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:33:40.605497
-2024-07-03 23:33:40,792 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:33:40.688628
-2024-07-03 23:33:40,891 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:33:40.792830
-2024-07-03 23:33:41,034 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:33:40.891428
-2024-07-03 23:33:41,239 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:33:42,482 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:33:43,065 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:33:43,065 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:33:43,065 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:33:43,065 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:33:43,167 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:33:43.066001
-2024-07-03 23:33:43,255 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:33:43.167302
-2024-07-03 23:33:43,398 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:33:43.255225
-2024-07-03 23:33:43,546 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:33:43.398433
-2024-07-03 23:33:43,592 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:33:44,783 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:33:45,627 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:33:45,627 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:33:45,627 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:33:45,627 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:33:45,743 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:33:45.627521
-2024-07-03 23:33:45,957 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:33:45.743700
-2024-07-03 23:33:46,114 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:33:46,114 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:33:45.958148
-2024-07-03 23:33:46,332 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:33:46.115034
-2024-07-03 23:33:47,368 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:33:48,373 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:33:48,373 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:33:48,373 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:33:48,373 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:33:48,424 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:33:48.373653
-2024-07-03 23:33:48,478 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:33:48,523 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:33:48.424383
-2024-07-03 23:33:48,580 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:33:48.523869
-2024-07-03 23:33:48,667 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:33:48.580980
-2024-07-03 23:33:49,547 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:33:50,627 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:33:50,700 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:33:50,700 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:33:50,700 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:33:50,700 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:33:50,748 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:33:50.700432
-2024-07-03 23:33:50,796 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:33:50.748666
-2024-07-03 23:33:50,844 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:33:50.797072
-2024-07-03 23:33:50,899 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:33:50.844646
-2024-07-03 23:33:51,693 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:33:52,780 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:33:52,925 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:33:52,925 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:33:52,925 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:33:52,925 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:33:52,973 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:33:52.925392
-2024-07-03 23:33:53,028 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:33:52.973372
-2024-07-03 23:33:53,079 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:33:53.028288
-2024-07-03 23:33:53,134 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:33:53.079167
-2024-07-03 23:33:53,846 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:33:55,079 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:33:55,176 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:33:55,176 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:33:55,176 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:33:55,176 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:33:55,237 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:33:55.176913
-2024-07-03 23:33:55,317 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:33:55.238002
-2024-07-03 23:33:55,435 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:33:55.317589
-2024-07-03 23:33:55,544 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:33:55.436146
-2024-07-03 23:33:56,266 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:33:57,410 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:33:57,584 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:33:57,584 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:33:57,584 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:33:57,584 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:33:57,691 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:33:57.584356
-2024-07-03 23:33:57,795 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:33:57.691944
-2024-07-03 23:33:57,893 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:33:57.795170
-2024-07-03 23:33:57,996 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:33:57.893851
-2024-07-03 23:33:58,616 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:00,156 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:00,156 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:00,156 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:00,156 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:00,321 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:00.156775
-2024-07-03 23:34:00,324 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:00,721 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:00.321892
-2024-07-03 23:34:00,789 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:00.721875
-2024-07-03 23:34:00,891 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:00.789960
-2024-07-03 23:34:01,501 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:02,601 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:02,969 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:02,969 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:02,969 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:02,969 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:03,153 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:02.969918
-2024-07-03 23:34:03,424 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:03.153779
-2024-07-03 23:34:03,739 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:03.424492
-2024-07-03 23:34:03,937 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:03.739743
-2024-07-03 23:34:03,938 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:05,184 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:05,997 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:05,997 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:05,997 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:05,997 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:06,045 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:05.997701
-2024-07-03 23:34:06,174 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:06.045686
-2024-07-03 23:34:06,296 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:06.174994
-2024-07-03 23:34:06,376 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:06,472 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:06.296875
-2024-07-03 23:34:07,642 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:08,498 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:08,498 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:08,498 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:08,498 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:08,665 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:08.498676
-2024-07-03 23:34:08,744 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:08.665698
-2024-07-03 23:34:08,876 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:08,907 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:08.744411
-2024-07-03 23:34:09,090 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:08.908139
-2024-07-03 23:34:10,037 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:11,128 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:11,129 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:11,129 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:11,129 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:11,131 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:11,186 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:11.129546
-2024-07-03 23:34:11,234 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:11.187102
-2024-07-03 23:34:11,290 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:11.234421
-2024-07-03 23:34:11,339 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:11.290736
-2024-07-03 23:34:12,194 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:13,293 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:13,366 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:13,366 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:13,366 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:13,366 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:13,412 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:13.366891
-2024-07-03 23:34:13,457 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:13.412715
-2024-07-03 23:34:13,505 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:13.457365
-2024-07-03 23:34:13,550 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:13.506117
-2024-07-03 23:34:14,371 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:15,451 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:15,583 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:15,583 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:15,583 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:15,583 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:15,634 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:15.583496
-2024-07-03 23:34:15,692 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:15.635038
-2024-07-03 23:34:15,742 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:15.692583
-2024-07-03 23:34:15,790 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:15.743162
-2024-07-03 23:34:16,528 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:17,598 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:17,815 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:17,815 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:17,816 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:17,816 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:17,866 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:17.816076
-2024-07-03 23:34:17,911 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:17.867144
-2024-07-03 23:34:17,963 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:17.912062
-2024-07-03 23:34:18,036 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:17.963605
-2024-07-03 23:34:18,678 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:19,743 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:20,066 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:20,066 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:20,066 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:20,066 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:20,130 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:20.066906
-2024-07-03 23:34:20,179 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:20.131103
-2024-07-03 23:34:20,222 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:20.180200
-2024-07-03 23:34:20,268 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:20.223208
-2024-07-03 23:34:20,839 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:21,905 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:22,298 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:22,298 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:22,298 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:22,298 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:22,343 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:22.298910
-2024-07-03 23:34:22,386 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:22.343972
-2024-07-03 23:34:22,429 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:22.386389
-2024-07-03 23:34:22,477 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:22.429775
-2024-07-03 23:34:22,971 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:24,036 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:24,500 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:24,500 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:24,500 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:24,500 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:24,553 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:24.500266
-2024-07-03 23:34:24,599 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:24.553776
-2024-07-03 23:34:24,642 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:24.599683
-2024-07-03 23:34:24,690 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:24.643077
-2024-07-03 23:34:25,118 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:26,199 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:26,769 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:26,770 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:26,770 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:26,770 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:26,880 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:26.770402
-2024-07-03 23:34:26,928 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:26.881152
-2024-07-03 23:34:26,978 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:26.928590
-2024-07-03 23:34:27,045 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:26.979144
-2024-07-03 23:34:27,585 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:28,842 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:29,086 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:29,086 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:29,086 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:29,086 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:29,160 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:29.086613
-2024-07-03 23:34:29,210 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:29.160988
-2024-07-03 23:34:29,259 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:29.210406
-2024-07-03 23:34:29,392 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:29.259354
-2024-07-03 23:34:29,943 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:31,066 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:31,419 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:31,419 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:31,419 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:31,419 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:31,465 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:31.419836
-2024-07-03 23:34:31,510 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:31.466119
-2024-07-03 23:34:31,569 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:31.510888
-2024-07-03 23:34:31,620 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:31.569272
-2024-07-03 23:34:32,157 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:33,285 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:33,667 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:33,668 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:33,668 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:33,668 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:33,729 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:33.668497
-2024-07-03 23:34:33,785 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:33.729587
-2024-07-03 23:34:33,835 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:33.785541
-2024-07-03 23:34:33,886 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:33.835540
-2024-07-03 23:34:34,357 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:35,451 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:35,914 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:35,914 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:35,914 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:35,914 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:35,965 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:35.914736
-2024-07-03 23:34:36,012 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:35.966071
-2024-07-03 23:34:36,064 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:36.012610
-2024-07-03 23:34:36,111 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:36.065151
-2024-07-03 23:34:36,525 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:37,593 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:38,137 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:38,137 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:38,137 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:38,137 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:38,190 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:38.137542
-2024-07-03 23:34:38,243 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:38.191239
-2024-07-03 23:34:38,295 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:38.243718
-2024-07-03 23:34:38,359 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:38.295968
-2024-07-03 23:34:38,660 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:39,733 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:40,401 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:40,401 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:40,402 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:40,402 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:40,450 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:40.402144
-2024-07-03 23:34:40,496 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:40.450851
-2024-07-03 23:34:40,548 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:40.496576
-2024-07-03 23:34:40,598 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:40.548372
-2024-07-03 23:34:40,805 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:41,879 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:42,631 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:42,635 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:42,635 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:42,635 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:42,688 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:42.635394
-2024-07-03 23:34:42,742 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:42.688756
-2024-07-03 23:34:42,791 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:42.742845
-2024-07-03 23:34:42,835 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:42.791484
-2024-07-03 23:34:42,955 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:44,034 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:44,864 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:44,864 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:44,865 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:44,865 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:44,938 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:44.865136
-2024-07-03 23:34:44,990 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:44.939147
-2024-07-03 23:34:45,041 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:44.990511
-2024-07-03 23:34:45,145 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:45.041490
-2024-07-03 23:34:45,167 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:46,278 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:47,172 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:47,172 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:47,172 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:47,172 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:47,218 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:47.172460
-2024-07-03 23:34:47,261 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:47.218557
-2024-07-03 23:34:47,313 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:47.261919
-2024-07-03 23:34:47,351 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:47,356 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:47.313501
-2024-07-03 23:34:48,463 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:49,420 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:49,421 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:49,421 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:49,421 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:49,527 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:49.421279
-2024-07-03 23:34:49,565 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:49,583 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:49.527333
-2024-07-03 23:34:49,631 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:49.583484
-2024-07-03 23:34:49,690 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:49.631403
-2024-07-03 23:34:50,683 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:51,731 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:51,731 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:51,731 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:51,731 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:51,822 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:51,836 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:51.731863
-2024-07-03 23:34:51,894 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:51.837077
-2024-07-03 23:34:51,940 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:51.894840
-2024-07-03 23:34:51,986 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:51.940860
-2024-07-03 23:34:53,226 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:54,038 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:54,038 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:54,038 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:54,038 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:54,153 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:54.039017
-2024-07-03 23:34:54,217 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:54.153591
-2024-07-03 23:34:54,319 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:54.217358
-2024-07-03 23:34:54,455 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:54,496 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:54.319911
-2024-07-03 23:34:55,593 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:56,541 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:56,541 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:56,541 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:56,541 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:56,820 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:56.541932
-2024-07-03 23:34:57,003 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:56.820795
-2024-07-03 23:34:57,007 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:57,118 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:57.004199
-2024-07-03 23:34:57,270 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:57.118950
-2024-07-03 23:34:58,167 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:59,348 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:34:59,348 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:34:59,348 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:34:59,348 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:34:59,366 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:34:59,495 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:34:59.348570
-2024-07-03 23:34:59,625 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:34:59.495297
-2024-07-03 23:34:59,714 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:34:59.626060
-2024-07-03 23:34:59,786 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:34:59.714702
-2024-07-03 23:35:00,498 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:01,573 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:01,814 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:01,814 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:01,814 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:01,814 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:01,862 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:01.814814
-2024-07-03 23:35:01,915 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:01.862932
-2024-07-03 23:35:01,972 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:01.915709
-2024-07-03 23:35:02,020 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:01.972722
-2024-07-03 23:35:02,643 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:03,797 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:04,055 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:04,056 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:04,056 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:04,056 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:04,107 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:04.056283
-2024-07-03 23:35:04,176 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:04.108082
-2024-07-03 23:35:04,225 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:04.176488
-2024-07-03 23:35:04,299 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:04.225626
-2024-07-03 23:35:04,900 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:05,975 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:06,330 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:06,331 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:06,331 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:06,331 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:06,377 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:06.331456
-2024-07-03 23:35:06,435 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:06.378253
-2024-07-03 23:35:06,484 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:06.436244
-2024-07-03 23:35:06,530 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:06.484221
-2024-07-03 23:35:07,043 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:08,146 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:08,563 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:08,563 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:08,563 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:08,563 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:08,620 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:08.563965
-2024-07-03 23:35:08,669 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:08.620424
-2024-07-03 23:35:08,719 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:08.669942
-2024-07-03 23:35:08,771 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:08.720431
-2024-07-03 23:35:09,216 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:10,288 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:10,799 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:10,800 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:10,800 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:10,800 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:10,854 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:10.800187
-2024-07-03 23:35:10,910 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:10.854642
-2024-07-03 23:35:10,956 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:10.910387
-2024-07-03 23:35:11,001 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:10.957006
-2024-07-03 23:35:11,361 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:12,431 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:13,044 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:13,044 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:13,044 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:13,045 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:13,163 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:13.045181
-2024-07-03 23:35:13,236 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:13.164306
-2024-07-03 23:35:13,280 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:13.236910
-2024-07-03 23:35:13,326 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:13.280481
-2024-07-03 23:35:13,518 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:14,586 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:15,359 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:15,359 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:15,359 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:15,360 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:15,414 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:15.360162
-2024-07-03 23:35:15,463 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:15.414863
-2024-07-03 23:35:15,510 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:15.463852
-2024-07-03 23:35:15,567 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:15.511134
-2024-07-03 23:35:15,652 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:16,735 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:17,601 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:17,601 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:17,601 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:17,601 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:17,651 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:17.601767
-2024-07-03 23:35:17,702 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:17.651712
-2024-07-03 23:35:17,787 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:17.702858
-2024-07-03 23:35:17,819 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:17,851 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:17.788155
-2024-07-03 23:35:18,909 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:19,887 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:19,887 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:19,887 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:19,887 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:19,940 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:19.887876
-2024-07-03 23:35:19,998 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:19.940396
-2024-07-03 23:35:20,005 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:20,055 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:19.999388
-2024-07-03 23:35:20,110 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:20.055447
-2024-07-03 23:35:21,072 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:22,136 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:22,136 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:22,136 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:22,137 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:22,139 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:22,183 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:22.137098
-2024-07-03 23:35:22,228 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:22.184010
-2024-07-03 23:35:22,275 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:22.229001
-2024-07-03 23:35:22,331 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:22.275307
-2024-07-03 23:35:22,869 - services.database_monitoring_service - INFO - New schedule(s) found. Updating schedule list.
-2024-07-03 23:35:23,205 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:24,272 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:24,358 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:24,358 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:24,358 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:24,358 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:24,404 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:24.358496
-2024-07-03 23:35:24,452 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:24.404252
-2024-07-03 23:35:24,497 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:24.452763
-2024-07-03 23:35:24,544 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:24.497793
-2024-07-03 23:35:25,346 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:26,417 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:26,569 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:26,569 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:26,569 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:26,569 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:26,618 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:26.569853
-2024-07-03 23:35:26,665 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:26.619061
-2024-07-03 23:35:26,710 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:26.665452
-2024-07-03 23:35:26,763 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:26.710834
-2024-07-03 23:35:27,484 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:28,545 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:28,789 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:28,789 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:28,789 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:28,789 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:28,844 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:28.789494
-2024-07-03 23:35:28,887 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:28.844550
-2024-07-03 23:35:28,934 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:28.887562
-2024-07-03 23:35:28,978 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:28.934231
-2024-07-03 23:35:29,607 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:30,677 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:31,014 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:31,014 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:31,014 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:31,014 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:31,056 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:31.014375
-2024-07-03 23:35:31,097 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:31.056899
-2024-07-03 23:35:31,156 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:31.097576
-2024-07-03 23:35:31,209 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:31.156882
-2024-07-03 23:35:31,748 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:32,816 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:33,239 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:33,239 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:33,239 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:33,239 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:33,301 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:33.239925
-2024-07-03 23:35:33,421 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:33.301471
-2024-07-03 23:35:33,502 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:33.421793
-2024-07-03 23:35:33,608 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:33.503090
-2024-07-03 23:35:33,881 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:34,947 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:35,630 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:35,630 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:35,630 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:35,630 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:35,674 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:35.630793
-2024-07-03 23:35:35,722 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:35.674747
-2024-07-03 23:35:35,766 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:35.722685
-2024-07-03 23:35:35,871 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:35.766403
-2024-07-03 23:35:36,014 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:37,082 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:37,898 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:37,898 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:37,898 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:37,898 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:37,965 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:37.898785
-2024-07-03 23:35:38,022 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:37.966177
-2024-07-03 23:35:38,077 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:38.022668
-2024-07-03 23:35:38,142 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:38.077292
-2024-07-03 23:35:38,181 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:39,248 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:40,170 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:40,171 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:40,171 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:40,171 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:40,215 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:40.171383
-2024-07-03 23:35:40,262 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:40.215398
-2024-07-03 23:35:40,305 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:40.262439
-2024-07-03 23:35:40,312 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:40,351 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:40.306056
-2024-07-03 23:35:41,389 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:42,383 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:42,383 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:42,383 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:42,383 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:42,430 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:42.383904
-2024-07-03 23:35:42,455 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:42,475 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:42.430890
-2024-07-03 23:35:42,522 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:42.475418
-2024-07-03 23:35:42,567 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:42.523119
-2024-07-03 23:35:43,525 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:44,593 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:44,593 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:44,593 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:44,593 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:44,595 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:44,640 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:44.593667
-2024-07-03 23:35:44,683 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:44.640767
-2024-07-03 23:35:44,734 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:44.683390
-2024-07-03 23:35:44,782 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:44.734818
-2024-07-03 23:35:45,654 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:46,724 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:46,810 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:46,810 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:46,810 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:46,810 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:46,855 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:46.810999
-2024-07-03 23:35:46,901 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:46.855234
-2024-07-03 23:35:46,949 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:46.901980
-2024-07-03 23:35:47,046 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:46.949269
-2024-07-03 23:35:47,788 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:48,860 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:49,074 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:49,074 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:49,075 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:49,075 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:49,119 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:49.075114
-2024-07-03 23:35:49,161 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:49.119400
-2024-07-03 23:35:49,206 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:49.161984
-2024-07-03 23:35:49,247 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:49.206216
-2024-07-03 23:35:49,945 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:51,033 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:51,287 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:51,287 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:51,288 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:51,288 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:51,345 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:51.288082
-2024-07-03 23:35:51,403 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:51.345777
-2024-07-03 23:35:51,450 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:51.403824
-2024-07-03 23:35:51,496 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:51.450818
-2024-07-03 23:35:52,286 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:53,469 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:53,532 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:53,533 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:53,533 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:53,533 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:53,650 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:53.533294
-2024-07-03 23:35:53,746 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:53.651125
-2024-07-03 23:35:53,833 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:53.747018
-2024-07-03 23:35:53,891 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:53.833478
-2024-07-03 23:35:54,638 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:55,701 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:55,923 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:55,923 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:55,923 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:55,923 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:55,966 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:55.923966
-2024-07-03 23:35:56,011 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:55.966577
-2024-07-03 23:35:56,054 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:56.011988
-2024-07-03 23:35:56,095 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:56.054102
-2024-07-03 23:35:56,766 - services.irrigation_service - INFO - No irrigation needed
-2024-07-03 23:35:57,371 - services.sensor_service - INFO - Reading data from sensor 1 with GPIO port 4
-2024-07-03 23:35:57,371 - services.sensor_service - INFO - Reading data from sensor 2 with GPIO port 4
-2024-07-03 23:35:57,371 - services.sensor_service - INFO - Reading data from sensor 3 with GPIO port 5
-2024-07-03 23:35:57,371 - services.sensor_service - INFO - Reading data from sensor 4 with GPIO port 5
-2024-07-03 23:35:57,413 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 1 at 2024-07-03 23:35:57.371718
-2024-07-03 23:35:57,457 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 2 at 2024-07-03 23:35:57.413633
-2024-07-03 23:35:57,500 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 3 at 2024-07-03 23:35:57.457255
-2024-07-03 23:35:57,544 - database.models.realtime_sensor_data - INFO - Updated value with 1 of existing sensor 4 at 2024-07-03 23:35:57.500344
-2024-07-03 23:35:57,544 - services.sensor_service - INFO - Stopped sensor service
-2024-07-03 23:35:57,545 - services.irrigation_service - INFO - Stopped irrigation service
+2024-08-12 01:04:17,216 - sensor_service.py - start - INFO - Starting sensor service
+2024-08-12 01:04:17,218 - irrigation_service.py - start - INFO - Starting irrigation service
+2024-08-12 01:04:17,220 - database_monitoring_service.py - start_monitoring - INFO - Starting monitor service
+2024-08-12 01:04:17,353 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:17,369 - database_monitoring_service.py - check_for_new_plants - INFO - New plant(s) found. Updating plant list.
+2024-08-12 01:04:17,410 - database_monitoring_service.py - check_for_new_sensors - INFO - New sensor(s) found. Updating sensor list.
+2024-08-12 01:04:17,427 - database_monitoring_service.py - check_for_new_schedules - INFO - New schedule(s) found. Updating schedule list.
+2024-08-12 01:04:17,428 - database_monitoring_service.py - monitor_database - INFO - Successfully checked for new data.
+2024-08-12 01:04:18,245 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:04:18,246 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:04:18,246 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:04:18,246 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:04:18,329 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:04:18,372 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:04:18,407 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:18,413 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:04:18,452 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:04:19,461 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:20,474 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:04:20,475 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:04:20,475 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:04:20,475 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:04:20,518 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:20,517 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:04:20,558 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:04:20,597 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:04:20,637 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:04:21,573 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:22,627 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:22,659 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:04:22,660 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:04:22,660 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:04:22,660 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:04:22,701 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:04:22,742 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:04:22,783 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:04:22,824 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:04:23,681 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:24,740 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:24,846 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:04:24,846 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:04:24,847 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:04:24,847 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:04:24,888 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:04:24,927 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:04:24,968 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:04:25,007 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:04:25,797 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:26,854 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:27,033 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:04:27,033 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:04:27,033 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:04:27,033 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:04:27,073 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:04:27,113 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:04:27,153 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:04:27,192 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:04:27,568 - database_monitoring_service.py - monitor_database - INFO - Successfully checked for new data.
+2024-08-12 01:04:27,911 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:28,966 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:29,215 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:04:29,215 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:04:29,215 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:04:29,215 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:04:29,254 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:04:29,293 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:04:29,332 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:04:29,370 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:04:30,021 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:31,086 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:31,393 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:04:31,393 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:04:31,393 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:04:31,394 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:04:31,432 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:04:31,486 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:04:31,524 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:04:31,564 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:04:32,140 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:33,195 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:33,587 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:04:33,587 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:04:33,587 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:04:33,588 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:04:33,627 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:04:33,666 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:04:33,705 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:04:33,746 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:04:34,252 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:35,311 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:35,768 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:04:35,769 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:04:35,769 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:04:35,769 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:04:35,808 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:04:35,849 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:04:35,887 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:04:35,930 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:04:36,366 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:37,420 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:37,715 - database_monitoring_service.py - monitor_database - INFO - Successfully checked for new data.
+2024-08-12 01:04:37,954 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:04:37,955 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:04:37,955 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:04:37,955 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:04:38,002 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:04:38,041 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:04:38,080 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:04:38,118 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:04:38,476 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:39,531 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:40,141 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:04:40,141 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:04:40,141 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:04:40,142 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:04:40,183 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:04:40,223 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:04:40,264 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:04:40,304 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:04:40,586 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:41,640 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:42,333 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:04:42,334 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:04:42,334 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:04:42,334 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:04:42,372 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:04:42,413 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:04:42,452 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:04:42,491 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:04:42,695 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:43,750 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:44,514 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:04:44,514 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:04:44,514 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:04:44,514 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:04:44,553 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:04:44,591 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:04:44,630 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:04:44,670 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:04:44,804 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:45,870 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:46,692 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:04:46,692 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:04:46,693 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:04:46,693 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:04:46,731 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:04:46,770 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:04:46,808 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:04:46,847 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:04:46,924 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:47,855 - database_monitoring_service.py - monitor_database - INFO - Successfully checked for new data.
+2024-08-12 01:04:47,978 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:48,870 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:04:48,870 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:04:48,871 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:04:48,871 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:04:48,911 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:04:48,949 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:04:48,991 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:04:49,030 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:04:49,033 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:50,085 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:51,052 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:04:51,052 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:04:51,053 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:04:51,053 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:04:51,092 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:04:51,132 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:04:51,140 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:51,171 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:04:51,211 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:04:52,194 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:53,233 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:04:53,235 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:04:53,235 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:04:53,235 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:04:53,254 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:53,277 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:04:53,325 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:04:53,365 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:04:53,404 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:04:54,312 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:55,367 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:55,426 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:04:55,426 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:04:55,427 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:04:55,427 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:04:55,466 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:04:55,505 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:04:55,544 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:04:55,583 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:04:56,422 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:57,476 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:57,605 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:04:57,605 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:04:57,605 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:04:57,605 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:04:57,644 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:04:57,683 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:04:57,725 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:04:57,765 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:04:57,993 - database_monitoring_service.py - monitor_database - INFO - Successfully checked for new data.
+2024-08-12 01:04:58,531 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:59,586 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:04:59,787 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:04:59,788 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:04:59,788 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:04:59,788 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:04:59,827 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:04:59,865 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:04:59,903 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:04:59,942 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:00,646 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:01,701 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:01,964 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:01,965 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:01,965 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:01,965 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:02,005 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:02,044 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:02,083 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:02,121 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:02,756 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:03,821 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:04,144 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:04,144 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:04,145 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:04,145 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:04,182 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:04,222 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:04,261 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:04,303 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:04,875 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:05,930 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:06,326 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:06,326 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:06,326 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:06,326 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:06,365 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:06,403 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:06,442 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:06,481 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:06,984 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:08,039 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:08,128 - database_monitoring_service.py - monitor_database - INFO - Successfully checked for new data.
+2024-08-12 01:05:08,500 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:08,500 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:08,500 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:08,500 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:08,538 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:08,580 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:08,619 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:08,659 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:09,093 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:10,148 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:10,681 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:10,682 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:10,682 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:10,682 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:10,720 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:10,760 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:10,799 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:10,837 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:11,204 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:12,259 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:12,860 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:12,860 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:12,860 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:12,860 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:12,913 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:12,955 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:12,993 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:13,034 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:13,327 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:14,385 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:15,056 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:15,057 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:15,057 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:15,057 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:15,096 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:15,136 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:15,175 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:15,216 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:15,438 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:16,493 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:17,238 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:17,239 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:17,239 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:17,239 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:17,280 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:17,319 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:17,358 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:17,396 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:17,547 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:18,280 - database_monitoring_service.py - monitor_database - INFO - Successfully checked for new data.
+2024-08-12 01:05:18,600 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:19,419 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:19,419 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:19,419 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:19,420 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:19,459 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:19,498 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:19,539 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:19,577 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:19,657 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:20,707 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:21,600 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:21,600 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:21,600 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:21,601 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:21,638 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:21,675 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:21,714 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:21,753 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:21,761 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:22,816 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:23,776 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:23,777 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:23,777 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:23,777 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:23,815 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:23,854 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:23,870 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:23,892 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:23,932 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:24,925 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:25,955 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:25,955 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:25,955 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:25,956 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:25,990 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:25,994 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:26,039 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:26,079 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:26,118 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:27,045 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:28,100 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:28,145 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:28,146 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:28,146 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:28,147 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:28,188 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:28,226 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:28,267 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:28,306 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:28,418 - database_monitoring_service.py - monitor_database - INFO - Successfully checked for new data.
+2024-08-12 01:05:29,156 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:30,209 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:30,328 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:30,329 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:30,329 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:30,329 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:30,368 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:30,407 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:30,446 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:30,485 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:31,265 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:32,320 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:32,508 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:32,508 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:32,508 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:32,509 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:32,546 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:32,583 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:32,621 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:32,660 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:33,376 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:34,431 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:34,682 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:34,682 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:34,683 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:34,683 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:34,721 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:34,760 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:34,798 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:34,838 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:35,485 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:36,541 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:36,862 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:36,862 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:36,863 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:36,863 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:36,901 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:36,951 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:36,990 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:37,038 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:37,594 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:38,559 - database_monitoring_service.py - monitor_database - INFO - Successfully checked for new data.
+2024-08-12 01:05:38,648 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:39,060 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:39,061 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:39,061 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:39,061 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:39,100 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:39,138 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:39,177 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:39,217 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:39,703 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:40,756 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:41,239 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:41,240 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:41,240 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:41,240 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:41,279 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:41,318 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:41,356 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:41,397 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:41,809 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:42,864 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:43,419 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:43,420 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:43,420 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:43,420 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:43,458 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:43,496 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:43,536 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:43,577 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:43,920 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:44,974 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:45,605 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:45,606 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:45,606 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:45,607 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:45,650 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:45,690 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:45,730 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:45,767 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:46,028 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:47,083 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:47,789 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:47,790 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:47,790 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:47,790 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:47,830 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:47,873 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:47,924 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:47,960 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:48,146 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:48,693 - database_monitoring_service.py - monitor_database - INFO - Successfully checked for new data.
+2024-08-12 01:05:49,200 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:49,982 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:49,983 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:49,983 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:49,983 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:50,022 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:50,060 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:50,100 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:50,140 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:50,254 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:51,309 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:52,162 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:52,163 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:52,163 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:52,163 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:52,203 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:52,242 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:52,280 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:52,318 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:52,363 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:53,418 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:54,341 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:54,341 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:54,341 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:54,342 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:54,380 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:54,416 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:54,456 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:54,476 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:54,495 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:55,531 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:56,518 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:56,518 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:56,518 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:56,518 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:56,557 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:56,585 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:56,595 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:56,634 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:56,674 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:57,641 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:58,696 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:05:58,698 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:05:58,699 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:05:58,700 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:05:58,700 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:05:58,743 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:05:58,787 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:05:58,827 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:05:58,841 - database_monitoring_service.py - monitor_database - INFO - Successfully checked for new data.
+2024-08-12 01:05:58,865 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:05:59,754 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:00,809 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:00,887 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:00,888 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:00,888 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:00,888 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:00,927 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:00,966 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:01,005 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:01,044 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:06:01,863 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:02,918 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:03,066 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:03,067 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:03,067 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:03,067 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:03,115 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:03,154 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:03,192 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:03,233 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:06:03,973 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:05,028 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:05,256 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:05,256 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:05,256 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:05,256 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:05,294 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:05,334 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:05,374 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:05,424 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:06:06,083 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:07,138 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:07,448 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:07,448 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:07,448 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:07,448 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:07,489 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:07,527 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:07,566 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:07,605 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:06:08,192 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:08,979 - database_monitoring_service.py - monitor_database - INFO - Successfully checked for new data.
+2024-08-12 01:06:09,247 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:09,628 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:09,628 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:09,628 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:09,628 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:09,667 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:09,707 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:09,747 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:09,786 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:06:10,312 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:11,365 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:11,808 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:11,808 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:11,808 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:11,808 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:11,847 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:11,885 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:11,926 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:12,008 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:06:12,423 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:13,478 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:13,731 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:13,731 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:13,732 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:13,732 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:13,778 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:13,819 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:13,869 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:13,908 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:06:13,908 - sensor_service.py - stop - INFO - Stopped sensor service
+2024-08-12 01:06:13,909 - irrigation_service.py - stop - INFO - Stopped irrigation service
+2024-08-12 01:06:21,305 - sensor_service.py - start - INFO - Starting sensor service
+2024-08-12 01:06:21,307 - irrigation_service.py - start - INFO - Starting irrigation service
+2024-08-12 01:06:21,310 - database_monitoring_service.py - start - INFO - Starting monitor service
+2024-08-12 01:06:21,441 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:21,451 - database_monitoring_service.py - check_for_new_plants - INFO - New plant(s) found. Updating plant list.
+2024-08-12 01:06:21,495 - database_monitoring_service.py - check_for_new_sensors - INFO - New sensor(s) found. Updating sensor list.
+2024-08-12 01:06:21,513 - database_monitoring_service.py - check_for_new_schedules - INFO - New schedule(s) found. Updating schedule list.
+2024-08-12 01:06:21,513 - database_monitoring_service.py - monitor_database - INFO - Successfully checked for new data.
+2024-08-12 01:06:22,329 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:22,330 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:22,330 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:22,330 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:22,406 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:22,446 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:22,485 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:22,496 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:22,523 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:06:23,550 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:24,545 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:24,546 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:24,546 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:24,546 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:24,589 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:24,604 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:24,629 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:24,676 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:24,715 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:06:25,658 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:26,708 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:26,734 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:26,735 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:26,735 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:26,735 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:26,771 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:26,808 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:26,844 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:26,882 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:06:27,762 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:28,816 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:28,905 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:28,905 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:28,905 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:28,905 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:28,943 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:28,982 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:29,020 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:29,058 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:06:29,870 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:30,925 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:31,080 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:31,081 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:31,081 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:31,081 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:31,119 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:31,157 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:31,195 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:31,235 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:06:31,651 - database_monitoring_service.py - monitor_database - INFO - Successfully checked for new data.
+2024-08-12 01:06:31,979 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:33,033 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:33,257 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:33,258 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:33,258 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:33,258 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:33,296 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:33,337 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:33,376 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:33,414 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:06:34,090 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:35,145 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:35,438 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:35,439 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:35,439 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:35,439 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:35,489 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:35,530 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:35,571 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:35,609 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:06:36,199 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:37,254 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:37,632 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:37,632 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:37,632 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:37,633 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:37,674 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:37,713 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:37,751 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:37,789 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:06:38,310 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:39,364 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:39,811 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:39,812 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:39,812 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:39,812 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:39,851 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:39,890 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:39,928 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:39,967 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:06:40,418 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:41,472 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:41,787 - database_monitoring_service.py - monitor_database - INFO - Successfully checked for new data.
+2024-08-12 01:06:41,989 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:41,989 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:41,989 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:41,990 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:42,028 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:42,068 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:42,106 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:42,144 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:06:42,525 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:43,579 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:44,166 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:44,167 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:44,167 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:44,167 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:44,205 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:44,244 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:44,282 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:44,322 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:06:44,633 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:45,688 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:46,349 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:46,349 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:46,349 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:46,349 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:46,386 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:46,437 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:46,477 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:46,515 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:06:46,742 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:47,799 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:48,537 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:48,537 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:48,538 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:48,538 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:48,576 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:48,615 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:48,652 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:48,690 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:06:48,853 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:49,908 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:50,712 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:50,713 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:50,713 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:50,713 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:50,752 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:50,793 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:50,830 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:50,869 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:06:50,961 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:51,924 - database_monitoring_service.py - monitor_database - INFO - Successfully checked for new data.
+2024-08-12 01:06:52,016 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:52,891 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:52,892 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:52,892 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:52,892 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:52,930 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:52,969 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:53,008 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:53,046 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:06:53,072 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:54,127 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:55,069 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:55,069 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:55,070 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:55,070 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:55,108 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:55,147 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:55,180 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:55,185 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:55,224 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:06:56,235 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:57,244 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:57,245 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:57,245 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:57,245 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:57,283 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:57,296 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:57,321 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:57,359 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:57,417 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:06:58,352 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:59,416 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:06:59,439 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:06:59,439 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:06:59,439 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:06:59,440 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:06:59,482 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:06:59,522 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:06:59,563 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:06:59,603 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:07:00,471 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:01,525 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:01,624 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:07:01,624 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:07:01,624 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:07:01,624 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:07:01,664 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:07:01,702 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:07:01,739 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:07:01,777 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:07:02,061 - database_monitoring_service.py - monitor_database - INFO - Successfully checked for new data.
+2024-08-12 01:07:02,580 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:03,636 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:03,802 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:07:03,802 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:07:03,802 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:07:03,803 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:07:03,842 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:07:03,881 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:07:03,922 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:07:03,963 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:07:04,695 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:05,753 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:05,985 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:07:05,986 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:07:05,986 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:07:05,986 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:07:06,028 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:07:06,067 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:07:06,107 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:07:06,145 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:07:06,809 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:07,864 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:08,169 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:07:08,170 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:07:08,170 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:07:08,170 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:07:08,209 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:07:08,256 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:07:08,295 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:07:08,336 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:07:08,921 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:09,977 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:10,360 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:07:10,360 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:07:10,360 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:07:10,360 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:07:10,399 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:07:10,437 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:07:10,476 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:07:10,515 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:07:11,033 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:12,088 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:12,198 - database_monitoring_service.py - monitor_database - INFO - Successfully checked for new data.
+2024-08-12 01:07:12,538 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:07:12,538 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:07:12,538 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:07:12,539 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:07:12,577 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:07:12,617 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:07:12,655 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:07:12,695 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:07:13,143 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:14,195 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:14,719 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:07:14,720 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:07:14,720 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:07:14,720 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:07:14,761 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:07:14,799 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:07:14,836 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:07:14,876 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:07:15,249 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:16,304 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:16,900 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:07:16,900 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:07:16,900 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:07:16,900 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:07:16,941 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:07:16,980 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:07:17,017 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:07:17,061 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:07:17,061 - sensor_service.py - stop - INFO - Stopped sensor service
+2024-08-12 01:07:17,062 - irrigation_service.py - stop - INFO - Stopped irrigation service
+2024-08-12 01:07:44,649 - sensor_service.py - start - INFO - Starting sensor service
+2024-08-12 01:07:44,651 - irrigation_service.py - start - INFO - Starting irrigation service
+2024-08-12 01:07:44,653 - database_monitoring_service.py - start - INFO - Starting monitor service
+2024-08-12 01:07:44,784 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:44,796 - database_monitoring_service.py - check_for_new_plants - INFO - New plant(s) found. Updating plant list.
+2024-08-12 01:07:44,840 - database_monitoring_service.py - check_for_new_sensors - INFO - New sensor(s) found. Updating sensor list.
+2024-08-12 01:07:44,858 - database_monitoring_service.py - check_for_new_schedules - INFO - New schedule(s) found. Updating schedule list.
+2024-08-12 01:07:44,858 - database_monitoring_service.py - monitor_database - INFO - Successfully checked for new data.
+2024-08-12 01:07:45,672 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:07:45,672 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:07:45,672 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:07:45,673 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:07:45,753 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:07:45,792 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:07:45,832 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:07:45,837 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:45,872 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:07:46,893 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:47,894 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:07:47,897 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:07:47,898 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:07:47,898 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:07:47,937 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:07:47,948 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:47,974 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:07:48,016 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:07:48,053 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:07:48,999 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:50,053 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:50,075 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:07:50,075 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:07:50,075 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:07:50,075 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:07:50,114 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:07:50,154 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:07:50,194 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:07:50,232 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:07:51,107 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:52,160 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:52,252 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:07:52,252 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:07:52,252 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:07:52,252 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:07:52,290 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:07:52,328 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:07:52,368 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:07:52,406 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:07:53,225 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:54,279 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:54,425 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:07:54,425 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:07:54,425 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:07:54,425 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:07:54,463 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:07:54,502 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:07:54,540 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:07:54,580 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:07:54,996 - database_monitoring_service.py - monitor_database - INFO - Successfully checked for new data.
+2024-08-12 01:07:55,333 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:56,388 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:56,603 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:07:56,603 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:07:56,603 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:07:56,603 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:07:56,642 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:07:56,682 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:07:56,719 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:07:56,758 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:07:57,444 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:58,497 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:07:58,780 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:07:58,781 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:07:58,781 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:07:58,781 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:07:58,818 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:07:58,860 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:07:58,901 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:07:58,939 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:07:59,551 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:08:00,605 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:08:00,961 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:08:00,962 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:08:00,962 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:08:00,962 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:08:01,000 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:08:01,039 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:08:01,077 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:08:01,117 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:08:01,663 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:08:02,717 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:08:03,139 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:08:03,140 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:08:03,140 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:08:03,140 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:08:03,179 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:08:03,218 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:08:03,257 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:08:03,296 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:08:03,771 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:08:04,825 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:08:05,132 - database_monitoring_service.py - monitor_database - INFO - Successfully checked for new data.
+2024-08-12 01:08:05,318 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:08:05,319 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:08:05,320 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:08:05,321 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:08:05,359 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:08:05,397 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:08:05,435 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:08:05,472 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:08:05,878 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:08:06,932 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:08:07,496 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:08:07,496 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:08:07,496 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:08:07,496 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:08:07,535 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:08:07,574 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:08:07,612 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:08:07,650 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:08:07,985 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:08:09,039 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:08:09,673 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:08:09,673 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:08:09,673 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:08:09,674 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:08:09,712 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:08:09,750 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:08:09,788 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:08:09,825 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:08:10,093 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:08:11,143 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:08:11,847 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 1 with GPIO port 4
+2024-08-12 01:08:11,847 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 2 with GPIO port 4
+2024-08-12 01:08:11,847 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 3 with GPIO port 5
+2024-08-12 01:08:11,847 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 with GPIO port 5
+2024-08-12 01:08:11,885 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 1
+2024-08-12 01:08:11,923 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 2
+2024-08-12 01:08:11,960 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 3
+2024-08-12 01:08:11,997 - realtime_sensor_data.py - update_sensor_data - INFO - Updated value with 1 of existing sensor 4
+2024-08-12 01:08:12,195 - irrigation_service.py - check_for_irrigation - INFO - No irrigation needed
+2024-08-12 01:08:12,703 - sensor_service.py - stop - INFO - Stopped sensor service
+2024-08-12 01:08:12,704 - irrigation_service.py - stop - INFO - Stopped irrigation service

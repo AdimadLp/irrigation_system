@@ -4,3 +4,4 @@ adafruit-circuitpython-dht
 python-dotenv
 pymongo[srv]
 pydantic
+concurrent-log-handler

@@ -1,6 +1,6 @@
 import threading
 import time
-import logging
+from logging_config import setup_logger
 from datetime import datetime
 from app.services.irrigation_service import IrrigationService
 from app.services.sensor_service import SensorService
@@ -12,28 +12,34 @@ from database.models import Schedules
 
 class DatabaseMonitoringService:
     def __init__(self, controller_id, irrigation_service, sensor_service):
-        self.logger = logging.getLogger(__name__)
+        self.logger = setup_logger(__name__)
         self.controller_id = controller_id
         self.irrigation_service = irrigation_service
         self.sensor_service = sensor_service
         self.is_running = False
         self.plants = []
 
-    def start_monitoring(self):
+    def start(self):
         self.logger.info("Starting monitor service")
         self.is_running = True
-        thread = threading.Thread(target=self.monitor_database)
-        thread.daemon = True
-        thread.start()
+        self.thread = threading.Thread(target=self.monitor_database)
+        self.thread.daemon = True
+        self.thread.start()
 
-    def stop_monitoring(self):
+    def stop(self):
         self.is_running = False
+
+    def restart(self):
+        self.stop_monitoring()
+        self.start_monitoring()
 
     def monitor_database(self):
         while self.is_running:
             self.check_for_new_plants()
             self.check_for_new_sensors()
             self.check_for_new_schedules()
+
+            self.logger.info("Successfully checked for new data.")
 
             time.sleep(10)  # Check every 10 seconds, adjust as needed
 
@@ -63,6 +69,7 @@ class DatabaseMonitoringService:
             self.logger.info("New sensor(s) found. Updating sensor list.")
             self.sensor_service.sensors = new_sensors_list
 
+
     def check_for_new_schedules(self):
         if self.irrigation_service.schedules:
             current_schedules = set(
@@ -76,6 +83,9 @@ class DatabaseMonitoringService:
         if current_schedules != new_schedules:
             self.logger.info("New schedule(s) found. Updating schedule list.")
             self.irrigation_service.schedules = new_schedules_list
+        
+    def is_healthy(self):
+        return self.is_running
 
 
 if __name__ == "__main__":

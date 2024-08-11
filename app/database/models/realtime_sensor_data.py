@@ -1,8 +1,8 @@
 from mongoengine import Document, IntField, DateTimeField
 from datetime import datetime
-import logging
+from logging_config import setup_logger
 
-logger = logging.getLogger(__name__)
+logger = setup_logger(__name__)
 
 class RealtimeSensorData(Document):
     sensorID = IntField(required=True)
@@ -31,9 +31,9 @@ class RealtimeSensorData(Document):
             if existing_record:
                 # Update the existing record
                 existing_record.update(value=value, timestamp=timestamp)
-                logger.info(f"Updated value with {value} of existing sensor {sensorID} at {timestamp}")
+                logger.info(f"Updated value with {value} of existing sensor {sensorID}")
             else:
                 # Create a new record
                 new_record = RealtimeSensorData(sensorID=sensorID, value=value, timestamp=timestamp)
                 new_record.save()
-                logger.info(f"Created new sensor {sensorID} and saved value {value} at {timestamp}")
+                logger.info(f"Created new sensor {sensorID} and saved value {value}")

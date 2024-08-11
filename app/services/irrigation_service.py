@@ -1,4 +1,4 @@
-import logging
+from logging_config import setup_logger
 import threading
 from datetime import datetime
 from database.models import Plants
@@ -12,7 +12,7 @@ from helpers.thread_safe_list import ThreadSafeList
 
 class IrrigationService:
     def __init__(self, controller_id, shared_data):
-        self.logger = logging.getLogger(__name__)
+        self.logger = setup_logger(__name__)
         self.stop_event = threading.Event()
         self.controller_id = controller_id
         self.shared_data = shared_data
@@ -27,6 +27,10 @@ class IrrigationService:
         self.stop_event.set()
         self.thread.join()
         self.logger.info("Stopped irrigation service")
+
+    def restart(self):
+        self.stop()
+        self.start()
 
     def check_for_irrigation(self):
         while not self.stop_event.is_set():
@@ -92,7 +96,4 @@ class IrrigationService:
         self.logger.info(f"Processing sensor data: {sensor_data}")
 
     def is_healthy(self):
-        # Implement your health check logic here.
-        # For example, you might check if the sensor is still responsive.
-        # For this example, we'll just return True.
-        return True
+        return self.thread.is_alive()
