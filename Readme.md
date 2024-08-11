@@ -12,19 +12,21 @@ irrigation_system/
 |   |   ├── models
 |   │   │   ├── __init__.py
 |   │   │   ├── irrigation_controller.py
-|   │   │   ├── plant.py
-|   │   │   ├── pump.py
+|   │   │   ├── plants.py
+|   │   │   ├── pumps.py
 |   │   │   ├── realtime_sensor_data.py
-|   │   │   ├── schedule.py
-|   │   │   ├── sensor.py
-|   │   │   └── watering_log.py
+|   │   │   ├── schedules.py
+|   │   │   ├── sensors.py
+|   │   │   └── watering_logs.py
 |   |   |
 │   │   ├── __init__.py
 │   │   └── connection.py
 │   │
 │   ├── helpers/
 |   |   ├── __init__.py
-│   │   └── create_plant.py
+|   |   ├── create_plant.py
+|   |   ├── create_schedule.py
+│   │   └── create_sensors.py
 |   |
 │   ├── services/
 │   │   ├── __init__.py
@@ -33,6 +35,7 @@ irrigation_system/
 │   │   └── sensor_service.py
 │   │
 |   ├── __init__.py
+|   ├── logging_config.py
 │   └── main.py
 │
 ├── tests/
@@ -40,5 +43,10 @@ irrigation_system/
 │   ├── test_irrigation_service.py
 │   └── test_sensor_service
 │
-└── .env
+├── .env
+├── app.log
+├── error.log
+├── Readme.md
+├── requirements.txt
+└── update_repo.sh
 ```
