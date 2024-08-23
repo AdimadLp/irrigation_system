@@ -4,23 +4,15 @@ from mongoengine.fields import (
     StringField,
     IntField,
     FloatField,
-    DateTimeField,
     ListField,
     EmbeddedDocumentField,
 )
-from mongoengine.errors import ValidationError
-from datetime import datetime
-from bson import ObjectId  # Add this import statement
 
 logger = setup_logger(__name__)
 
-
 class SensorReading(EmbeddedDocument):
-    value = FloatField(
-        required=True
-    )  # Assuming the value is a float, adjust as necessary
-    timestamp = DateTimeField(default=datetime.now)
-
+    value = FloatField(required=True)
+    timestamp = FloatField(required=True)
 
 class Sensors(Document):
     sensorID = IntField(required=True, unique=True)
@@ -32,14 +24,15 @@ class Sensors(Document):
     meta = {"indexes": [{"fields": ["sensorID"], "unique": True}]}
 
     @staticmethod
-    def get_all_sensors_by_controller(controllerID):
-        return Sensors.objects(controllerID=controllerID)
+    def get_sensors_by_controller(controller_id):
+        return Sensors.objects(controllerID=controller_id)
 
     @staticmethod
-    def save_sensor_data(data_list):
+    def save_sensor_data(data_list, session=None):
         for data in data_list:
             sensorID = data.get("sensorID")
             value = data.get("value")
+            timestamp = data.get("timestamp")
 
             if sensorID is None:
                 logger.error("Missing sensorID")
@@ -47,35 +40,32 @@ class Sensors(Document):
             if value is None:
                 logger.error(f"Missing value for sensor {sensorID}")
                 continue
+            if timestamp is None:
+                logger.error(f"Missing timestamp for sensor {sensorID}")
+                continue
 
-            sensor = Sensors.objects(sensorID=sensorID).first()
-            if sensor:
-                # Create a new SensorReading instance
-                reading = SensorReading(value=value)
+            try:
+                sensor = Sensors.objects(sensorID=sensorID).get()
+                reading = SensorReading(value=value, timestamp=timestamp)
                 sensor.readings.append(reading)
-                sensor.save()
-            else:
+                if session:
+                    sensor.save(session=session)
+                else:
+                    sensor.save()
+                logger.info(f"Saved reading for sensor {sensorID}")
+            except Sensors.DoesNotExist:
                 logger.error(f"Sensor with ID {sensorID} not found")
+            except Exception as e:
+                logger.error(f"Error saving data for sensor {sensorID}: {str(e)}")
 
     @staticmethod
     def get_sensor_type(sensorID):
-        sensor = Sensors.objects(sensorID=sensorID).first()
-        if sensor:
+        try:
+            sensor = Sensors.objects(sensorID=sensorID).get()
             return sensor.type
-        else:
+        except Sensors.DoesNotExist:
             logger.error(f"Sensor with ID {sensorID} not found")
             return None
-
-    @staticmethod
-    def get_new_sensors(since_date):
-        """
-        Retrieves sensors that have been added to the database since a specified date.
-
-        :param since_date: A datetime object representing the point in time from which new sensors should be identified.
-        :return: A list of Sensors documents that were added to the database after the specified date.
-        """
-        # Use the __raw__ query to leverage MongoDB's $gt (greater than) operator on the _id field.
-        # ObjectId creation times can be used to approximate document creation times.
-        return Sensors.objects(
-            __raw__={"_id": {"$gt": ObjectId.from_datetime(since_date)}}
-        )
+        except Exception as e:
+            logger.error(f"Error getting sensor type for {sensorID}: {str(e)}")
+            return None

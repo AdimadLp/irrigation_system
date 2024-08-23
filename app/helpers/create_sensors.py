@@ -1,5 +1,5 @@
-from app.database.models import Sensors
-import app.database.connection
+from database.models import Sensors
+import database.connection
 from datetime import datetime
 
 # Create a new plant instance

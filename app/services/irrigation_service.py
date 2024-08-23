@@ -1,22 +1,17 @@
-from logging_config import setup_logger
 import threading
 from datetime import datetime
-from database.models import Plants
-from database.models import Sensors
-from database.models import Pumps
-from database.models import Schedules
-from database.models import WateringLogs
-from services.sensor_service import SensorService
-from helpers.thread_safe_list import ThreadSafeList
-
+from logging_config import setup_logger
 
 class IrrigationService:
-    def __init__(self, controller_id, shared_data):
+    def __init__(self, controller_id, redis_client, stop_event):
         self.logger = setup_logger(__name__)
-        self.stop_event = threading.Event()
         self.controller_id = controller_id
-        self.shared_data = shared_data
+        self.redis_client = redis_client
+        self.stop_event = stop_event
+        self.plants = []
         self.schedules = []
+        self.sensor_types = {}
+        self.thread = None
 
     def start(self):
         self.logger.info("Starting irrigation service")
@@ -24,9 +19,9 @@ class IrrigationService:
         self.thread.start()
 
     def stop(self):
-        self.stop_event.set()
-        self.thread.join()
-        self.logger.info("Stopped irrigation service")
+        self.logger.info("Stopping irrigation service")
+        if self.thread:
+            self.thread.join()
 
     def restart(self):
         self.stop()
@@ -34,66 +29,53 @@ class IrrigationService:
 
     def check_for_irrigation(self):
         while not self.stop_event.is_set():
-            plants = Plants.get_plants_by_controller_id(self.controller_id)
-            for plant in plants:
+            for plant in self.plants:
                 if self.is_irrigation_needed(plant):
-                    self.logger.info("Irrigation needed!")
-                    # Here you would trigger the irrigation process
+                    self.logger.info(f"Irrigation needed for plant {plant['plantID']}!")
+                    # TODO: Trigger irrigation process here
                 else:
-                    self.logger.info("No irrigation needed")
+                    self.logger.debug(f"No irrigation needed for plant {plant['plantID']}")
                 self.stop_event.wait(1)
 
     def during_time(self, schedule):
-        weekdays = schedule["weekdays"]
-        startTime = schedule["startTime"]
-        endTime = schedule["endTime"]
-        # Get the current date and time
         now = datetime.now()
+        return (now.strftime("%A") in schedule['weekdays'] and
+                schedule['startTime'].time() <= now.time() <= schedule['endTime'].time())
 
-        # Check if today is one of the specified weekdays
-        if now.strftime("%A") in weekdays:
-            # Check if the current time is within the specified start and end times
-            if startTime.time() <= now.time() <= endTime.time():
-                return True
-        return False
 
     def is_threshold_met(self, threshold):
-        sensor_data = self.shared_data.get()
+        sensor_data = eval(self.redis_client.get('sensor_data') or '[]')
         for reading in sensor_data:
-            # Check which sensor is a moisture sensor
-            if Sensors.get_sensor_type(reading["sensorID"]) == "moisture":
-                # Check if the moisture level is below the lower limit
-                if reading["value"] < threshold:
-                    self.logger.info(
-                        f"Moisture level is below threshold: {reading['value']} < {threshold}"
-                    )
+            sensor_type = self.sensor_types.get(reading['sensorID'])
+            if sensor_type == 'moisture':
+                if reading['value'] < threshold:
+                    self.logger.info(f"Moisture level is below threshold: {reading['value']} < {threshold}")
                     return True
                 else:
-                    self.logger.info(
-                        f"Moisture level is above threshold: {reading['value']} >= {threshold}"
-                    )
+                    self.logger.info(f"Moisture level is above threshold: {reading['value']} >= {threshold}")
                     return False
-
         self.logger.warning("No moisture sensor data found")
         return False
 
     def is_irrigation_needed(self, plant):
-        plant_sensors = Plants.get_sensors_by_plant_id(plant["plantID"])
-
-        schedules = Schedules.get_schedules_by_plant_id(plant["plantID"])
-        for schedule in schedules:
+        plant_schedules = [s for s in self.schedules if s['plantID'] == plant['plantID']]
+        for schedule in plant_schedules:
             if self.during_time(schedule):
-                if schedule["type"] == "threshold":
-                    if self.is_threshold_met(schedule["threshold"]):
-                        return True
-                    self.logger.info("Threshold not met")
-                elif schedule["type"] == "interval":
+                if schedule['type'] == 'threshold':
+                    # TODO: return self.is_threshold_met(schedule['threshold'])
+                    return True
+                elif schedule['type'] == 'interval':
                     return True
         return False
 
-    def process_sensor_data(self, sensor_data):
-        # Here you would process the sensor data
-        self.logger.info(f"Processing sensor data: {sensor_data}")
+    def update_plants(self, new_plants):
+        self.plants = new_plants
+
+    def update_schedules(self, new_schedules):
+        self.schedules = new_schedules
+
+    def update_sensor_types(self, new_sensor_types):
+        self.sensor_types = new_sensor_types
 
     def is_healthy(self):
-        return self.thread.is_alive()
+        return self.thread and self.thread.is_alive()

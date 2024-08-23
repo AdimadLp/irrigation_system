@@ -7,8 +7,9 @@ class Schedules(Document):
     endTime = DateTimeField(required=True)
     type = StringField(required=True)
     plantID = IntField(required=True)
+    controllerID = IntField(required=True)
     threshold = IntField(required=True)
     meta = {'indexes': [{'fields': ['scheduleID'], 'unique': True}]}
 
-    def get_schedules_by_plant_id(plant_id):
-        return Schedules.objects(plantID=plant_id)
+    def get_schedules_by_controller(controller_id):
+        return Schedules.objects(controllerID=controller_id)
