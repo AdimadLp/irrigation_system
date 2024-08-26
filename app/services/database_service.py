@@ -3,9 +3,11 @@ import threading
 import time
 from redis import WatchError
 from mongoengine import get_db
+from pymongo.errors import NetworkTimeout, ConnectionFailure
+from mongoengine.errors import OperationError
 from logging_config import setup_logger
 from database.models import Plants, Sensors, Schedules, RealtimeSensorData
-from database import connection  # Import the connection module
+from database import connection
 
 class DatabaseService:
     def __init__(self, controller_id, redis_client, sensor_service, irrigation_service, stop_event):
@@ -16,9 +18,7 @@ class DatabaseService:
         self.irrigation_service = irrigation_service
         self.stop_event = stop_event
         self.logger = setup_logger(__name__)
-        self.max_retries = 5
-        self.retry_delay = 5  # Initial delay in seconds
-        self.failure_threshold = 10  # Number of consecutive failures before backing off
+        self.batch_size = 100
         self.thread = None
         self.last_check_time = 0
 
@@ -48,91 +48,77 @@ class DatabaseService:
 
             self.save_sensor_data()
             
-            self.print_redis_content()  # Debug: Print Redis content
             self.stop_event.wait(1)  # Wait for 1 second or until stop_event is set
 
     def save_sensor_data(self):
-        consecutive_failures = 0
-        while not self.stop_event.is_set():
-            if consecutive_failures >= self.failure_threshold:
-                self.logger.warning(f"Hit failure threshold. Backing off for {self.retry_delay} seconds.")
-                if self.stop_event.wait(self.retry_delay):
-                    return
-                consecutive_failures = 0
-
-            try:
-                processed = self.process_batch()
-                if processed:
-                    consecutive_failures = 0
-                else:
-                    break  # No more data to process, exit the loop
-            except Exception as e:
-                self.logger.error(f"Error in save_sensor_data: {e}")
-                consecutive_failures += 1
-
-    def process_batch(self):
-        with self.redis_client.pipeline() as pipe:
-            try:
-                pipe.watch('sensor_data')
-                pipe.multi()
-                pipe.lrange('sensor_data', 0, 99)
-                results = pipe.execute()
-                sensor_data_list = results[0]
-
+        try:
+            with self.redis_client.pipeline() as pipe:
+                # Fetch the data to be processed
+                sensor_data_list = self.redis_client.lrange('sensor_data', 0, self.batch_size - 1)
+                
                 if not sensor_data_list:
-                    return False  # No data to process
+                    return
 
-                successful_indices = self.process_sensor_data_batch(sensor_data_list)
+                # Determine the actual batch size
+                actual_batch_size = len(sensor_data_list)
 
-                # Remove only the successfully processed items
-                if successful_indices:
-                    print(f"Removing {len(successful_indices)} items from Redis")
+                # Watch the key
+                pipe.watch('sensor_data')
+
+                # Process the data
+                success = self.process_sensor_data_batch(sensor_data_list)
+
+                if success and actual_batch_size > 0:
                     pipe.multi()
-                    for index in sorted(successful_indices, reverse=True):
-                        pipe.lset('sensor_data', index, '__DUMMY__')
-                    pipe.lrem('sensor_data', 0, '__DUMMY__')
+                    pipe.ltrim('sensor_data', actual_batch_size, -1)  # Remove processed items
                     pipe.execute()
-
-                return True
-
-            except WatchError:
-                self.logger.warning("Concurrent modification detected, retrying...")
-                return False
+                    self.logger.info(f"Removed {actual_batch_size} items from Redis")
+                elif not success:
+                    self.logger.warning("Transaction failed. Data remains in Redis for retry.")
+                
+        except WatchError:
+            self.logger.warning("Concurrent modification detected, verifying data...")
+            # Verify that the data hasn't changed
+            current_data_list = self.redis_client.lrange('sensor_data', 0, actual_batch_size - 1)
+            if sensor_data_list == current_data_list:
+                self.logger.info("Data hasn't changed, ignoring WatchError and proceeding.")
+                with self.redis_client.pipeline() as pipe:
+                    pipe.multi()
+                    pipe.ltrim('sensor_data', actual_batch_size, -1)  # Remove processed items
+                    pipe.execute()
+                    self.logger.info(f"Removed {actual_batch_size} items from Redis")
+            else:
+                self.logger.warning("Data changed")
 
     def process_sensor_data_batch(self, sensor_data_list):
-        successful_indices = []
-        with self.mongo_client.start_session() as session:
-            with session.start_transaction():
-                try:
-                    for index, sensor_data in enumerate(sensor_data_list):
-                        try:
-                            sensor_data_json = json.loads(sensor_data.decode('utf-8'))
-                            
-                            for item in sensor_data_json:  # sensor_data_json is a list of sensor readings
-                                # Save sensor data blocks the execution of the thread until the data is saved
-                                Sensors.save_sensor_data([item], session=session)
-                                # TODO: Prevent blocking the thread by using mongodb timeouts and error handling 
+        try:
+            with self.mongo_client.start_session() as session:
+                with session.start_transaction(max_commit_time_ms=5000):
+                    processed_count = self._process_sensor_data(sensor_data_list, session)
+                    session.commit_transaction()
+                    self.logger.info(f"Successfully processed {processed_count} items")
+                    if processed_count < len(sensor_data_list):
+                        self.logger.warning(f"{len(sensor_data_list) - processed_count} items failed to process and will be deleted.")
+                    return True
 
-                            #RealtimeSensorData.update_sensor_data(sensor_data_json, session=session)
-                            successful_indices.append(index)
-                        except json.JSONDecodeError:
-                            self.logger.error(f"Failed to parse JSON for item at index {index}")
-                        except Exception as e:
-                            self.logger.error(f"Error processing sensor data at index {index}: {e}")
+        except (NetworkTimeout, ConnectionFailure, OperationError) as e:
+            self.logger.error(f"Network error: {e}")
+            return False
+        except Exception as e:
+            self.logger.error(f"Unexpected error: {e}")
+            return False
 
-                    if successful_indices:
-                        session.commit_transaction()
-                        self.logger.info(f"Successfully processed {len(successful_indices)} out of {len(sensor_data_list)} items")
-                    else:
-                        session.abort_transaction()
-                        self.logger.warning("No items were successfully processed in this batch")
+    def _process_sensor_data(self, sensor_data_list, session):
+        sensor_data_json_list = []
+        for sensor_data in sensor_data_list:
+            try:
+                sensor_data_json_list.append(json.loads(sensor_data.decode('utf-8')))
+            except json.JSONDecodeError:
+                self.logger.error(f"Failed to parse JSON for item: {sensor_data}")
+                continue
 
-                except Exception as e:
-                    session.abort_transaction()
-                    self.logger.error(f"Transaction failed: {e}")
-                    return []
-
-        return successful_indices
+        Sensors.save_sensor_data(sensor_data_json_list, session=session) 
+        return len(sensor_data_json_list)       
 
     def check_for_new_data(self):
         self.logger.info("Checking for new data...")

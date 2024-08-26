@@ -32,7 +32,8 @@ class SensorService:
             new_data = self.read_sensor_data()
             
             if new_data:  # Only push if there's data
-                self.redis_client.rpush('sensor_data', json.dumps(new_data))
+                for data in new_data:
+                    self.redis_client.rpush('sensor_data', json.dumps(data))
             self.stop_event.wait(1)
 
     def read_sensor_data(self):
