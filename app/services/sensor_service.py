@@ -3,8 +3,6 @@ import time
 import json
 from logging_config import setup_logger
 
-# TODO: database_service should read from the db with rpop
-# TODO: irrigation_service should read the last data from the db with get
 class SensorService:
     def __init__(self, controller_id, redis_client, stop_event):
         self.logger = setup_logger(__name__)
@@ -34,7 +32,6 @@ class SensorService:
             new_data = self.read_sensor_data()
             
             if new_data:  # Only push if there's data
-                print(new_data)
                 self.redis_client.rpush('sensor_data', json.dumps(new_data))
             self.stop_event.wait(1)
 

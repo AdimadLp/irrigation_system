@@ -86,6 +86,7 @@ class DatabaseService:
 
                 # Remove only the successfully processed items
                 if successful_indices:
+                    print(f"Removing {len(successful_indices)} items from Redis")
                     pipe.multi()
                     for index in sorted(successful_indices, reverse=True):
                         pipe.lset('sensor_data', index, '__DUMMY__')
@@ -108,7 +109,9 @@ class DatabaseService:
                             sensor_data_json = json.loads(sensor_data.decode('utf-8'))
                             
                             for item in sensor_data_json:  # sensor_data_json is a list of sensor readings
+                                # Save sensor data blocks the execution of the thread until the data is saved
                                 Sensors.save_sensor_data([item], session=session)
+                                # TODO: Prevent blocking the thread by using mongodb timeouts and error handling 
 
                             #RealtimeSensorData.update_sensor_data(sensor_data_json, session=session)
                             successful_indices.append(index)
