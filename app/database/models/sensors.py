@@ -13,9 +13,11 @@ from mongoengine.fields import (
 
 logger = setup_logger(__name__)
 
+
 class SensorReading(EmbeddedDocument):
     value = FloatField(required=True)
     timestamp = FloatField(required=True)
+
 
 class Sensors(Document):
     sensorID = IntField(required=True, unique=True)
@@ -53,7 +55,7 @@ class Sensors(Document):
                 UpdateOne(
                     {"sensorID": sensorID},
                     {"$push": {"readings": reading.to_mongo()}},
-                    upsert=True
+                    upsert=True,
                 )
             )
 
@@ -65,7 +67,7 @@ class Sensors(Document):
                 logger.error(f"Sensor with ID {sensorID} not found")
             except Exception as e:
                 # TODO: 2024-08-27 01:25:59,196 - sensors.py - save_sensor_data - ERROR - Error saving data for sensor 4: Caused by :: Write conflict during plan execution and yielding is disabled. :: Please retry your operation or multi-document transaction., full error: {'errorLabels': ['TransientTransactionError'], 'ok': 0.0, 'errmsg': 'Caused by :: Write conflict during plan execution and yielding is disabled. :: Please retry your operation or multi-document transaction.', 'code': 112, 'codeName': 'WriteConflict', '$clusterTime': {'clusterTime': Timestamp(1724714759, 8), 'signature': {'hash': b'\xd9\xab\xd0g\x1f,h\x00\xa5\xf2\xe3\x99q\xd8\xb3\x9cH\xb5\xb8\x98', 'keyId': 7364634122427301889}}, 'operationTime': Timestamp(1724714759, 8)}
-                logger.error(f"Error saving data for sensor {sensorID}: {str(e)}")
+                logger.error(f"Error uploading data for sensor {sensorID}: {str(e)}")
                 raise
 
     @staticmethod

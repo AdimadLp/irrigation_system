@@ -4,6 +4,7 @@ from datetime import datetime
 
 # Create a new plant instance
 new_schedule = Schedules(
+    controllerID=1,
     scheduleID=3,
     weekdays=["Monday", "Wednesday", "Friday", "Sunday"],
     startTime=datetime.strptime("17:00", "%H:%M"),
