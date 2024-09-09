@@ -115,9 +115,6 @@ class IrrigationService:
             # Simulating irrigation process
             self.logger.info(f"Irrigating plant {plant['plantID']}")
             
-
-            
-
             pump_id = plant['pumpIDs'][0]
             pump = next((p for p in self.pumps if p["plantID"] == plant['plantID']), None)  # Get the pump from self.pumps
 
@@ -132,7 +129,6 @@ class IrrigationService:
             if not self.test:
 
                 self.GPIO.setup(pump["gpioPort"], self.GPIO.OUT)
-                self.GPIO.output(pump["gpioPort"], self.GPIO.LOW)  # Start the pump
                 await asyncio.sleep(irrigation_time)
                 self.GPIO.output(pump["gpioPort"], self.GPIO.HIGH)  # Stop the pump
                 self.GPIO.cleanup(pump["gpioPort"])  # Free the GPIO port
