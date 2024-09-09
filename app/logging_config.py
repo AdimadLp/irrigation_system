@@ -50,7 +50,7 @@ def setup_logger(name):
 
     # Create a file handler for all logs with a maximum file size of 10MB
     file_handler = ConcurrentRotatingFileHandler(
-        "app.log", maxBytes=10 * 1024 * 1024, backupCount=1
+        "app.log", maxBytes=10 * 1024, backupCount=1
     )
     file_handler.setLevel(logging.INFO)
     file_handler.setFormatter(formatter)

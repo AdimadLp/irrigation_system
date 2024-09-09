@@ -13,6 +13,14 @@ class Sensors:
         if not db_connection.is_connected():
             return None
         return db_connection.db.sensors
+    
+    @classmethod
+    async def create(cls, sensor_data):
+        collection = await cls.get_collection()
+        if collection is None:
+            return None
+        result = await collection.insert_one(sensor_data)
+        return result.inserted_id
 
     @classmethod
     async def get_sensors_by_controller(cls, controller_id):
@@ -87,3 +95,5 @@ class Sensors:
         else:
             logger.error(f"Sensor with ID {sensorID} not found")
             return None
+async def create_new_sensors(plant_data):
+    return await Sensors.create(plant_data)

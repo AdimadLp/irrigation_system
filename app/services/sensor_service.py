@@ -5,7 +5,7 @@ from logging_config import setup_logger
 
 
 class SensorService:
-    def __init__(self, controller_id, redis_client, stop_event):
+    def __init__(self, controller_id, redis_client, stop_event, test=False):
         self.logger = setup_logger(__name__)
         self.controller_id = controller_id
         self.redis_client = redis_client
@@ -13,6 +13,11 @@ class SensorService:
         self.sensors = []
         self.healthy = asyncio.Event()
         self.healthy.set()
+        self.test = test
+        if test is False:
+            import adafruit_dht
+            import board
+            self.dhtDevice = adafruit_dht.DHT11(board.D23)
 
     async def start(self):
         self.logger.info("Starting sensor service")
@@ -43,20 +48,29 @@ class SensorService:
                 await asyncio.sleep(5)  # Wait before retrying
 
     async def read_sensor_data(self):
-        sensor_data = []
-        for sensor in self.sensors:
-            self.logger.info(
-                f"Reading data from sensor {sensor['sensorID']} of type {sensor['type']}"
-            )
-            # Simulated sensor reading. Replace with actual sensor reading logic
-            sensor_data.append(
-                {
-                    "sensorID": sensor["sensorID"],
-                    "value": 1,  # Replace with actual sensor value
-                    "timestamp": time.time(),
-                }
-            )
-        return sensor_data
+        if self.test is False:
+            sensor_data = []
+            for sensor in self.sensors:
+                self.logger.info(
+                    f"Reading data from sensor {sensor['sensorID']} of type {sensor['type']}"
+                )
+                if sensor["type"] == "Temperature":
+                    sensor_data.append(
+                        {
+                            "sensorID": sensor["sensorID"],
+                            "value": self.dhtDevice.temperature,
+                            "timestamp": time.time(),
+                        }
+                    )
+                elif sensor["type"] == "Humidity":
+                    sensor_data.append(
+                        {
+                            "sensorID": sensor["sensorID"],
+                            "value": self.dhtDevice.humidity,
+                            "timestamp": time.time(),
+                        }
+                    )
+            return sensor_data
 
     async def update_sensors(self, new_sensors):
         self.sensors = new_sensors
