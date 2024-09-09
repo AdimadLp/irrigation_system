@@ -121,8 +121,11 @@ class IrrigationService:
             if not self.test:
 
                 self.GPIO.setup(pump["gpioPort"], self.GPIO.OUT)
+                self.GPIO.output(pump["gpioPort"], self.GPIO.LOW)  # Start the pump
                 await asyncio.sleep(irrigation_time)
-                self.GPIO.output(pump["gpioPort"], self.GPIO.HIGH)
+                self.GPIO.output(pump["gpioPort"], self.GPIO.HIGH)  # Stop the pump
+                self.GPIO.cleanup(pump["gpioPort"])  # Free the GPIO port
+
 
             # Create watering log
             watering_log = {
