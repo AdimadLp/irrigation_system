@@ -19974,3 +19974,203 @@
 2024-09-09 19:36:22,727 - database_service.py - stop - INFO - Stopping database service
 2024-09-09 19:36:23,729 - main.py - run - INFO - All services stopped. Exiting.
 2024-09-09 19:36:23,730 - main.py - main - INFO - Program terminated.
+2024-09-09 19:37:07,686 - database.py - connect - INFO - Connected to MongoDB successfully.
+2024-09-09 19:37:07,994 - main.py - start_services - INFO - Starting all services...
+2024-09-09 19:37:07,996 - sensor_service.py - start - INFO - Starting sensor service
+2024-09-09 19:37:07,996 - irrigation_service.py - start - INFO - Starting irrigation service for controller 1
+2024-09-09 19:37:07,997 - irrigation_service.py - wait_for_plants - INFO - Waiting for plants to be initialized...
+2024-09-09 19:37:07,997 - database_service.py - start - INFO - Starting database service
+2024-09-09 19:37:07,998 - database_service.py - initialize_plants - INFO - Initializing plants
+2024-09-09 19:37:08,019 - database_service.py - initialize_plants - INFO - Plants in mongodb found, updating Redis
+2024-09-09 19:37:08,021 - irrigation_service.py - update_plants - INFO - Updated plants: 1 plants
+2024-09-09 19:37:08,023 - irrigation_service.py - wait_for_plants - INFO - Plants initialized
+2024-09-09 19:37:08,024 - main.py - start_services - ERROR - Failed to start all services
+2024-09-09 19:37:08,025 - main.py - run - INFO - All services started successfully.
+2024-09-09 19:37:08,046 - irrigation_service.py - initialize_last_watered_times - INFO - Initialized last watered times for 1 plants
+2024-09-09 19:37:08,046 - irrigation_service.py - start - INFO - Irrigation check task created
+2024-09-09 19:37:08,046 - irrigation_service.py - check_for_irrigation - INFO - Starting irrigation check loop
+2024-09-09 19:37:17,548 - main.py - handle_shutdown - INFO - Received signal 2. Initiating shutdown...
+2024-09-09 19:37:17,550 - main.py - stop_services - INFO - Stopping all services...
+2024-09-09 19:37:17,551 - sensor_service.py - stop - INFO - Stopping sensor service
+2024-09-09 19:37:17,552 - irrigation_service.py - stop - INFO - Stopping irrigation service
+2024-09-09 19:37:17,553 - database_service.py - stop - INFO - Stopping database service
+2024-09-09 19:37:17,554 - irrigation_service.py - check_for_irrigation - INFO - Irrigation check loop cancelled
+2024-09-09 19:37:17,555 - irrigation_service.py - check_for_irrigation - INFO - Irrigation check loop ended
+2024-09-09 19:37:17,555 - irrigation_service.py - stop - INFO - Irrigation service stopped
+2024-09-09 19:37:18,029 - main.py - stop_services - INFO - Stopping all services...
+2024-09-09 19:37:18,030 - sensor_service.py - stop - INFO - Stopping sensor service
+2024-09-09 19:37:18,032 - irrigation_service.py - stop - INFO - Stopping irrigation service
+2024-09-09 19:37:18,032 - irrigation_service.py - stop - INFO - Irrigation service stopped
+2024-09-09 19:37:18,033 - database_service.py - stop - INFO - Stopping database service
+2024-09-09 19:37:19,036 - main.py - run - INFO - All services stopped. Exiting.
+2024-09-09 19:37:19,037 - main.py - main - INFO - Program terminated.
+2024-09-09 19:37:22,387 - database.py - connect - INFO - Connected to MongoDB successfully.
+2024-09-09 19:37:22,718 - main.py - start_services - INFO - Starting all services...
+2024-09-09 19:37:22,719 - sensor_service.py - start - INFO - Starting sensor service
+2024-09-09 19:37:22,719 - irrigation_service.py - start - INFO - Starting irrigation service for controller 1
+2024-09-09 19:37:22,719 - irrigation_service.py - wait_for_plants - INFO - Waiting for plants to be initialized...
+2024-09-09 19:37:22,719 - database_service.py - start - INFO - Starting database service
+2024-09-09 19:37:22,719 - database_service.py - initialize_plants - INFO - Initializing plants
+2024-09-09 19:37:22,741 - database_service.py - initialize_plants - INFO - Plants in mongodb found, updating Redis
+2024-09-09 19:37:22,743 - irrigation_service.py - update_plants - INFO - Updated plants: 1 plants
+2024-09-09 19:37:22,744 - irrigation_service.py - wait_for_plants - INFO - Plants initialized
+2024-09-09 19:37:22,745 - main.py - start_services - ERROR - Failed to start all services
+2024-09-09 19:37:22,746 - main.py - run - INFO - All services started successfully.
+2024-09-09 19:37:22,768 - irrigation_service.py - initialize_last_watered_times - INFO - Initialized last watered times for 1 plants
+2024-09-09 19:37:22,768 - irrigation_service.py - start - INFO - Irrigation check task created
+2024-09-09 19:37:22,769 - irrigation_service.py - check_for_irrigation - INFO - Starting irrigation check loop
+2024-09-09 19:37:25,061 - main.py - handle_shutdown - INFO - Received signal 2. Initiating shutdown...
+2024-09-09 19:37:25,062 - main.py - stop_services - INFO - Stopping all services...
+2024-09-09 19:37:25,063 - sensor_service.py - stop - INFO - Stopping sensor service
+2024-09-09 19:37:25,063 - irrigation_service.py - stop - INFO - Stopping irrigation service
+2024-09-09 19:37:25,064 - database_service.py - stop - INFO - Stopping database service
+2024-09-09 19:37:25,064 - irrigation_service.py - check_for_irrigation - INFO - Irrigation check loop cancelled
+2024-09-09 19:37:25,065 - irrigation_service.py - check_for_irrigation - INFO - Irrigation check loop ended
+2024-09-09 19:37:25,065 - irrigation_service.py - stop - INFO - Irrigation service stopped
+2024-09-09 19:37:32,781 - main.py - stop_services - INFO - Stopping all services...
+2024-09-09 19:37:32,782 - sensor_service.py - stop - INFO - Stopping sensor service
+2024-09-09 19:37:32,783 - irrigation_service.py - stop - INFO - Stopping irrigation service
+2024-09-09 19:37:32,783 - irrigation_service.py - stop - INFO - Irrigation service stopped
+2024-09-09 19:37:32,784 - database_service.py - stop - INFO - Stopping database service
+2024-09-09 19:37:33,789 - main.py - run - INFO - All services stopped. Exiting.
+2024-09-09 19:37:33,790 - main.py - main - INFO - Program terminated.
+2024-09-09 19:37:58,857 - database.py - connect - INFO - Connected to MongoDB successfully.
+2024-09-09 19:37:59,136 - main.py - start_services - INFO - Starting all services...
+2024-09-09 19:37:59,138 - sensor_service.py - start - INFO - Starting sensor service
+2024-09-09 19:37:59,138 - irrigation_service.py - start - INFO - Starting irrigation service for controller 1
+2024-09-09 19:37:59,139 - irrigation_service.py - wait_for_plants - INFO - Waiting for plants to be initialized...
+2024-09-09 19:37:59,139 - database_service.py - start - INFO - Starting database service
+2024-09-09 19:37:59,139 - database_service.py - initialize_plants - INFO - Initializing plants
+2024-09-09 19:37:59,160 - database_service.py - initialize_plants - INFO - Plants in mongodb found, updating Redis
+2024-09-09 19:37:59,161 - irrigation_service.py - update_plants - INFO - Updated plants: 1 plants
+2024-09-09 19:37:59,163 - irrigation_service.py - wait_for_plants - INFO - Plants initialized
+2024-09-09 19:37:59,164 - main.py - start_services - ERROR - Failed to start all services: 'DatabaseService' object has no attribute 'monitor_network'
+2024-09-09 19:37:59,165 - main.py - run - INFO - All services started successfully.
+2024-09-09 19:37:59,191 - irrigation_service.py - initialize_last_watered_times - INFO - Initialized last watered times for 1 plants
+2024-09-09 19:37:59,191 - irrigation_service.py - start - INFO - Irrigation check task created
+2024-09-09 19:37:59,191 - irrigation_service.py - check_for_irrigation - INFO - Starting irrigation check loop
+2024-09-09 19:38:02,287 - main.py - handle_shutdown - INFO - Received signal 2. Initiating shutdown...
+2024-09-09 19:38:02,288 - main.py - stop_services - INFO - Stopping all services...
+2024-09-09 19:38:02,289 - sensor_service.py - stop - INFO - Stopping sensor service
+2024-09-09 19:38:02,289 - irrigation_service.py - stop - INFO - Stopping irrigation service
+2024-09-09 19:38:02,290 - database_service.py - stop - INFO - Stopping database service
+2024-09-09 19:38:02,290 - irrigation_service.py - check_for_irrigation - INFO - Irrigation check loop cancelled
+2024-09-09 19:38:02,291 - irrigation_service.py - check_for_irrigation - INFO - Irrigation check loop ended
+2024-09-09 19:38:02,291 - irrigation_service.py - stop - INFO - Irrigation service stopped
+2024-09-09 19:38:09,197 - main.py - stop_services - INFO - Stopping all services...
+2024-09-09 19:38:09,198 - sensor_service.py - stop - INFO - Stopping sensor service
+2024-09-09 19:38:09,198 - irrigation_service.py - stop - INFO - Stopping irrigation service
+2024-09-09 19:38:09,199 - irrigation_service.py - stop - INFO - Irrigation service stopped
+2024-09-09 19:38:09,199 - database_service.py - stop - INFO - Stopping database service
+2024-09-09 19:38:10,204 - main.py - run - INFO - All services stopped. Exiting.
+2024-09-09 19:38:10,205 - main.py - main - INFO - Program terminated.
+2024-09-09 19:39:17,248 - database.py - connect - INFO - Connected to MongoDB successfully.
+2024-09-09 19:39:17,550 - main.py - start_services - INFO - Starting all services...
+2024-09-09 19:39:17,552 - sensor_service.py - start - INFO - Starting sensor service
+2024-09-09 19:39:17,554 - irrigation_service.py - start - INFO - Starting irrigation service for controller 1
+2024-09-09 19:39:17,555 - irrigation_service.py - wait_for_plants - INFO - Waiting for plants to be initialized...
+2024-09-09 19:39:17,556 - database_service.py - start - INFO - Starting database service
+2024-09-09 19:39:17,557 - database_service.py - initialize_plants - INFO - Initializing plants
+2024-09-09 19:39:17,586 - database_service.py - initialize_plants - INFO - Plants in mongodb found, updating Redis
+2024-09-09 19:39:17,588 - irrigation_service.py - update_plants - INFO - Updated plants: 1 plants
+2024-09-09 19:39:17,590 - irrigation_service.py - wait_for_plants - INFO - Plants initialized
+2024-09-09 19:39:17,604 - database_service.py - check_for_new_data - INFO - Checking for new data...
+2024-09-09 19:39:17,619 - irrigation_service.py - initialize_last_watered_times - INFO - Initialized last watered times for 1 plants
+2024-09-09 19:39:17,620 - irrigation_service.py - start - INFO - Irrigation check task created
+2024-09-09 19:39:17,621 - irrigation_service.py - check_for_irrigation - INFO - Starting irrigation check loop
+2024-09-09 19:39:17,638 - irrigation_service.py - update_schedules - INFO - Updated schedules: 1 schedules
+2024-09-09 19:39:17,763 - irrigation_service.py - update_sensor_types - INFO - Updated sensor types: 1 sensors
+2024-09-09 19:39:17,773 - irrigation_service.py - update_plants - INFO - Updated plants: 1 plants
+2024-09-09 19:39:17,773 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
+2024-09-09 19:39:18,561 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 of type Temperature
+2024-09-09 19:39:18,836 - sensors.py - process_sensor_data_batch - INFO - Successfully processed 1 items
+2024-09-09 19:39:18,862 - realtime_sensor_data.py - update_realtime_sensor_data - INFO - Updated realtime data for 1 sensors
+2024-09-09 19:39:18,864 - database_service.py - save_sensor_data - INFO - Removed 1 items from Redis
+2024-09-09 19:39:19,565 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 of type Temperature
+2024-09-09 19:39:19,911 - sensors.py - process_sensor_data_batch - INFO - Successfully processed 1 items
+2024-09-09 19:39:19,933 - realtime_sensor_data.py - update_realtime_sensor_data - INFO - Updated realtime data for 1 sensors
+2024-09-09 19:39:19,935 - database_service.py - save_sensor_data - INFO - Removed 1 items from Redis
+2024-09-09 19:39:20,571 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 of type Temperature
+2024-09-09 19:39:20,984 - sensors.py - process_sensor_data_batch - INFO - Successfully processed 1 items
+2024-09-09 19:39:21,008 - realtime_sensor_data.py - update_realtime_sensor_data - INFO - Updated realtime data for 1 sensors
+2024-09-09 19:39:21,009 - database_service.py - save_sensor_data - INFO - Removed 1 items from Redis
+2024-09-09 19:39:21,576 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 of type Temperature
+2024-09-09 19:39:22,057 - sensors.py - process_sensor_data_batch - INFO - Successfully processed 1 items
+2024-09-09 19:39:22,082 - realtime_sensor_data.py - update_realtime_sensor_data - INFO - Updated realtime data for 1 sensors
+2024-09-09 19:39:22,083 - database_service.py - save_sensor_data - INFO - Removed 1 items from Redis
+2024-09-09 19:39:22,582 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 of type Temperature
+2024-09-09 19:39:23,132 - sensors.py - process_sensor_data_batch - INFO - Successfully processed 1 items
+2024-09-09 19:39:23,156 - realtime_sensor_data.py - update_realtime_sensor_data - INFO - Updated realtime data for 1 sensors
+2024-09-09 19:39:23,158 - database_service.py - save_sensor_data - INFO - Removed 1 items from Redis
+2024-09-09 19:39:23,587 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 of type Temperature
+2024-09-09 19:39:24,208 - sensors.py - process_sensor_data_batch - INFO - Successfully processed 1 items
+2024-09-09 19:39:24,232 - realtime_sensor_data.py - update_realtime_sensor_data - INFO - Updated realtime data for 1 sensors
+2024-09-09 19:39:24,233 - database_service.py - save_sensor_data - INFO - Removed 1 items from Redis
+2024-09-09 19:39:24,591 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 of type Temperature
+2024-09-09 19:39:25,283 - sensors.py - process_sensor_data_batch - INFO - Successfully processed 1 items
+2024-09-09 19:39:25,307 - realtime_sensor_data.py - update_realtime_sensor_data - INFO - Updated realtime data for 1 sensors
+2024-09-09 19:39:25,308 - database_service.py - save_sensor_data - INFO - Removed 1 items from Redis
+2024-09-09 19:39:25,596 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 of type Temperature
+2024-09-09 19:39:26,358 - sensors.py - process_sensor_data_batch - INFO - Successfully processed 1 items
+2024-09-09 19:39:26,381 - realtime_sensor_data.py - update_realtime_sensor_data - INFO - Updated realtime data for 1 sensors
+2024-09-09 19:39:26,383 - database_service.py - save_sensor_data - INFO - Removed 1 items from Redis
+2024-09-09 19:39:26,599 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 of type Temperature
+2024-09-09 19:39:27,430 - sensors.py - process_sensor_data_batch - INFO - Successfully processed 1 items
+2024-09-09 19:39:27,454 - realtime_sensor_data.py - update_realtime_sensor_data - INFO - Updated realtime data for 1 sensors
+2024-09-09 19:39:27,455 - database_service.py - save_sensor_data - INFO - Removed 1 items from Redis
+2024-09-09 19:39:27,603 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 of type Temperature
+2024-09-09 19:39:28,476 - database_service.py - check_for_new_data - INFO - Checking for new data...
+2024-09-09 19:39:28,498 - irrigation_service.py - update_plants - INFO - Updated plants: 1 plants
+2024-09-09 19:39:28,501 - irrigation_service.py - update_sensor_types - INFO - Updated sensor types: 1 sensors
+2024-09-09 19:39:28,503 - irrigation_service.py - update_schedules - INFO - Updated schedules: 1 schedules
+2024-09-09 19:39:28,504 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
+2024-09-09 19:39:28,533 - sensors.py - process_sensor_data_batch - INFO - Successfully processed 1 items
+2024-09-09 19:39:28,559 - realtime_sensor_data.py - update_realtime_sensor_data - INFO - Updated realtime data for 1 sensors
+2024-09-09 19:39:28,560 - database_service.py - save_sensor_data - INFO - Removed 1 items from Redis
+2024-09-09 19:39:28,606 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 of type Temperature
+2024-09-09 19:39:29,608 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 of type Temperature
+2024-09-09 19:39:29,610 - sensors.py - process_sensor_data_batch - INFO - Successfully processed 1 items
+2024-09-09 19:39:29,634 - realtime_sensor_data.py - update_realtime_sensor_data - INFO - Updated realtime data for 1 sensors
+2024-09-09 19:39:29,636 - database_service.py - save_sensor_data - INFO - Removed 1 items from Redis
+2024-09-09 19:39:30,615 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 of type Temperature
+2024-09-09 19:39:30,685 - sensors.py - process_sensor_data_batch - INFO - Successfully processed 2 items
+2024-09-09 19:39:30,711 - realtime_sensor_data.py - update_realtime_sensor_data - INFO - Updated realtime data for 1 sensors
+2024-09-09 19:39:30,713 - database_service.py - save_sensor_data - INFO - Removed 2 items from Redis
+2024-09-09 19:39:31,622 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 of type Temperature
+2024-09-09 19:39:31,757 - sensors.py - process_sensor_data_batch - INFO - Successfully processed 1 items
+2024-09-09 19:39:31,781 - realtime_sensor_data.py - update_realtime_sensor_data - INFO - Updated realtime data for 1 sensors
+2024-09-09 19:39:31,782 - database_service.py - save_sensor_data - INFO - Removed 1 items from Redis
+2024-09-09 19:39:32,628 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 of type Temperature
+2024-09-09 19:39:32,830 - sensors.py - process_sensor_data_batch - INFO - Successfully processed 1 items
+2024-09-09 19:39:32,855 - realtime_sensor_data.py - update_realtime_sensor_data - INFO - Updated realtime data for 1 sensors
+2024-09-09 19:39:32,856 - database_service.py - save_sensor_data - INFO - Removed 1 items from Redis
+2024-09-09 19:39:33,634 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 of type Temperature
+2024-09-09 19:39:33,904 - sensors.py - process_sensor_data_batch - INFO - Successfully processed 1 items
+2024-09-09 19:39:33,929 - realtime_sensor_data.py - update_realtime_sensor_data - INFO - Updated realtime data for 1 sensors
+2024-09-09 19:39:33,930 - database_service.py - save_sensor_data - INFO - Removed 1 items from Redis
+2024-09-09 19:39:34,639 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 of type Temperature
+2024-09-09 19:39:34,978 - sensors.py - process_sensor_data_batch - INFO - Successfully processed 1 items
+2024-09-09 19:39:35,002 - realtime_sensor_data.py - update_realtime_sensor_data - INFO - Updated realtime data for 1 sensors
+2024-09-09 19:39:35,003 - database_service.py - save_sensor_data - INFO - Removed 1 items from Redis
+2024-09-09 19:39:35,645 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 of type Temperature
+2024-09-09 19:39:36,053 - sensors.py - process_sensor_data_batch - INFO - Successfully processed 1 items
+2024-09-09 19:39:36,078 - realtime_sensor_data.py - update_realtime_sensor_data - INFO - Updated realtime data for 1 sensors
+2024-09-09 19:39:36,079 - database_service.py - save_sensor_data - INFO - Removed 1 items from Redis
+2024-09-09 19:39:36,651 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 of type Temperature
+2024-09-09 19:39:37,127 - sensors.py - process_sensor_data_batch - INFO - Successfully processed 1 items
+2024-09-09 19:39:37,152 - realtime_sensor_data.py - update_realtime_sensor_data - INFO - Updated realtime data for 1 sensors
+2024-09-09 19:39:37,154 - database_service.py - save_sensor_data - INFO - Removed 1 items from Redis
+2024-09-09 19:39:37,654 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 of type Temperature
+2024-09-09 19:39:38,205 - sensors.py - process_sensor_data_batch - INFO - Successfully processed 1 items
+2024-09-09 19:39:38,231 - realtime_sensor_data.py - update_realtime_sensor_data - INFO - Updated realtime data for 1 sensors
+2024-09-09 19:39:38,232 - database_service.py - save_sensor_data - INFO - Removed 1 items from Redis
+2024-09-09 19:39:38,659 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 of type Temperature
+2024-09-09 19:39:39,252 - database_service.py - check_for_new_data - INFO - Checking for new data...
+2024-09-09 19:39:39,275 - irrigation_service.py - update_plants - INFO - Updated plants: 1 plants
+2024-09-09 19:39:39,278 - irrigation_service.py - update_sensor_types - INFO - Updated sensor types: 1 sensors
+2024-09-09 19:39:39,279 - irrigation_service.py - update_schedules - INFO - Updated schedules: 1 schedules
+2024-09-09 19:39:39,280 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
+2024-09-09 19:39:39,310 - sensors.py - process_sensor_data_batch - INFO - Successfully processed 1 items
+2024-09-09 19:39:39,335 - realtime_sensor_data.py - update_realtime_sensor_data - INFO - Updated realtime data for 1 sensors
+2024-09-09 19:39:39,338 - database_service.py - save_sensor_data - INFO - Removed 1 items from Redis
+2024-09-09 19:39:39,663 - sensor_service.py - read_sensor_data - INFO - Reading data from sensor 4 of type Temperature

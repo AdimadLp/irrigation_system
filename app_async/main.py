@@ -65,7 +65,7 @@ class MainController:
                 self.database_service.start(),
             )
         except Exception as e:
-            logger.error("Failed to start all services")
+            logger.error(f"Failed to start all services: {str(e)}")
 
     async def stop_services(self):
         logger.info("Stopping all services...")

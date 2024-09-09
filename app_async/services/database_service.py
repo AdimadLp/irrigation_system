@@ -42,7 +42,7 @@ class DatabaseService:
         self.logger.info("Starting database service")
         self.healthy.set()
         await self.initialize_plants()
-        await asyncio.gather(self.run(), self.monitor_network())
+        await self.run()
 
     async def stop(self):
         self.logger.info("Stopping database service")
