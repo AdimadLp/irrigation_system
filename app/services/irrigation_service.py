@@ -117,7 +117,7 @@ class IrrigationService:
             flow_rate = pump["flowRate"]
 
             irrigation_time = 60 * plant['waterRequirement'] / flow_rate  # Calculate irrigation time in seconds
-            self.logger.debug(f"Watering plant {plant['plantID']} with pump {pump_id} with {flow_rate}ml of flowrate for {irrigation_time}s on gpio port {pump["gpioPort"]}")
+            self.logger.debug(f"Watering plant {plant['plantID']} with pump {pump_id} with {flow_rate}ml of flowrate for {irrigation_time}s on gpio port {pump['gpioPort']}")
             if not self.test:
 
                 self.GPIO.setup(pump["gpioPort"], self.GPIO.OUT)

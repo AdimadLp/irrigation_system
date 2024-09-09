@@ -21743,3 +21743,6 @@
 2024-09-09 21:53:56,852 - database_service.py - stop - INFO - Stopping database service
 2024-09-09 21:53:57,857 - main.py - run - INFO - All services stopped. Exiting.
 2024-09-09 21:53:57,858 - main.py - main - INFO - Program terminated.
+2024-09-09 22:06:01,767 - database.py - connect - INFO - Connected to MongoDB successfully.
+2024-09-09 22:06:02,045 - main.py - main - CRITICAL - Critical error in main: No module named 'RPi'
+2024-09-09 22:06:02,049 - main.py - main - INFO - Program terminated.
