@@ -40,7 +40,7 @@ class MainController:
             self.controller_id, self.redis_client, self.stop_event
         )
         self.irrigation_service = IrrigationService(
-            self.controller_id, self.redis_client, self.stop_event, True
+            self.controller_id, self.redis_client, self.stop_event
         )
         self.database_service = DatabaseService(
             self.controller_id,
