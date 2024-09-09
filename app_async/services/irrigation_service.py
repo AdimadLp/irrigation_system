@@ -1,6 +1,9 @@
 import asyncio
-from datetime import datetime
+from datetime import datetime, date
 from logging_config import setup_logger
+import json
+import time
+from database.models.plants import Plants
 
 
 class IrrigationService:
@@ -45,6 +48,25 @@ class IrrigationService:
         await self.stop()
         await self.start()
 
+    async def irrigate_plant(self, plant):
+        try:
+            # Simulating irrigation process
+            self.logger.info(f"Irrigating plant {plant['plantID']}")
+            await asyncio.sleep(2)  # Simulating irrigation time
+
+            # Create watering log
+            watering_log = {
+                "plantID": plant["plantID"],
+                "timestamp": time.time(),
+            }
+
+            # Send watering log to Redis
+            await self.redis_client.rpush("watering_logs", json.dumps(watering_log))
+
+            self.logger.info(f"Irrigation completed for plant {plant['plantID']}")
+        except Exception as e:
+            self.logger.error(f"Error during irrigation: {str(e)}")
+
     async def check_for_irrigation(self):
         self.logger.info("Starting irrigation check loop")
         while not self.stop_event.is_set():
@@ -57,12 +79,11 @@ class IrrigationService:
                         self.logger.info(
                             f"Irrigation needed for plant {plant['plantID']}!"
                         )
-                        # TODO: Trigger irrigation process here
+                        await self.irrigate_plant(plant)
                     else:
                         self.logger.debug(
                             f"No irrigation needed for plant {plant['plantID']}"
                         )
-                    await asyncio.sleep(1)
                 await asyncio.sleep(5)  # Wait 5 seconds before the next check cycle
             except asyncio.CancelledError:
                 self.logger.info("Irrigation check loop cancelled")
@@ -77,7 +98,7 @@ class IrrigationService:
         now = datetime.now()
         return (
             now.strftime("%A") in schedule["weekdays"]
-            and schedule["startTime"].time() <= now.time() <= schedule["endTime"].time()
+            and schedule["startTime"].time() <= now.time()
         )
 
     async def is_threshold_met(self, threshold):
@@ -106,12 +127,27 @@ class IrrigationService:
         plant_schedules = [
             s for s in self.schedules if s["plantID"] == plant["plantID"]
         ]
+        last_watered_unix = await Plants.get_last_watering_time(plant["plantID"])
+        now = datetime.now()
+
+        if last_watered_unix is not None:
+            last_watered_date = date.fromtimestamp(last_watered_unix)
+        else:
+            last_watered_date = None
+
         for schedule in plant_schedules:
             if self.during_time(schedule):
-                if schedule["type"] == "threshold":
-                    return await self.is_threshold_met(schedule["threshold"])
-                elif schedule["type"] == "interval":
-                    return True
+                if last_watered_date is None or last_watered_date < now.date():
+                    if schedule["type"] == "threshold":
+                        return await self.is_threshold_met(schedule["threshold"])
+                    elif schedule["type"] == "interval":
+                        return True
+                else:
+                    self.logger.debug(f"Plant {plant['plantID']} already watered today")
+            else:
+                self.logger.debug(
+                    f"Current time is not within schedule for plant {plant['plantID']}"
+                )
         return False
 
     async def update_plants(self, new_plants):

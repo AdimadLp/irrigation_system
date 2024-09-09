@@ -9,7 +9,7 @@ new_schedule = Schedules(
     weekdays=["Monday", "Wednesday", "Friday", "Sunday"],
     startTime=datetime.strptime("17:00", "%H:%M"),
     endTime=datetime.strptime("23:59", "%H:%M"),
-    type="Interval",
+    type="interval",
     plantID=1,
     threshold=40,
 )

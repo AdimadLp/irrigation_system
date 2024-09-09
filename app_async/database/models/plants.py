@@ -1,5 +1,6 @@
 from motor.motor_asyncio import AsyncIOMotorCollection
 from ..database import db
+from pymongo import UpdateOne
 
 
 class Plants:
@@ -30,3 +31,33 @@ class Plants:
             {"plantID": plant_id}, {"$set": update_data}
         )
         return result.modified_count
+
+    @classmethod
+    async def bulk_update_watering_history(cls, watering_data):
+        bulk_operations = []
+        for plant_id, timestamp in watering_data:
+            bulk_operations.append(
+                UpdateOne(
+                    {"plantID": plant_id},
+                    {
+                        "$push": {
+                            "wateringHistory": {
+                                "$each": [{"timestamp": timestamp}],
+                                "$sort": {"timestamp": -1},
+                            }
+                        }
+                    },
+                )
+            )
+
+        if bulk_operations:
+            result = await cls.collection.bulk_write(bulk_operations)
+            return result.modified_count
+        return 0
+
+    @classmethod
+    async def get_last_watering_time(cls, plant_id):
+        plant = await cls.get_by_id(plant_id)
+        if plant and plant.get("wateringHistory"):
+            return plant["wateringHistory"][0]["timestamp"]
+        return None

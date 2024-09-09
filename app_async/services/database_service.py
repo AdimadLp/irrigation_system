@@ -1,8 +1,15 @@
 import asyncio
 from logging_config import setup_logger
-from database.models import Plants, Sensors, Schedules, RealtimeSensorData
+from database.models import (
+    Plants,
+    Sensors,
+    Schedules,
+    RealtimeSensorData,
+    WateringHistory,
+)
 import time
 from pymongo.errors import NetworkTimeout, ConnectionFailure
+import json
 
 
 class DatabaseService:
@@ -50,6 +57,7 @@ class DatabaseService:
                     await self.check_for_new_data()
                     self.last_check_time = current_time
                 await self.save_sensor_data()
+                await self.save_watering_logs()
                 await asyncio.sleep(1)
             except asyncio.TimeoutError:
                 pass
@@ -65,6 +73,30 @@ class DatabaseService:
                 else:
                     self.logger.info("Waiting for network connection to be restored...")
             await asyncio.sleep(self.network_check_interval)
+
+    async def save_watering_logs(self):
+        try:
+            watering_logs = await self.redis_client.lrange("watering_logs", 0, -1)
+            if not watering_logs:
+                return
+
+            watering_data = []
+            for log in watering_logs:
+                log_data = json.loads(log)
+                plant_id = log_data["plantID"]
+                timestamp = log_data["timestamp"]
+                watering_data.append((plant_id, timestamp))
+
+            # Bulk update watering history for plants
+            updated_count = await Plants.bulk_update_watering_history(watering_data)
+            self.logger.info(f"Updated watering history for {updated_count} plants")
+
+            # Remove processed logs from Redis
+            await self.redis_client.ltrim("watering_logs", len(watering_logs), -1)
+            self.logger.info(f"Processed {len(watering_logs)} watering logs")
+
+        except Exception as e:
+            self.logger.error(f"Error processing watering logs: {str(e)}")
 
     async def save_sensor_data(self):
         try:

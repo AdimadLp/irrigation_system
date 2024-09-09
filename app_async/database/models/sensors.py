@@ -29,13 +29,6 @@ class Sensors:
                 if not isinstance(data, dict):
                     raise ValueError("Parsed data is not a dictionary")
 
-                if (
-                    "sensorID" not in data
-                    or "value" not in data
-                    or "timestamp" not in data
-                ):
-                    raise ValueError("Missing required fields in sensor data")
-
                 sensor_id = data["sensorID"]
                 reading = {
                     "value": data["value"],

@@ -1,7 +1,5 @@
 from logging_config import setup_logger
-from pymongo.errors import NetworkTimeout, ConnectionFailure
 from pymongo import UpdateOne
-from mongoengine.errors import OperationError
 from mongoengine import Document, EmbeddedDocument
 from mongoengine.fields import (
     StringField,
