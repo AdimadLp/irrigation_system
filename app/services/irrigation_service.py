@@ -53,12 +53,23 @@ class IrrigationService:
     async def stop(self):
         self.logger.info("Stopping irrigation service")
         self.stop_event.set()
+        
         if hasattr(self, "check_irrigation_task"):
             self.check_irrigation_task.cancel()
             try:
                 await self.check_irrigation_task
             except asyncio.CancelledError:
                 pass
+
+        if not self.test:
+            for pump in self.pumps:
+                try:
+                    self.GPIO.setup(pump["gpioPort"], self.GPIO.OUT)
+                    self.GPIO.output(pump["gpioPort"], self.GPIO.HIGH)  # Set GPIO port to HIGH
+                    self.GPIO.cleanup(pump["gpioPort"])  # Free the GPIO port
+                except Exception as e:
+                    self.logger.error(f"Error setting GPIO port {pump['gpioPort']} to HIGH: {str(e)}")
+
         self.logger.info("Irrigation service stopped")
 
     async def restart(self):
