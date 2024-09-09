@@ -4,6 +4,7 @@ import os
 from pymongo.errors import ConfigurationError
 from logging_config import setup_logger
 import socket
+import asyncio
 
 logger = setup_logger(__name__)
 
@@ -28,19 +29,21 @@ class DatabaseConnection:
         self.client = None
         self.db = None
 
-    async def connect(self):
-        if not check_internet_connection():
-            logger.warning("No internet connection available. Operating in offline mode.")
-            return
+    async def connect(self, retry_interval=5):
+        while not check_internet_connection():
+            logger.warning("No internet connection available. Retrying in {} seconds...".format(retry_interval))
+            await asyncio.sleep(retry_interval)
 
-        try:
-            self.client = motor.motor_asyncio.AsyncIOMotorClient(_ATLAS_URI)
-            self.db = self.client.irrigation_system
-            logger.info("Connected to MongoDB successfully.")
-        except ConfigurationError as e:
-            logger.error(f"Failed to connect to MongoDB: {str(e)}")
-            self.client = None
-            self.db = None
+        while self.client is None or self.db is None:
+            try:
+                self.client = motor.motor_asyncio.AsyncIOMotorClient(_ATLAS_URI)
+                self.db = self.client.irrigation_system
+                logger.info("Connected to MongoDB successfully.")
+            except ConfigurationError as e:
+                logger.error(f"Failed to connect to MongoDB: {str(e)}. Retrying in {retry_interval} seconds...")
+                self.client = None
+                self.db = None
+                await asyncio.sleep(retry_interval)
 
     def is_connected(self):
         return self.client is not None and self.db is not None
