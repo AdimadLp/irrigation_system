@@ -1,81 +1,89 @@
+from motor.motor_asyncio import AsyncIOMotorCollection
+from ..database import db_connection
 from logging_config import setup_logger
+import json
 from pymongo import UpdateOne
-from mongoengine import Document, EmbeddedDocument
-from mongoengine.fields import (
-    StringField,
-    IntField,
-    FloatField,
-    ListField,
-    EmbeddedDocumentField,
-)
 
 logger = setup_logger(__name__)
 
 
-class SensorReading(EmbeddedDocument):
-    value = FloatField(required=True)
-    timestamp = FloatField(required=True)
+class Sensors:
+    @classmethod
+    async def get_collection(cls):
+        if not db_connection.is_connected():
+            return None
+        return db_connection.db.sensors
 
+    @classmethod
+    async def get_sensors_by_controller(cls, controller_id):
+        collection = await cls.get_collection()
+        if collection is None:
+            return None
+        cursor = collection.find(
+            {"controllerID": controller_id},
+            projection={"sensorID": 1, "type": 1, "_id": 0},
+        )
+        return await cursor.to_list(length=None)
 
-class Sensors(Document):
-    sensorID = IntField(required=True, unique=True)
-    sensorName = StringField(required=True)
-    controllerID = IntField(required=True)
-    gpioPort = IntField(required=True)
-    type = StringField(required=True)
-    readings = ListField(EmbeddedDocumentField(SensorReading))
-    meta = {"indexes": [{"fields": ["sensorID"], "unique": True}]}
-
-    @staticmethod
-    def get_sensors_by_controller(controller_id):
-        return Sensors.objects(controllerID=controller_id)
-
-    @staticmethod
-    def save_sensor_data(data_list, session=None):
+    @classmethod
+    async def process_sensor_data_batch(cls, sensor_data_list):
+        collection = await cls.get_collection()
+        if collection is None:
+            return None
         bulk_operations = []
-        for data in data_list:
-            sensorID = data.get("sensorID")
-            value = data.get("value")
-            timestamp = data.get("timestamp")
+        latest_readings = {}
 
-            if sensorID is None:
-                logger.error("Missing sensorID")
-                continue
-            if value is None:
-                logger.error(f"Missing value for sensor {sensorID}")
-                continue
-            if timestamp is None:
-                logger.error(f"Missing timestamp for sensor {sensorID}")
-                continue
+        for data_str in sensor_data_list:
+            try:
+                data = json.loads(data_str)
 
-            reading = SensorReading(value=value, timestamp=timestamp)
-            bulk_operations.append(
-                UpdateOne(
-                    {"sensorID": sensorID},
-                    {"$push": {"readings": reading.to_mongo()}},
-                    upsert=True,
+                if not isinstance(data, dict):
+                    raise ValueError("Parsed data is not a dictionary")
+
+                sensor_id = data["sensorID"]
+                reading = {
+                    "value": data["value"],
+                    "timestamp": data["timestamp"],
+                }
+
+                bulk_operations.append(
+                    UpdateOne(
+                        {"sensorID": sensor_id},
+                        {"$push": {"readings": reading}},
+                        upsert=True,
+                    )
                 )
-            )
+
+                # Keep track of the latest reading for each sensor
+                if (
+                    sensor_id not in latest_readings
+                    or data["timestamp"] > latest_readings[sensor_id]["timestamp"]
+                ):
+                    latest_readings[sensor_id] = reading
+
+            except json.JSONDecodeError:
+                logger.warning(f"Invalid JSON data: {data_str}")
+            except ValueError as ve:
+                logger.warning(f"Invalid data format: {ve}")
+            except Exception as e:
+                logger.error(f"Error processing sensor data: {e}")
 
         if bulk_operations:
-            try:
-                Sensors._get_collection().bulk_write(bulk_operations, session=session)
-                logger.info(f"Saved {len(bulk_operations)} sensor readings")
-            except Sensors.DoesNotExist:
-                logger.error(f"Sensor with ID {sensorID} not found")
-            except Exception as e:
-                # TODO: 2024-08-27 01:25:59,196 - sensors.py - save_sensor_data - ERROR - Error saving data for sensor 4: Caused by :: Write conflict during plan execution and yielding is disabled. :: Please retry your operation or multi-document transaction., full error: {'errorLabels': ['TransientTransactionError'], 'ok': 0.0, 'errmsg': 'Caused by :: Write conflict during plan execution and yielding is disabled. :: Please retry your operation or multi-document transaction.', 'code': 112, 'codeName': 'WriteConflict', '$clusterTime': {'clusterTime': Timestamp(1724714759, 8), 'signature': {'hash': b'\xd9\xab\xd0g\x1f,h\x00\xa5\xf2\xe3\x99q\xd8\xb3\x9cH\xb5\xb8\x98', 'keyId': 7364634122427301889}}, 'operationTime': Timestamp(1724714759, 8)}
-                logger.error(f"Error uploading data for sensor {sensorID}: {str(e)}")
-                raise
+            result = await collection.bulk_write(bulk_operations)
+            logger.info(f"Successfully processed {result.modified_count} items")
+            return True, latest_readings
+        else:
+            logger.warning("No valid sensor data to process")
+            return False, {}
 
-    @staticmethod
-    def get_sensor_type(sensorID):
-        try:
-            sensor = Sensors.objects(sensorID=sensorID).get()
-            return sensor.type
-        except Sensors.DoesNotExist:
-            logger.error(f"Sensor with ID {sensorID} not found")
+    @classmethod
+    async def get_sensor_type(cls, sensorID):
+        collection = await cls.get_collection()
+        if collection is None:
             return None
-        except Exception as e:
-            logger.error(f"Error getting sensor type for {sensorID}: {str(e)}")
+        sensor = await collection.find_one({"sensorID": sensorID})
+        if sensor:
+            return sensor.get("type")
+        else:
+            logger.error(f"Sensor with ID {sensorID} not found")
             return None

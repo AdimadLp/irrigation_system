@@ -1,22 +1,27 @@
-from app.database.models import Plants
-import app.database.connection
+import asyncio
 from datetime import datetime
+from app.database.models.plants import create_new_plant  # Import the function
+from app.database.database import db_connection
 
-# Create a new plant instance
-new_plant = Plants(
-    plantID=1,  # Unique identifier for the plant
-    plantName="Einblatt",
-    plantType="Spathiphyllum",
-    location="Schuhschrank",
-    controllerID=1,  # Assuming you have a controller with ID 1
-    sensorIDs=[],  # List of associated sensor IDs
-    pumpIDs=[1],  # List of associated pump IDs
-    waterRequirement=100,  # Water requirement in milliliters
-    lastWatered=datetime.now(),  # Last watered timestamp
-    imagePath="https://www.123zimmerpflanzen.de/media/catalog/product/cache/7e47a816da2f8f1d082e569b4e2be5e7/s/p/spathiphyllum_sweet_rocco.jpg"
-)
+async def main():
+    # Plant data dictionary
+    await db_connection.connect()
+    plant_data = {
+        "plantID": 3,  # Unique identifier for the plant
+        "plantName": "Bogenhanf",
+        "plantType": "Sansevieria",
+        "location": "Boden",
+        "controllerID": 1,  # Assuming you have a controller with ID 1
+        "sensorIDs": [],  # List of associated sensor IDs
+        "pumpIDs": [4],  # List of associated pump IDs
+        "waterRequirement": 100,  # Water requirement in milliliters
+        "imagePath": "https://www.123zimmerpflanzen.de/media/catalog/product/cache/7e47a816da2f8f1d082e569b4e2be5e7/s/p/spathiphyllum_sweet_rocco.jpg"
+    }
 
-# Save the new plant to the database
-new_plant.save()
+    # Create and save the new plant to the database
+    plant_id = await create_new_plant(plant_data)
 
-print("New plant added to the database.")
+    print(f"New plant added to the database with id: {plant_id}.")
+
+# Run the main function
+asyncio.run(main())
