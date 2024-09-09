@@ -5,7 +5,7 @@ from database.models import (
     Sensors,
     Schedules,
     RealtimeSensorData,
-    WateringHistory,
+    Logs,
 )
 import time
 from pymongo.errors import NetworkTimeout, ConnectionFailure
@@ -41,38 +41,72 @@ class DatabaseService:
     async def start(self):
         self.logger.info("Starting database service")
         self.healthy.set()
+        await self.initialize_plants()
         await asyncio.gather(self.run(), self.monitor_network())
 
     async def stop(self):
         self.logger.info("Stopping database service")
         self.stop_event.set()
 
+    async def initialize_plants(self):
+        try:
+            self.logger.info("Initializing plants")
+            plants_json = await self.redis_client.get("all_plants")
+            redis_plants = json.loads(plants_json) if plants_json else None
+
+            new_plants = await Plants.get_plants_by_controller_id(self.controller_id)
+
+            if new_plants:
+                self.logger.info("Plants in mongodb found, updating Redis")
+                await self.redis_client.set("all_plants", json.dumps(new_plants))
+                await self.irrigation_service.update_plants(new_plants)
+            elif redis_plants:
+                self.logger.info("No plants in mongodb found, using plants from Redis")
+                await self.irrigation_service.update_plants(redis_plants)
+            else:
+                self.logger.warning("No plants found in Redis or mongodb")
+        except Exception as e:
+            self.logger.error(f"Error initializing plants: {str(e)}")
+            self.healthy.clear()
+
+
     async def run(self):
         while not self.stop_event.is_set():
             try:
                 current_time = time.time()
-                await asyncio.wait_for(self.network_available.wait(), timeout=1)
+                
+                # Check if network is available
+                if not await self.network_is_available():
+                    self.logger.warning("Network not available, skipping this iteration")
+                    await asyncio.sleep(1)
+                    continue
+
                 # Check for new data every 10 seconds
                 if current_time - self.last_check_time >= 10:
                     await self.check_for_new_data()
                     self.last_check_time = current_time
+
                 await self.save_sensor_data()
                 await self.save_watering_logs()
+                #await self.save_logs()
                 await asyncio.sleep(1)
             except asyncio.TimeoutError:
                 pass
 
-    async def monitor_network(self):
-        while not self.stop_event.is_set():
-            if not self.network_available.is_set():
-                if await self.network_is_available():
-                    self.network_available.set()
-                    self.logger.info(
-                        "Network connection restored. Resuming operations."
-                    )
-                else:
-                    self.logger.info("Waiting for network connection to be restored...")
-            await asyncio.sleep(self.network_check_interval)
+    async def network_is_available(self):
+        try:
+            # Try to connect to a known IP address (e.g., Google's DNS server)
+            reader, writer = await asyncio.wait_for(
+                asyncio.open_connection("8.8.8.8", 53), timeout=5
+            )
+            writer.close()
+            await writer.wait_closed()
+            return True
+        except (asyncio.TimeoutError, OSError, ConnectionRefusedError):
+            return False
+        except Exception as e:
+            self.logger.error(f"Error checking network availability: {e}")
+            return False
 
     async def save_watering_logs(self):
         try:
@@ -128,6 +162,19 @@ class DatabaseService:
             self.logger.error(f"Unexpected error: {e}")
             self.increment_exception_count()
             return False, {}
+    
+    async def save_logs(self):
+        try:
+            logs = await self.redis_client.lrange("logs", 0, self.batch_size - 1)
+            if not logs:
+                return
+
+            inserted_count = await Logs.process_logs(logs)
+            await self.redis_client.ltrim("logs", inserted_count, -1)
+            self.logger.info(f"Inserted {inserted_count} logs into the database")
+
+        except Exception as e:
+            self.logger.error(f"Error processing logs: {str(e)}")
 
     async def network_is_available(self):
         try:

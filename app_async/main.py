@@ -8,10 +8,10 @@ from services.database_service import DatabaseService
 from database.models import IrrigationControllers
 import tracemalloc
 import traceback
+from database.database import db_connection
 
 tracemalloc.start()
 
-# Rest of your imports and code...
 logger = setup_logger("main")
 
 
@@ -34,6 +34,7 @@ class MainController:
         return self
 
     async def initialize(self):
+        await db_connection.connect()
         self.controller_id = await self.initialize_controller()
         self.sensor_service = SensorService(
             self.controller_id, self.redis_client, self.stop_event
@@ -50,15 +51,21 @@ class MainController:
         )
 
     async def initialize_controller(self):
-        return await IrrigationControllers.check_and_save_controller()
+        try:
+            return await IrrigationControllers.check_and_save_controller()
+        except Exception as e:
+            logger.error(f"Error initializing controller: {str(e)}")
 
     async def start_services(self):
         logger.info("Starting all services...")
-        await asyncio.gather(
-            self.sensor_service.start(),
-            self.irrigation_service.start(),
-            self.database_service.start(),
-        )
+        try:
+            await asyncio.gather(
+                self.sensor_service.start(),
+                self.irrigation_service.start(),
+                self.database_service.start(),
+            )
+        except Exception as e:
+            logger.error("Failed to start all services")
 
     async def stop_services(self):
         logger.info("Stopping all services...")

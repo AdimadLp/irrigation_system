@@ -17,6 +17,8 @@ class IrrigationService:
         self.sensor_types = {}
         self.healthy = asyncio.Event()
         self.healthy.set()
+        self.last_watered_times = {}
+        self.plants_initialized = asyncio.Event()
 
     async def start(self):
         self.logger.info(
@@ -24,6 +26,8 @@ class IrrigationService:
         )
         self.healthy.set()
         try:
+            await self.wait_for_plants()
+            await self.initialize_last_watered_times()
             self.check_irrigation_task = asyncio.create_task(
                 self.check_for_irrigation()
             )
@@ -32,6 +36,14 @@ class IrrigationService:
             self.logger.error(f"Error starting irrigation service: {str(e)}")
             self.healthy.clear()
             raise
+
+    async def wait_for_plants(self):
+        try:
+            self.logger.info("Waiting for plants to be initialized...")
+            await self.plants_initialized.wait()
+            self.logger.info("Plants initialized")
+        except Exception as e:
+            self.logger.error("Failed waiting for plants")
 
     async def stop(self):
         self.logger.info("Stopping irrigation service")
@@ -48,6 +60,40 @@ class IrrigationService:
         await self.stop()
         await self.start()
 
+    async def initialize_last_watered_times(self):
+        try:
+            if not self.plants:
+                self.logger.warning("No plants available. Skipping initialization of last watered times.")
+                return
+
+            redis_logs = await self.redis_client.lrange("watering_logs", 0, -1)
+            redis_logs = [json.loads(log) for log in redis_logs]
+            
+            plant_ids = [plant["plantID"] for plant in self.plants]
+            redis_plant_ids = set(log["plantID"] for log in redis_logs)
+            mongodb_plant_ids = set(plant_ids) - redis_plant_ids
+
+            # Get last watering times from Redis
+            for log in redis_logs:
+                plant_id = log["plantID"]
+                if plant_id in plant_ids and plant_id not in self.last_watered_times:
+                    self.last_watered_times[plant_id] = log["timestamp"]
+            self.logger.debug(f"Initialized last watered times for {len(redis_logs)} plants from Redis")
+
+            # Get last watering times from MongoDB for remaining plants
+            if mongodb_plant_ids:
+                mongodb_times = await Plants.get_last_watering_times(list(mongodb_plant_ids))
+                if mongodb_times is not None:
+                    self.last_watered_times.update(mongodb_times)
+                    self.logger.debug(f"Initialized last watered times for {len(mongodb_times)} plants from MongoDB")
+                else:
+                    self.logger.debug(f"mongodb_times is none")
+
+
+            self.logger.info(f"Initialized last watered times for {len(self.last_watered_times)} plants")
+        except Exception as e:
+            self.logger.error(f"Error initializing last watered times: {str(e)}")
+
     async def irrigate_plant(self, plant):
         try:
             # Simulating irrigation process
@@ -62,6 +108,9 @@ class IrrigationService:
 
             # Send watering log to Redis
             await self.redis_client.rpush("watering_logs", json.dumps(watering_log))
+
+            # Update last_watered_times
+            self.last_watered_times[plant["plantID"]] = watering_log["timestamp"]
 
             self.logger.info(f"Irrigation completed for plant {plant['plantID']}")
         except Exception as e:
@@ -122,12 +171,23 @@ class IrrigationService:
         except Exception as e:
             self.logger.error(f"Error fetching or processing sensor data: {str(e)}")
         return False
+    
+    async def get_last_watering_time(self, plant_id):
+        try:
+            watering_logs = await self.redis_client.lrange("watering_logs", 0, -1)
+            watering_logs = [json.loads(log) for log in watering_logs]
+            plant_logs = [log for log in watering_logs if log["plantID"] == plant_id]
+            if plant_logs:
+                return plant_logs[-1]["timestamp"]
+        except Exception as e:
+            self.logger.error(f"Error fetching last watering time: {str(e)}")
+        return None
 
     async def is_irrigation_needed(self, plant):
         plant_schedules = [
             s for s in self.schedules if s["plantID"] == plant["plantID"]
         ]
-        last_watered_unix = await Plants.get_last_watering_time(plant["plantID"])
+        last_watered_unix = self.last_watered_times.get(plant["plantID"])
         now = datetime.now()
 
         if last_watered_unix is not None:
@@ -154,6 +214,7 @@ class IrrigationService:
         try:
             self.plants = new_plants
             self.logger.info(f"Updated plants: {len(new_plants)} plants")
+            self.plants_initialized.set()
         except Exception as e:
             self.logger.error(f"Error updating plants: {str(e)}")
 

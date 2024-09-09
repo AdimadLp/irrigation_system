@@ -6,3 +6,4 @@ pymongo[srv]
 pydantic
 concurrent-log-handler
 redis
+motor

@@ -1,16 +1,23 @@
 from motor.motor_asyncio import AsyncIOMotorCollection
-from ..database import db
+from ..database import db_connection
 import json
 from pymongo import InsertOne
 
 
-class WateringHistory:
-    collection: AsyncIOMotorCollection = db.watering_logs
+class Logs:
+    @classmethod
+    async def get_collection(cls):
+        if not db_connection.is_connected():
+            return None
+        return db_connection.db.logs
 
     @classmethod
-    async def process_watering_logs(cls, watering_log_list):
+    async def process_logs(cls, logs):
+        collection = await cls.get_collection()
+        if collection is None:
+            return None
         bulk_operations = []
-        for log in watering_log_list:
+        for log in logs:
             try:
                 log_json = json.loads(log)
 
@@ -18,8 +25,11 @@ class WateringHistory:
                     raise ValueError("Parsed data is not a dictionary")
 
                 data = {
-                    "plantID": log_json["plantID"],
-                    "timestamp": log_json["timestamp"],
+                    "asctime": log_json["asctime"],
+                    "scriptname": log_json["scriptname"],
+                    "custom_funcname": log_json["custom_funcname"],
+                    "levelname": log_json["levelname"],
+                    "message": log_json["message"],
                 }
                 bulk_operations.append(InsertOne(data))
 
@@ -29,11 +39,6 @@ class WateringHistory:
                 raise ValueError(f"Missing required key in log data: {e}")
 
         if bulk_operations:
-            result = await cls.collection.bulk_write(bulk_operations)
+            result = await collection.bulk_write(bulk_operations)
             return result.inserted_count
         return 0
-
-    @classmethod
-    async def get_by_plant_id(cls, plant_id):
-        cursor = cls.collection.find({"plantID": plant_id})
-        return await cursor.to_list(length=None)

@@ -1,5 +1,5 @@
 from motor.motor_asyncio import AsyncIOMotorCollection
-from ..database import db
+from ..database import db_connection
 from logging_config import setup_logger
 import json
 from pymongo import UpdateOne
@@ -8,17 +8,28 @@ logger = setup_logger(__name__)
 
 
 class Sensors:
-    collection: AsyncIOMotorCollection = db.sensors
+    @classmethod
+    async def get_collection(cls):
+        if not db_connection.is_connected():
+            return None
+        return db_connection.db.sensors
 
     @classmethod
     async def get_sensors_by_controller(cls, controller_id):
-        cursor = cls.collection.find(
+        collection = await cls.get_collection()
+        if collection is None:
+            return None
+        cursor = collection.find(
             {"controllerID": controller_id},
             projection={"sensorID": 1, "type": 1, "_id": 0},
         )
         return await cursor.to_list(length=None)
 
-    async def process_sensor_data_batch(sensor_data_list):
+    @classmethod
+    async def process_sensor_data_batch(cls, sensor_data_list):
+        collection = await cls.get_collection()
+        if collection is None:
+            return None
         bulk_operations = []
         latest_readings = {}
 
@@ -58,7 +69,7 @@ class Sensors:
                 logger.error(f"Error processing sensor data: {e}")
 
         if bulk_operations:
-            result = await db.sensors.bulk_write(bulk_operations)
+            result = await collection.bulk_write(bulk_operations)
             logger.info(f"Successfully processed {result.modified_count} items")
             return True, latest_readings
         else:
@@ -67,7 +78,10 @@ class Sensors:
 
     @classmethod
     async def get_sensor_type(cls, sensorID):
-        sensor = await cls.collection.find_one({"sensorID": sensorID})
+        collection = await cls.get_collection()
+        if collection is None:
+            return None
+        sensor = await collection.find_one({"sensorID": sensorID})
         if sensor:
             return sensor.get("type")
         else:
