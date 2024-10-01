@@ -1,6 +1,6 @@
 # Irrigation System
 
-This project is an irrigation system that uses various sensors and services to manage and control an irrigation system.
+This project uses various sensors and services to manage and control an irrigation system.
 
 ## Project Structure
 ```bash
