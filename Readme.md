@@ -12,30 +12,31 @@ irrigation_system/
 |   |   ├── models
 |   │   │   ├── __init__.py
 |   │   │   ├── irrigation_controller.py
+|   │   │   ├── logs.py
 |   │   │   ├── plants.py
 |   │   │   ├── pumps.py
 |   │   │   ├── realtime_sensor_data.py
 |   │   │   ├── schedules.py
-|   │   │   ├── sensors.py
-|   │   │   └── watering_logs.py
+|   │   │   └── sensors.py
 |   |   |
-│   │   ├── __init__.py
-│   │   └── connection.py
+│   │   └── database.py
 │   │
 │   ├── helpers/
 |   |   ├── __init__.py
 |   |   ├── create_plant.py
+|   |   ├── create_pump.py
 |   |   ├── create_schedule.py
 │   │   └── create_sensors.py
 |   |
 │   ├── services/
 │   │   ├── __init__.py
-|   |   ├── database_monitoring_service.py
+|   |   ├── database_service.py
 │   │   ├── irrigation_service.py
 │   │   └── sensor_service.py
 │   │
 |   ├── __init__.py
 |   ├── logging_config.py
+|   ├── create_documents.py
 │   └── main.py
 │
 ├── tests/
