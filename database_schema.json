@@ -1,89 +1,81 @@
 {
-    "plants": [
-      {
-        "_id": "ObjectId",
-        "plantID": "Number",
-        "name": "String",
-        "type": "String",
-        "location": "String",
-        "controllerID": "ObjectId",
-        "waterRequirement": "Number",
-        "lowerMoistureLimit": "Number",
-        "lastWatered": "Date",
-        "imagePath": "String"
-      }
-    ],
-    "irrigationControllers": [
-      {
-        "_id": "ObjectId",
-        "name": "String",
-        "ipAddress": "String",
-        "status": "String"
-      }
-    ],
-    "sensors": [
-      {
-        "_id": "ObjectId",
-        "name": "String",
-        "controllerID": "ObjectId",
-        "plantID": "ObjectId",
-        "gpioPort": "Number",
-        "type": "String"
-      }
-    ],
-    "sensorReadings": [
-      {
-        "_id": "ObjectId",
-        "sensorID": "ObjectId",
-        "value": "Number",
-        "timestamp": "Date"
-      }
-    ],
-    "realtimeSensorData": [
-      {
-        "sensorID": "ObjectId",
-        "value": "Number",
-        "timestamp": "Date"
-      }
-    ],
-    "pumps": [
-      {
-        "_id": "ObjectId",
-        "name": "String",
-        "controllerID": "ObjectId",
-        "plantID": "ObjectId",
-        "gpioPort": "Number",
-        "type": "String",
-        "status": "String",
-        "flowRate": "Number"
-      }
-    ],
-    "schedules": [
-      {
-        "_id": "ObjectId",
-        "plantID": "ObjectId",
-        "type": "String",
-        "weekdays": ["Number"],
-        "startTime": {
-          "hour": "Number",
-          "minute": "Number"
-        },
-        "endTime": {
-          "hour": "Number",
-          "minute": "Number"
-        },
-        "threshold": "Number"
-      }
-    ],
-    "wateringLogs": [
-      {
-        "_id": "ObjectId",
-        "plantID": "ObjectId",
-        "pumpID": "ObjectId",
-        "amount": "Number",
-        "timestamp": "Date",
-        "trigger": "String",
-        "scheduleID": "ObjectId"
-      }
-    ]
-  }
+  "plants": [
+    {
+      "_id": "ObjectId",
+      "plantID": "Number",
+      "plantName": "String",
+      "plantType": "String",
+      "location": "String",
+      "controllerID": "Number",
+      "waterRequirement": "Number",
+      "lowerMoistureLimit": "Number",
+      "lastWatered": "Date",
+      "imagePath": "String",
+      "wateringHistory": "Timestamp"
+    }
+  ],
+  "irrigationControllers": [
+    {
+      "_id": "ObjectId",
+      "controllerID": "Number",
+      "name": "String",
+      "ipAddress": "String",
+      "status": "String"
+    }
+  ],
+  "sensors": [
+    {
+      "_id": "ObjectId",
+      "sensorID": "Number",
+      "sensorName": "String",
+      "controllerID": "Number",
+      "gpioPort": "Number",
+      "sensorType": "String",
+      "sensorReadings": [
+        {
+          "_id": "ObjectId",
+          "value": "Number",
+          "timestamp": "Date"
+        }
+      ]
+    }
+  ],
+  "pumps": [
+    {
+      "_id": "ObjectId",
+      "pumpID": "Number",
+      "controllerID": "Number",
+      "plantID": "Number",
+      "gpioPort": "Number",
+      "type": "String",
+      "status": "String",
+      "flowRate": "Number"
+    }
+  ],
+  "schedules": [
+    {
+      "_id": "ObjectId",
+      "scheduleID": "Number",
+      "weekdays": ["Number"],
+      "startTime": {
+        "hour": "Number",
+        "minute": "Number"
+      },
+      "type": "String",
+      "plantID": "Number",
+      "controllerID": "Number",
+      "threshold": "Number",
+      "lastChanged": "Timestamp"
+    }
+  ],
+  "logs": [
+    {
+      "_id": "ObjectId",
+      "asctime": "Timestamp",
+      "scriptname": "String",
+      "custom_funcname": "String",
+      "levelname": "String",
+      "message": "String"
+    }
+  ]
+}
