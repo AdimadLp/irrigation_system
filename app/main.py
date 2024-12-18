@@ -9,6 +9,7 @@ from database.models import IrrigationControllers
 import tracemalloc
 import traceback
 from database.database import db_connection
+import argparse
 
 tracemalloc.start()
 
@@ -16,7 +17,7 @@ logger = setup_logger("main")
 
 
 class MainController:
-    def __init__(self):
+    def __init__(self, test_mode=False):
         self.controller_id = None
         self.stop_event = asyncio.Event()
         self.redis_client = redis.Redis.from_url(
@@ -26,10 +27,11 @@ class MainController:
         self.irrigation_service = None
         self.database_service = None
         self.last_restart_time = None
+        self.test_mode = test_mode
 
     @classmethod
-    async def create(cls):
-        self = cls()
+    async def create(cls, test_mode=False):
+        self = cls(test_mode)
         await self.initialize()
         return self
 
@@ -37,10 +39,10 @@ class MainController:
         await db_connection.connect()
         self.controller_id = await self.initialize_controller()
         self.sensor_service = SensorService(
-            self.controller_id, self.redis_client, self.stop_event
+            self.controller_id, self.redis_client, self.stop_event, self.test_mode
         )
         self.irrigation_service = IrrigationService(
-            self.controller_id, self.redis_client, self.stop_event
+            self.controller_id, self.redis_client, self.stop_event, self.test_mode
         )
         self.database_service = DatabaseService(
             self.controller_id,
@@ -157,7 +159,6 @@ class MainController:
 
         try:
             await self.start_services()
-            logger.info("All services started successfully.")
 
             while not self.stop_event.is_set():
                 try:
@@ -177,8 +178,14 @@ class MainController:
 
 
 async def main():
+    parser = argparse.ArgumentParser(description="Irrigation System Controller")
+    parser.add_argument(
+        "-test", action="store_true", help="Run the controller in test mode"
+    )
+    args = parser.parse_args()
+
     try:
-        controller = await MainController.create()
+        controller = await MainController.create(test_mode=args.test)
         await controller.run()
     except Exception as e:
         logger.critical(f"Critical error in main: {str(e)}")
