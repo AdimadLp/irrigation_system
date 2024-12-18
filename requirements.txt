@@ -1,6 +1,6 @@
-RPi.GPIO
+RPi.GPIO; platform_system == "Linux" and platform_machine == "armv7l"
+adafruit-circuitpython-dht; platform_system == "Linux" and platform_machine == "armv7l"
 schedule
-adafruit-circuitpython-dht
 python-dotenv
 pymongo[srv]
 pydantic
