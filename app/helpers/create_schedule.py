@@ -6,7 +6,7 @@ from datetime import datetime
 new_schedule = Schedules(
     controllerID=1,
     scheduleID=3,
-    weekdays=["Monday", "Wednesday", "Friday", "Sunday"],
+    weekdays=["Monday", "Wednesday", "Friday"],
     startTime=datetime.strptime("17:00", "%H:%M"),
     endTime=datetime.strptime("23:59", "%H:%M"),
     type="interval",

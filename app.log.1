@@ -1,78 +1,95 @@
-2024-12-18 20:45:38,995 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
-2024-12-18 20:45:38,999 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
-2024-12-18 20:45:40,022 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
-2024-12-18 20:45:40,022 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
-2024-12-18 20:45:40,023 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
-2024-12-18 20:45:41,046 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
-2024-12-18 20:45:41,047 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
-2024-12-18 20:45:41,051 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
-2024-12-18 20:45:42,075 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
-2024-12-18 20:45:42,076 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
-2024-12-18 20:45:42,079 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
-2024-12-18 20:45:43,100 - database_service.py - check_for_new_data - INFO - Checking for new data...
-2024-12-18 20:45:43,122 - irrigation_service.py - update_plants - INFO - Updated plants: 3 plants
-2024-12-18 20:45:43,124 - database_service.py - check_for_new_schedules - WARNING - No schedules found for this controller.
-2024-12-18 20:45:43,124 - irrigation_service.py - update_schedules - INFO - Updated schedules: 0 schedules
-2024-12-18 20:45:43,125 - irrigation_service.py - update_sensor_types - INFO - Updated sensor types: 2 sensors
-2024-12-18 20:45:43,125 - irrigation_service.py - update_pumps - INFO - Updated pumps: 3 pumps
-2024-12-18 20:45:43,125 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
-2024-12-18 20:45:43,126 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
-2024-12-18 20:45:43,127 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
-2024-12-18 20:45:43,128 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
-2024-12-18 20:45:44,152 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
-2024-12-18 20:45:44,153 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
-2024-12-18 20:45:44,157 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
-2024-12-18 20:45:45,180 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
-2024-12-18 20:45:45,181 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
-2024-12-18 20:45:45,185 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
-2024-12-18 20:45:46,156 - main.py - handle_shutdown - INFO - Received signal 2. Initiating shutdown...
-2024-12-18 20:45:46,157 - main.py - stop_services - INFO - Stopping all services...
-2024-12-18 20:45:46,158 - sensor_service.py - stop - INFO - Stopping sensor service
-2024-12-18 20:45:46,158 - irrigation_service.py - stop - INFO - Stopping irrigation service
-2024-12-18 20:45:46,159 - database_service.py - stop - INFO - Stopping database service
-2024-12-18 20:45:46,159 - irrigation_service.py - check_for_irrigation - INFO - Irrigation check loop cancelled
-2024-12-18 20:45:46,160 - irrigation_service.py - check_for_irrigation - INFO - Irrigation check loop ended
-2024-12-18 20:45:46,160 - irrigation_service.py - stop - INFO - Irrigation service stopped
-2024-12-18 20:45:46,188 - main.py - run - INFO - All services started successfully.
-2024-12-18 20:45:46,189 - main.py - stop_services - INFO - Stopping all services...
-2024-12-18 20:45:46,189 - sensor_service.py - stop - INFO - Stopping sensor service
-2024-12-18 20:45:46,190 - irrigation_service.py - stop - INFO - Stopping irrigation service
-2024-12-18 20:45:46,190 - irrigation_service.py - stop - INFO - Irrigation service stopped
-2024-12-18 20:45:46,191 - database_service.py - stop - INFO - Stopping database service
-2024-12-18 20:45:47,191 - main.py - run - INFO - All services stopped. Exiting.
-2024-12-18 20:45:47,192 - main.py - main - INFO - Program terminated.
-2024-12-18 20:49:19,154 - database.py - connect - INFO - Connected to MongoDB successfully.
-2024-12-18 20:49:19,469 - main.py - start_services - INFO - Starting all services...
-2024-12-18 20:49:19,470 - sensor_service.py - start - INFO - Starting sensor service
-2024-12-18 20:49:19,470 - irrigation_service.py - start - INFO - Starting irrigation service for controller 1
-2024-12-18 20:49:19,471 - irrigation_service.py - wait_for_plants - INFO - Waiting for plants to be initialized...
-2024-12-18 20:49:19,471 - database_service.py - start - INFO - Starting database service
-2024-12-18 20:49:19,472 - database_service.py - initialize_plants - INFO - Initializing plants
-2024-12-18 20:49:19,498 - database_service.py - initialize_plants - INFO - Plants in mongodb found, updating Redis
-2024-12-18 20:49:19,500 - irrigation_service.py - update_plants - INFO - Updated plants: 3 plants
-2024-12-18 20:49:19,501 - irrigation_service.py - wait_for_plants - INFO - Plants initialized
-2024-12-18 20:49:19,521 - database_service.py - check_for_new_data - INFO - Checking for new data...
-2024-12-18 20:49:19,529 - irrigation_service.py - initialize_last_watered_times - INFO - Initialized last watered times for 3 plants
-2024-12-18 20:49:19,529 - irrigation_service.py - start - INFO - Irrigation check task created
-2024-12-18 20:49:19,529 - irrigation_service.py - check_for_irrigation - INFO - Starting irrigation check loop
-2024-12-18 20:49:19,550 - database_service.py - check_for_new_schedules - WARNING - No schedules found for this controller.
-2024-12-18 20:49:19,552 - irrigation_service.py - update_schedules - INFO - Updated schedules: 0 schedules
-2024-12-18 20:49:19,582 - irrigation_service.py - update_pumps - INFO - Updated pumps: 3 pumps
-2024-12-18 20:49:19,683 - irrigation_service.py - update_plants - INFO - Updated plants: 3 plants
-2024-12-18 20:49:19,698 - irrigation_service.py - update_sensor_types - INFO - Updated sensor types: 2 sensors
-2024-12-18 20:49:19,699 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
-2024-12-18 20:49:29,927 - database_service.py - check_for_new_data - INFO - Checking for new data...
-2024-12-18 20:49:29,958 - irrigation_service.py - update_plants - INFO - Updated plants: 3 plants
-2024-12-18 20:49:29,960 - database_service.py - check_for_new_schedules - WARNING - No schedules found for this controller.
-2024-12-18 20:49:29,960 - irrigation_service.py - update_schedules - INFO - Updated schedules: 0 schedules
-2024-12-18 20:49:29,961 - irrigation_service.py - update_sensor_types - INFO - Updated sensor types: 2 sensors
-2024-12-18 20:49:30,100 - irrigation_service.py - update_pumps - INFO - Updated pumps: 3 pumps
-2024-12-18 20:49:30,101 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
-2024-12-18 20:49:40,328 - database_service.py - check_for_new_data - INFO - Checking for new data...
-2024-12-18 20:49:40,356 - irrigation_service.py - update_plants - INFO - Updated plants: 3 plants
-2024-12-18 20:49:40,358 - database_service.py - check_for_new_schedules - WARNING - No schedules found for this controller.
-2024-12-18 20:49:40,361 - irrigation_service.py - update_schedules - INFO - Updated schedules: 0 schedules
-2024-12-18 20:49:40,362 - irrigation_service.py - update_sensor_types - INFO - Updated sensor types: 2 sensors
-2024-12-18 20:49:40,363 - irrigation_service.py - update_pumps - INFO - Updated pumps: 3 pumps
-2024-12-18 20:49:40,363 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
-2024-12-18 20:49:50,590 - database_service.py - check_for_new_data - INFO - Checking for new data...
+2024-12-18 20:49:50,626 - database_service.py - check_for_new_schedules - WARNING - No schedules found for this controller.
+2024-12-18 20:49:50,628 - irrigation_service.py - update_schedules - INFO - Updated schedules: 0 schedules
+2024-12-18 20:49:50,628 - irrigation_service.py - update_plants - INFO - Updated plants: 3 plants
+2024-12-18 20:49:50,629 - irrigation_service.py - update_pumps - INFO - Updated pumps: 3 pumps
+2024-12-18 20:49:50,630 - irrigation_service.py - update_sensor_types - INFO - Updated sensor types: 2 sensors
+2024-12-18 20:49:50,630 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
+2024-12-18 20:49:56,828 - main.py - handle_shutdown - INFO - Received signal 2. Initiating shutdown...
+2024-12-18 20:49:56,830 - main.py - stop_services - INFO - Stopping all services...
+2024-12-18 20:49:56,831 - sensor_service.py - stop - INFO - Stopping sensor service
+2024-12-18 20:49:56,832 - irrigation_service.py - stop - INFO - Stopping irrigation service
+2024-12-18 20:49:56,833 - database_service.py - stop - INFO - Stopping database service
+2024-12-18 20:49:56,834 - irrigation_service.py - check_for_irrigation - INFO - Irrigation check loop cancelled
+2024-12-18 20:49:56,834 - irrigation_service.py - check_for_irrigation - INFO - Irrigation check loop ended
+2024-12-18 20:49:56,835 - irrigation_service.py - stop - INFO - Irrigation service stopped
+2024-12-18 20:49:57,770 - main.py - run - INFO - All services started successfully.
+2024-12-18 20:49:57,770 - main.py - stop_services - INFO - Stopping all services...
+2024-12-18 20:49:57,771 - sensor_service.py - stop - INFO - Stopping sensor service
+2024-12-18 20:49:57,771 - irrigation_service.py - stop - INFO - Stopping irrigation service
+2024-12-18 20:49:57,772 - irrigation_service.py - stop - INFO - Irrigation service stopped
+2024-12-18 20:49:57,772 - database_service.py - stop - INFO - Stopping database service
+2024-12-18 20:49:58,772 - main.py - run - INFO - All services stopped. Exiting.
+2024-12-18 20:49:58,773 - main.py - main - INFO - Program terminated.
+2024-12-18 20:51:23,052 - database.py - connect - INFO - Connected to MongoDB successfully.
+2024-12-18 20:51:23,393 - main.py - start_services - INFO - Starting all services...
+2024-12-18 20:51:23,394 - sensor_service.py - start - INFO - Starting sensor service
+2024-12-18 20:51:23,395 - irrigation_service.py - start - INFO - Starting irrigation service for controller 1
+2024-12-18 20:51:23,395 - irrigation_service.py - wait_for_plants - INFO - Waiting for plants to be initialized...
+2024-12-18 20:51:23,396 - database_service.py - start - INFO - Starting database service
+2024-12-18 20:51:23,396 - database_service.py - initialize_plants - INFO - Initializing plants
+2024-12-18 20:51:23,422 - database_service.py - initialize_plants - INFO - Plants in mongodb found, updating Redis
+2024-12-18 20:51:23,424 - irrigation_service.py - update_plants - INFO - Updated plants: 3 plants
+2024-12-18 20:51:23,425 - irrigation_service.py - wait_for_plants - INFO - Plants initialized
+2024-12-18 20:51:23,444 - database_service.py - check_for_new_data - INFO - Checking for new data...
+2024-12-18 20:51:23,453 - irrigation_service.py - initialize_last_watered_times - INFO - Initialized last watered times for 3 plants
+2024-12-18 20:51:23,453 - irrigation_service.py - start - INFO - Irrigation check task created
+2024-12-18 20:51:23,454 - irrigation_service.py - check_for_irrigation - INFO - Starting irrigation check loop
+2024-12-18 20:51:23,471 - database_service.py - check_for_new_schedules - WARNING - No schedules found for this controller.
+2024-12-18 20:51:23,472 - irrigation_service.py - update_schedules - INFO - Updated schedules: 0 schedules
+2024-12-18 20:51:23,491 - irrigation_service.py - update_pumps - INFO - Updated pumps: 3 pumps
+2024-12-18 20:51:23,606 - irrigation_service.py - update_sensor_types - INFO - Updated sensor types: 2 sensors
+2024-12-18 20:51:23,621 - irrigation_service.py - update_plants - INFO - Updated plants: 3 plants
+2024-12-18 20:51:23,622 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
+2024-12-18 20:51:33,851 - database_service.py - check_for_new_data - INFO - Checking for new data...
+2024-12-18 20:51:33,877 - irrigation_service.py - update_pumps - INFO - Updated pumps: 3 pumps
+2024-12-18 20:51:33,878 - database_service.py - check_for_new_schedules - WARNING - No schedules found for this controller.
+2024-12-18 20:51:33,880 - irrigation_service.py - update_schedules - INFO - Updated schedules: 0 schedules
+2024-12-18 20:51:33,881 - irrigation_service.py - update_plants - INFO - Updated plants: 3 plants
+2024-12-18 20:51:34,020 - irrigation_service.py - update_sensor_types - INFO - Updated sensor types: 2 sensors
+2024-12-18 20:51:34,020 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
+2024-12-18 20:51:40,816 - main.py - handle_shutdown - INFO - Received signal 2. Initiating shutdown...
+2024-12-18 20:51:40,817 - main.py - stop_services - INFO - Stopping all services...
+2024-12-18 20:51:40,817 - sensor_service.py - stop - INFO - Stopping sensor service
+2024-12-18 20:51:40,818 - irrigation_service.py - stop - INFO - Stopping irrigation service
+2024-12-18 20:51:40,818 - database_service.py - stop - INFO - Stopping database service
+2024-12-18 20:51:40,819 - irrigation_service.py - check_for_irrigation - INFO - Irrigation check loop cancelled
+2024-12-18 20:51:40,819 - irrigation_service.py - check_for_irrigation - INFO - Irrigation check loop ended
+2024-12-18 20:51:40,820 - irrigation_service.py - stop - INFO - Irrigation service stopped
+2024-12-18 20:51:41,159 - main.py - run - INFO - All services started successfully.
+2024-12-18 20:51:41,160 - main.py - stop_services - INFO - Stopping all services...
+2024-12-18 20:51:41,160 - sensor_service.py - stop - INFO - Stopping sensor service
+2024-12-18 20:51:41,161 - irrigation_service.py - stop - INFO - Stopping irrigation service
+2024-12-18 20:51:41,162 - irrigation_service.py - stop - INFO - Irrigation service stopped
+2024-12-18 20:51:41,162 - database_service.py - stop - INFO - Stopping database service
+2024-12-18 20:51:42,162 - main.py - run - INFO - All services stopped. Exiting.
+2024-12-18 20:51:42,163 - main.py - main - INFO - Program terminated.
+2025-03-02 16:53:02,276 - database.py - connect - ERROR - Failed to connect to MongoDB: The DNS query name does not exist: _mongodb._tcp.cluster0.pdaqcm3.mongodb.net.. Retrying in 5 seconds...
+2025-03-02 16:53:07,291 - database.py - connect - ERROR - Failed to connect to MongoDB: The DNS query name does not exist: _mongodb._tcp.cluster0.pdaqcm3.mongodb.net.. Retrying in 5 seconds...
+2025-03-02 16:53:12,303 - database.py - connect - ERROR - Failed to connect to MongoDB: The DNS query name does not exist: _mongodb._tcp.cluster0.pdaqcm3.mongodb.net.. Retrying in 5 seconds...
+2025-03-02 16:53:17,317 - database.py - connect - ERROR - Failed to connect to MongoDB: The DNS query name does not exist: _mongodb._tcp.cluster0.pdaqcm3.mongodb.net.. Retrying in 5 seconds...
+2025-03-02 16:53:17,975 - main.py - main - INFO - Program terminated.
+2025-03-02 16:54:01,889 - database.py - connect - ERROR - Failed to connect to MongoDB: The DNS query name does not exist: _mongodb._tcp.cluster0.pdaqcm3.mongodb.net.. Retrying in 5 seconds...
+2025-03-02 16:54:06,925 - database.py - connect - ERROR - Failed to connect to MongoDB: The DNS query name does not exist: _mongodb._tcp.cluster0.pdaqcm3.mongodb.net.. Retrying in 5 seconds...
+2025-03-02 16:54:11,939 - database.py - connect - ERROR - Failed to connect to MongoDB: The DNS query name does not exist: _mongodb._tcp.cluster0.pdaqcm3.mongodb.net.. Retrying in 5 seconds...
+2025-03-02 16:54:16,954 - database.py - connect - ERROR - Failed to connect to MongoDB: The DNS query name does not exist: _mongodb._tcp.cluster0.pdaqcm3.mongodb.net.. Retrying in 5 seconds...
+2025-03-02 16:54:21,965 - database.py - connect - ERROR - Failed to connect to MongoDB: The DNS query name does not exist: _mongodb._tcp.cluster0.pdaqcm3.mongodb.net.. Retrying in 5 seconds...
+2025-03-02 16:54:26,979 - database.py - connect - ERROR - Failed to connect to MongoDB: The DNS query name does not exist: _mongodb._tcp.cluster0.pdaqcm3.mongodb.net.. Retrying in 5 seconds...
+2025-03-02 16:54:31,992 - database.py - connect - ERROR - Failed to connect to MongoDB: The DNS query name does not exist: _mongodb._tcp.cluster0.pdaqcm3.mongodb.net.. Retrying in 5 seconds...
+2025-03-02 16:54:35,568 - main.py - main - INFO - Program terminated.
+2025-03-02 18:37:54,445 - database.py - connect - INFO - Connected to MongoDB successfully.
+2025-03-02 18:37:54,849 - main.py - start_services - INFO - Starting all services...
+2025-03-02 18:37:54,849 - sensor_service.py - start - INFO - Starting sensor service
+2025-03-02 18:37:54,850 - irrigation_service.py - start - INFO - Starting irrigation service for controller 1
+2025-03-02 18:37:54,850 - irrigation_service.py - wait_for_plants - INFO - Waiting for plants to be initialized...
+2025-03-02 18:37:54,850 - database_service.py - start - INFO - Starting database service
+2025-03-02 18:37:54,850 - database_service.py - initialize_plants - INFO - Initializing plants
+2025-03-02 18:37:54,881 - database_service.py - initialize_plants - INFO - Plants in mongodb found, updating Redis
+2025-03-02 18:37:54,882 - irrigation_service.py - update_plants - INFO - Updated plants: 3 plants
+2025-03-02 18:37:54,884 - irrigation_service.py - wait_for_plants - INFO - Plants initialized
+2025-03-02 18:37:54,903 - database_service.py - check_for_new_data - INFO - Checking for new data...
+2025-03-02 18:37:54,914 - irrigation_service.py - initialize_last_watered_times - INFO - Initialized last watered times for 3 plants
+2025-03-02 18:37:54,914 - irrigation_service.py - start - INFO - Irrigation check task created
+2025-03-02 18:37:54,914 - irrigation_service.py - check_for_irrigation - INFO - Starting irrigation check loop
+2025-03-02 18:37:54,945 - database_service.py - check_for_new_schedules - WARNING - No schedules found for this controller.
+2025-03-02 18:37:54,946 - irrigation_service.py - update_schedules - INFO - Updated schedules: 0 schedules
+2025-03-02 18:37:54,970 - irrigation_service.py - update_pumps - INFO - Updated pumps: 3 pumps

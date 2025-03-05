@@ -1,65 +1,58 @@
-2024-12-18 20:49:50,626 - database_service.py - check_for_new_schedules - WARNING - No schedules found for this controller.
-2024-12-18 20:49:50,628 - irrigation_service.py - update_schedules - INFO - Updated schedules: 0 schedules
-2024-12-18 20:49:50,628 - irrigation_service.py - update_plants - INFO - Updated plants: 3 plants
-2024-12-18 20:49:50,629 - irrigation_service.py - update_pumps - INFO - Updated pumps: 3 pumps
-2024-12-18 20:49:50,630 - irrigation_service.py - update_sensor_types - INFO - Updated sensor types: 2 sensors
-2024-12-18 20:49:50,630 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
-2024-12-18 20:49:56,828 - main.py - handle_shutdown - INFO - Received signal 2. Initiating shutdown...
-2024-12-18 20:49:56,830 - main.py - stop_services - INFO - Stopping all services...
-2024-12-18 20:49:56,831 - sensor_service.py - stop - INFO - Stopping sensor service
-2024-12-18 20:49:56,832 - irrigation_service.py - stop - INFO - Stopping irrigation service
-2024-12-18 20:49:56,833 - database_service.py - stop - INFO - Stopping database service
-2024-12-18 20:49:56,834 - irrigation_service.py - check_for_irrigation - INFO - Irrigation check loop cancelled
-2024-12-18 20:49:56,834 - irrigation_service.py - check_for_irrigation - INFO - Irrigation check loop ended
-2024-12-18 20:49:56,835 - irrigation_service.py - stop - INFO - Irrigation service stopped
-2024-12-18 20:49:57,770 - main.py - run - INFO - All services started successfully.
-2024-12-18 20:49:57,770 - main.py - stop_services - INFO - Stopping all services...
-2024-12-18 20:49:57,771 - sensor_service.py - stop - INFO - Stopping sensor service
-2024-12-18 20:49:57,771 - irrigation_service.py - stop - INFO - Stopping irrigation service
-2024-12-18 20:49:57,772 - irrigation_service.py - stop - INFO - Irrigation service stopped
-2024-12-18 20:49:57,772 - database_service.py - stop - INFO - Stopping database service
-2024-12-18 20:49:58,772 - main.py - run - INFO - All services stopped. Exiting.
-2024-12-18 20:49:58,773 - main.py - main - INFO - Program terminated.
-2024-12-18 20:51:23,052 - database.py - connect - INFO - Connected to MongoDB successfully.
-2024-12-18 20:51:23,393 - main.py - start_services - INFO - Starting all services...
-2024-12-18 20:51:23,394 - sensor_service.py - start - INFO - Starting sensor service
-2024-12-18 20:51:23,395 - irrigation_service.py - start - INFO - Starting irrigation service for controller 1
-2024-12-18 20:51:23,395 - irrigation_service.py - wait_for_plants - INFO - Waiting for plants to be initialized...
-2024-12-18 20:51:23,396 - database_service.py - start - INFO - Starting database service
-2024-12-18 20:51:23,396 - database_service.py - initialize_plants - INFO - Initializing plants
-2024-12-18 20:51:23,422 - database_service.py - initialize_plants - INFO - Plants in mongodb found, updating Redis
-2024-12-18 20:51:23,424 - irrigation_service.py - update_plants - INFO - Updated plants: 3 plants
-2024-12-18 20:51:23,425 - irrigation_service.py - wait_for_plants - INFO - Plants initialized
-2024-12-18 20:51:23,444 - database_service.py - check_for_new_data - INFO - Checking for new data...
-2024-12-18 20:51:23,453 - irrigation_service.py - initialize_last_watered_times - INFO - Initialized last watered times for 3 plants
-2024-12-18 20:51:23,453 - irrigation_service.py - start - INFO - Irrigation check task created
-2024-12-18 20:51:23,454 - irrigation_service.py - check_for_irrigation - INFO - Starting irrigation check loop
-2024-12-18 20:51:23,471 - database_service.py - check_for_new_schedules - WARNING - No schedules found for this controller.
-2024-12-18 20:51:23,472 - irrigation_service.py - update_schedules - INFO - Updated schedules: 0 schedules
-2024-12-18 20:51:23,491 - irrigation_service.py - update_pumps - INFO - Updated pumps: 3 pumps
-2024-12-18 20:51:23,606 - irrigation_service.py - update_sensor_types - INFO - Updated sensor types: 2 sensors
-2024-12-18 20:51:23,621 - irrigation_service.py - update_plants - INFO - Updated plants: 3 plants
-2024-12-18 20:51:23,622 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
-2024-12-18 20:51:33,851 - database_service.py - check_for_new_data - INFO - Checking for new data...
-2024-12-18 20:51:33,877 - irrigation_service.py - update_pumps - INFO - Updated pumps: 3 pumps
-2024-12-18 20:51:33,878 - database_service.py - check_for_new_schedules - WARNING - No schedules found for this controller.
-2024-12-18 20:51:33,880 - irrigation_service.py - update_schedules - INFO - Updated schedules: 0 schedules
-2024-12-18 20:51:33,881 - irrigation_service.py - update_plants - INFO - Updated plants: 3 plants
-2024-12-18 20:51:34,020 - irrigation_service.py - update_sensor_types - INFO - Updated sensor types: 2 sensors
-2024-12-18 20:51:34,020 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
-2024-12-18 20:51:40,816 - main.py - handle_shutdown - INFO - Received signal 2. Initiating shutdown...
-2024-12-18 20:51:40,817 - main.py - stop_services - INFO - Stopping all services...
-2024-12-18 20:51:40,817 - sensor_service.py - stop - INFO - Stopping sensor service
-2024-12-18 20:51:40,818 - irrigation_service.py - stop - INFO - Stopping irrigation service
-2024-12-18 20:51:40,818 - database_service.py - stop - INFO - Stopping database service
-2024-12-18 20:51:40,819 - irrigation_service.py - check_for_irrigation - INFO - Irrigation check loop cancelled
-2024-12-18 20:51:40,819 - irrigation_service.py - check_for_irrigation - INFO - Irrigation check loop ended
-2024-12-18 20:51:40,820 - irrigation_service.py - stop - INFO - Irrigation service stopped
-2024-12-18 20:51:41,159 - main.py - run - INFO - All services started successfully.
-2024-12-18 20:51:41,160 - main.py - stop_services - INFO - Stopping all services...
-2024-12-18 20:51:41,160 - sensor_service.py - stop - INFO - Stopping sensor service
-2024-12-18 20:51:41,161 - irrigation_service.py - stop - INFO - Stopping irrigation service
-2024-12-18 20:51:41,162 - irrigation_service.py - stop - INFO - Irrigation service stopped
-2024-12-18 20:51:41,162 - database_service.py - stop - INFO - Stopping database service
-2024-12-18 20:51:42,162 - main.py - run - INFO - All services stopped. Exiting.
-2024-12-18 20:51:42,163 - main.py - main - INFO - Program terminated.
+2025-03-02 18:37:55,071 - irrigation_service.py - update_plants - INFO - Updated plants: 3 plants
+2025-03-02 18:37:55,084 - irrigation_service.py - update_sensor_types - INFO - Updated sensor types: 2 sensors
+2025-03-02 18:37:55,085 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
+2025-03-02 18:38:05,311 - database_service.py - check_for_new_data - INFO - Checking for new data...
+2025-03-02 18:38:05,338 - irrigation_service.py - update_pumps - INFO - Updated pumps: 3 pumps
+2025-03-02 18:38:05,342 - database_service.py - check_for_new_schedules - WARNING - No schedules found for this controller.
+2025-03-02 18:38:05,343 - irrigation_service.py - update_schedules - INFO - Updated schedules: 0 schedules
+2025-03-02 18:38:05,343 - irrigation_service.py - update_sensor_types - INFO - Updated sensor types: 2 sensors
+2025-03-02 18:38:05,494 - irrigation_service.py - update_plants - INFO - Updated plants: 3 plants
+2025-03-02 18:38:05,495 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
+2025-03-02 18:38:15,721 - database_service.py - check_for_new_data - INFO - Checking for new data...
+2025-03-02 18:38:15,749 - irrigation_service.py - update_plants - INFO - Updated plants: 3 plants
+2025-03-02 18:38:15,755 - database_service.py - check_for_new_schedules - WARNING - No schedules found for this controller.
+2025-03-02 18:38:15,756 - irrigation_service.py - update_schedules - INFO - Updated schedules: 0 schedules
+2025-03-02 18:38:15,757 - irrigation_service.py - update_sensor_types - INFO - Updated sensor types: 2 sensors
+2025-03-02 18:38:15,759 - irrigation_service.py - update_pumps - INFO - Updated pumps: 3 pumps
+2025-03-02 18:38:15,759 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
+2025-03-02 18:38:25,990 - database_service.py - check_for_new_data - INFO - Checking for new data...
+2025-03-02 18:38:26,019 - database_service.py - check_for_new_schedules - WARNING - No schedules found for this controller.
+2025-03-02 18:38:26,024 - irrigation_service.py - update_schedules - INFO - Updated schedules: 0 schedules
+2025-03-02 18:38:26,025 - irrigation_service.py - update_plants - INFO - Updated plants: 3 plants
+2025-03-02 18:38:26,026 - irrigation_service.py - update_sensor_types - INFO - Updated sensor types: 2 sensors
+2025-03-02 18:38:26,026 - irrigation_service.py - update_pumps - INFO - Updated pumps: 3 pumps
+2025-03-02 18:38:26,027 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
+2025-03-02 18:38:36,254 - database_service.py - check_for_new_data - INFO - Checking for new data...
+2025-03-02 18:38:36,281 - irrigation_service.py - update_plants - INFO - Updated plants: 3 plants
+2025-03-02 18:38:36,285 - irrigation_service.py - update_sensor_types - INFO - Updated sensor types: 2 sensors
+2025-03-02 18:38:36,285 - irrigation_service.py - update_pumps - INFO - Updated pumps: 3 pumps
+2025-03-02 18:38:36,288 - database_service.py - check_for_new_schedules - WARNING - No schedules found for this controller.
+2025-03-02 18:38:36,289 - irrigation_service.py - update_schedules - INFO - Updated schedules: 0 schedules
+2025-03-02 18:38:36,289 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
+2025-03-02 18:38:40,035 - main.py - handle_shutdown - INFO - Received signal 2. Initiating shutdown...
+2025-03-02 18:38:40,035 - main.py - stop_services - INFO - Stopping all services...
+2025-03-02 18:38:40,036 - sensor_service.py - stop - INFO - Stopping sensor service
+2025-03-02 18:38:40,037 - irrigation_service.py - stop - INFO - Stopping irrigation service
+2025-03-02 18:38:40,037 - database_service.py - stop - INFO - Stopping database service
+2025-03-02 18:38:40,038 - irrigation_service.py - check_for_irrigation - INFO - Irrigation check loop cancelled
+2025-03-02 18:38:40,038 - irrigation_service.py - check_for_irrigation - INFO - Irrigation check loop ended
+2025-03-02 18:38:40,038 - irrigation_service.py - stop - INFO - Irrigation service stopped
+2025-03-02 18:38:40,206 - main.py - handle_shutdown - INFO - Received signal 2. Initiating shutdown...
+2025-03-02 18:38:40,206 - main.py - stop_services - INFO - Stopping all services...
+2025-03-02 18:38:40,207 - sensor_service.py - stop - INFO - Stopping sensor service
+2025-03-02 18:38:40,207 - irrigation_service.py - stop - INFO - Stopping irrigation service
+2025-03-02 18:38:40,208 - irrigation_service.py - stop - INFO - Irrigation service stopped
+2025-03-02 18:38:40,209 - database_service.py - stop - INFO - Stopping database service
+2025-03-02 18:38:40,358 - main.py - stop_services - INFO - Stopping all services...
+2025-03-02 18:38:40,359 - sensor_service.py - stop - INFO - Stopping sensor service
+2025-03-02 18:38:40,359 - irrigation_service.py - stop - INFO - Stopping irrigation service
+2025-03-02 18:38:40,360 - irrigation_service.py - stop - INFO - Irrigation service stopped
+2025-03-02 18:38:40,360 - database_service.py - stop - INFO - Stopping database service
+2025-03-02 18:38:40,565 - main.py - handle_shutdown - INFO - Received signal 2. Initiating shutdown...
+2025-03-02 18:38:40,565 - main.py - stop_services - INFO - Stopping all services...
+2025-03-02 18:38:40,566 - sensor_service.py - stop - INFO - Stopping sensor service
+2025-03-02 18:38:40,567 - irrigation_service.py - stop - INFO - Stopping irrigation service
+2025-03-02 18:38:40,567 - irrigation_service.py - stop - INFO - Irrigation service stopped
+2025-03-02 18:38:40,568 - database_service.py - stop - INFO - Stopping database service
+2025-03-02 18:38:41,360 - main.py - run - INFO - All services stopped. Exiting.
+2025-03-02 18:38:41,361 - main.py - main - INFO - Program terminated.
