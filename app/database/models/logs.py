@@ -1,44 +1,45 @@
-from motor.motor_asyncio import AsyncIOMotorCollection
-from ..database import db_connection
-import json
-from pymongo import InsertOne
+from google.cloud.firestore_v1.base_query import FieldFilter
+from app.database.firebase import db
+from datetime import datetime
 
 
 class Logs:
     @classmethod
     async def get_collection(cls):
-        if not db_connection.is_connected():
-            return None
-        return db_connection.db.logs
+        collection_name = "logs"
+        return db.collection(collection_name)
 
     @classmethod
     async def process_logs(cls, logs):
         collection = await cls.get_collection()
-        if collection is None:
-            return None
-        bulk_operations = []
-        for log in logs:
+        batch = db.batch()
+        inserted_count = 0
+
+        for log_entry in logs:
             try:
-                log_json = json.loads(log)
-
-                if not isinstance(log_json, dict):
-                    raise ValueError("Parsed data is not a dictionary")
-
-                data = {
-                    "asctime": log_json["asctime"],
-                    "scriptname": log_json["scriptname"],
-                    "custom_funcname": log_json["custom_funcname"],
-                    "levelname": log_json["levelname"],
-                    "message": log_json["message"],
+                #  log_entry is expected to be a dictionary
+                doc_ref = collection.document()  # auto-generates a document ID
+                log_data = {
+                    "logID": doc_ref.id,  # store the auto-generated document ID
+                    "timestamp": datetime.strptime(
+                        log_entry["asctime"], "%Y-%m-%d %H:%M:%S,%f"
+                    ),
+                    "scriptname": log_entry["scriptname"],
+                    "custom_funcname": log_entry["custom_funcname"],
+                    "levelname": log_entry["levelname"],
+                    "message": log_entry["message"],
                 }
-                bulk_operations.append(InsertOne(data))
+                batch.set(doc_ref, log_data)
+                inserted_count += 1
 
-            except json.JSONDecodeError:
-                raise ValueError("Invalid JSON data")
-            except KeyError as e:
-                raise ValueError(f"Missing required key in log data: {e}")
-
-        if bulk_operations:
-            result = await collection.bulk_write(bulk_operations)
-            return result.inserted_count
-        return 0
+            except (ValueError, KeyError, TypeError) as e:
+                print(f"Invalid log entry format: {e}, log entry: {log_entry}")
+        try:
+            if inserted_count > 0:
+                batch.commit()
+                return inserted_count
+            else:
+                return 0
+        except Exception as e:
+            print(f"Error committing logs batch : {e}")
+            return 0

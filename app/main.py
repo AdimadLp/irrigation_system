@@ -1,14 +1,14 @@
 import asyncio
 import signal
 import redis.asyncio as redis
-from logging_config import setup_logger
-from services.irrigation_service import IrrigationService
-from services.sensor_service import SensorService
-from services.database_service import DatabaseService
-from database.models import IrrigationControllers
+from app.logging_config import setup_logger
+from app.services.irrigation_service import IrrigationService
+from app.services.sensor_service import SensorService
+from app.services.database_service import DatabaseService
+from app.database.models import IrrigationControllers
 import tracemalloc
 import traceback
-from database.database import db_connection
+from app.database.firebase import db
 import argparse
 
 tracemalloc.start()
@@ -36,7 +36,6 @@ class MainController:
         return self
 
     async def initialize(self):
-        await db_connection.connect()
         self.controller_id = await self.initialize_controller()
         self.sensor_service = SensorService(
             self.controller_id, self.redis_client, self.stop_event, self.test_mode
@@ -67,7 +66,7 @@ class MainController:
                 self.database_service.start(),
             )
         except Exception as e:
-            logger.error(f"Failed to start all services: {str(e)}")
+            logger.exception("An error occurred")
 
     async def stop_services(self):
         logger.info("Stopping all services...")

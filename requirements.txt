@@ -7,3 +7,5 @@ pydantic
 concurrent-log-handler
 redis
 motor>=3.6
+firebase-admin
+psycopg2-binary

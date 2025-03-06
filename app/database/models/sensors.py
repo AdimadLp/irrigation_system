@@ -1,44 +1,38 @@
-from motor.motor_asyncio import AsyncIOMotorCollection
-from ..database import db_connection
-from logging_config import setup_logger
+from firebase_admin import firestore
+from google.cloud.firestore_v1.base_query import FieldFilter
+from app.database.firebase import db
+from app.logging_config import setup_logger
 import json
-from pymongo import UpdateOne
 
 logger = setup_logger(__name__)
 
 
 class Sensors:
     @classmethod
-    async def get_collection(cls):
-        if not db_connection.is_connected():
-            return None
-        return db_connection.db.sensors
-    
-    @classmethod
-    async def create(cls, sensor_data):
-        collection = await cls.get_collection()
-        if collection is None:
-            return None
-        result = await collection.insert_one(sensor_data)
-        return result.inserted_id
+    def get_collection(cls):
+        return db.collection("sensors")
 
     @classmethod
-    async def get_sensors_by_controller(cls, controller_id):
-        collection = await cls.get_collection()
-        if collection is None:
-            return None
-        cursor = collection.find(
-            {"controllerID": controller_id},
-            projection={"sensorID": 1, "type": 1, "_id": 0},
-        )
-        return await cursor.to_list(length=None)
+    def create(cls, sensor_data):
+        collection = cls.get_collection()
+        doc_ref = collection.document()  # Auto-generate a document ID
+        doc_ref.set(sensor_data)
+        return doc_ref.id
 
     @classmethod
-    async def process_sensor_data_batch(cls, sensor_data_list):
-        collection = await cls.get_collection()
-        if collection is None:
-            return None
-        bulk_operations = []
+    def get_sensors_by_controller(cls, controller_id):
+        collection = cls.get_collection()
+        # Create a FieldFilter for the query.
+        field_filter = FieldFilter("controllerID", "==", controller_id)
+        docs = collection.where(filter=field_filter).stream()
+        return [
+            {"sensorID": doc.get("sensorID"), "type": doc.get("type")} for doc in docs
+        ]
+
+    @classmethod
+    def process_sensor_data_batch(cls, sensor_data_list):
+        collection = cls.get_collection()
+        batch = db.batch()
         latest_readings = {}
 
         for data_str in sensor_data_list:
@@ -54,15 +48,18 @@ class Sensors:
                     "timestamp": data["timestamp"],
                 }
 
-                bulk_operations.append(
-                    UpdateOne(
-                        {"sensorID": sensor_id},
-                        {"$push": {"readings": reading}},
-                        upsert=True,
-                    )
+                doc_ref = collection.document(sensor_id)
+                # Use set with merge to upsert the document and push the new reading using ArrayUnion.
+                batch.set(
+                    doc_ref,
+                    {
+                        "sensorID": sensor_id,
+                        "readings": firestore.ArrayUnion([reading]),
+                    },
+                    merge=True,
                 )
 
-                # Keep track of the latest reading for each sensor
+                # Track the latest reading for each sensor.
                 if (
                     sensor_id not in latest_readings
                     or data["timestamp"] > latest_readings[sensor_id]["timestamp"]
@@ -76,24 +73,25 @@ class Sensors:
             except Exception as e:
                 logger.error(f"Error processing sensor data: {e}")
 
-        if bulk_operations:
-            result = await collection.bulk_write(bulk_operations)
-            logger.info(f"Successfully processed {result.modified_count} items")
+        if latest_readings:
+            batch.commit()
+            logger.info("Successfully processed sensor data batch")
             return True, latest_readings
         else:
             logger.warning("No valid sensor data to process")
             return False, {}
 
     @classmethod
-    async def get_sensor_type(cls, sensorID):
-        collection = await cls.get_collection()
-        if collection is None:
-            return None
-        sensor = await collection.find_one({"sensorID": sensorID})
-        if sensor:
-            return sensor.get("type")
+    def get_sensor_type(cls, sensorID):
+        collection = cls.get_collection()
+        doc_ref = collection.document(sensorID)
+        doc = doc_ref.get()
+        if doc.exists:
+            return doc.get("type")
         else:
             logger.error(f"Sensor with ID {sensorID} not found")
             return None
-async def create_new_sensors(plant_data):
-    return await Sensors.create(plant_data)
+
+
+def create_new_sensors(plant_data):
+    return Sensors.create(plant_data)

@@ -1,7 +1,7 @@
 import asyncio
 import time
 import json
-from logging_config import setup_logger
+from app.logging_config import setup_logger
 
 
 class SensorService:
@@ -17,6 +17,7 @@ class SensorService:
         if test is False:
             import adafruit_dht
             import board
+
             self.dhtDevice = adafruit_dht.DHT11(board.D23)
 
     async def start(self):
@@ -37,14 +38,12 @@ class SensorService:
         while not self.stop_event.is_set():
             try:
                 new_data = await self.read_sensor_data()
-                await asyncio.sleep(
-                    3600
-                )  # Read data every hour
+                await asyncio.sleep(3600)  # Read data every hour
 
                 if new_data:  # Only push if there's data
                     for data in new_data:
                         await self.redis_client.rpush("sensor_data", json.dumps(data))
-                
+
             except Exception as e:
                 self.logger.error(f"Error in update_data: {e}")
                 self.healthy.clear()

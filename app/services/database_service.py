@@ -1,6 +1,6 @@
 import asyncio
-from logging_config import setup_logger
-from database.models import (
+from app.logging_config import setup_logger
+from app.database.models import (
     Plants,
     Sensors,
     Schedules,
@@ -70,15 +70,16 @@ class DatabaseService:
             self.logger.error(f"Error initializing plants: {str(e)}")
             self.healthy.clear()
 
-
     async def run(self):
         while not self.stop_event.is_set():
             try:
                 current_time = time.time()
-                
+
                 # Check if network is available
                 if not await self.network_is_available():
-                    self.logger.warning("Network not available, skipping this iteration")
+                    self.logger.warning(
+                        "Network not available, skipping this iteration"
+                    )
                     await asyncio.sleep(1)
                     continue
 
@@ -89,7 +90,7 @@ class DatabaseService:
 
                 await self.save_sensor_data()
                 await self.save_watering_logs()
-                #await self.save_logs()
+                # await self.save_logs()
                 await asyncio.sleep(1)
             except asyncio.TimeoutError:
                 pass
@@ -163,7 +164,7 @@ class DatabaseService:
             self.logger.error(f"Unexpected error: {e}")
             self.increment_exception_count()
             return False, {}
-    
+
     async def save_logs(self):
         try:
             logs = await self.redis_client.lrange("logs", 0, self.batch_size - 1)
@@ -221,7 +222,7 @@ class DatabaseService:
         await self.irrigation_service.update_plants(plants)
 
     async def check_for_new_sensors(self):
-        sensors = await Sensors.get_sensors_by_controller(self.controller_id)
+        sensors = Sensors.get_sensors_by_controller(self.controller_id)
         if not sensors:
             self.logger.warning("No sensors found for this controller.")
         else:
