@@ -8,13 +8,13 @@ logger = setup_logger(__name__)
 
 class RealtimeSensorData:
     @classmethod
-    async def get_collection(cls):
+    def get_collection(cls):
         collection_name = "realtime_sensor_data"
         return db.collection(collection_name)
 
     @classmethod
-    async def update_realtime_sensor_data(cls, latest_readings):
-        collection = await cls.get_collection()
+    def update_realtime_sensor_data(cls, latest_readings):
+        collection = cls.get_collection()
         if not latest_readings:
             logger.info("No realtime sensor data to update.")
             return

@@ -106,11 +106,9 @@ class IrrigationService:
                 f"Initialized last watered times for {len(redis_logs)} plants from Redis"
             )
 
-            # Get last watering times from MongoDB for remaining plants
+            # Get last watering times from Database for remaining plants
             if mongodb_plant_ids:
-                mongodb_times = await Plants.get_last_watering_times(
-                    list(mongodb_plant_ids)
-                )
+                mongodb_times = Plants.get_last_watering_times(list(mongodb_plant_ids))
                 if mongodb_times is not None:
                     self.last_watered_times.update(mongodb_times)
                     self.logger.debug(

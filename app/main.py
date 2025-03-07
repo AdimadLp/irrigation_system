@@ -53,7 +53,7 @@ class MainController:
 
     async def initialize_controller(self):
         try:
-            return await IrrigationControllers.check_and_save_controller()
+            return IrrigationControllers.check_and_save_controller()
         except Exception as e:
             logger.error(f"Error initializing controller: {str(e)}")
 

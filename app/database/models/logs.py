@@ -5,13 +5,13 @@ from datetime import datetime
 
 class Logs:
     @classmethod
-    async def get_collection(cls):
+    def get_collection(cls):
         collection_name = "logs"
         return db.collection(collection_name)
 
     @classmethod
-    async def process_logs(cls, logs):
-        collection = await cls.get_collection()
+    def process_logs(cls, logs):
+        collection = cls.get_collection()
         batch = db.batch()
         inserted_count = 0
 

@@ -14,7 +14,7 @@ def get_ip_address():
 
 class IrrigationControllers:
     @classmethod
-    async def check_and_save_controller(
+    def check_and_save_controller(
         cls,
         deviceName=get_device_name(),
         deviceType="",

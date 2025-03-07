@@ -12,11 +12,11 @@ collection_name = "plants"
 
 # Define the document data
 document_data = {
-    "plantID": 2,
+    "plantID": 30,
     "plantName": "Aloe Vera",
     "plantType": "Succulent",
     "location": "Schreibtisch",
-    "controllerID": 1,
+    "controllerID": "hQz46os9hviArk7j9Uks",
     "sensorIDs": [],
     "pumpIDs": [2],
     "waterRequirement": 100,

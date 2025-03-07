@@ -1,7 +1,7 @@
 .venv/
 *.pyc
 serviceAccountKey.json
-*.log
+*.log*
 *.lock
 .pytest_cache/
 __pycache__/

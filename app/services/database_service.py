@@ -9,7 +9,7 @@ from app.database.models import (
     Logs,
 )
 import time
-from pymongo.errors import NetworkTimeout, ConnectionFailure
+from google.cloud.firestore_v1.base_query import FieldFilter
 import json
 
 
@@ -39,15 +39,40 @@ class DatabaseService:
         self.network_available.set()
         self.last_check_time = 0
 
+        # New: Snapshot listener unsubscribe handles
+        self.plant_listener = None
+        self.sensor_listener = None
+        self.schedule_listener = None
+        self.pump_listener = None
+
     async def start(self):
         self.logger.info("Starting database service")
         self.healthy.set()
+        self.loop = asyncio.get_running_loop()  # Capture main loop
         await self.initialize_plants()
+        # Register snapshot listeners for all data types
+        self.register_plants_listener()
+        self.register_sensors_listener()
+        self.register_schedules_listener()
+        self.register_pumps_listener()
         await self.run()
 
     async def stop(self):
         self.logger.info("Stopping database service")
         self.stop_event.set()
+        # Unsubscribe snapshot listeners if they exist.
+        if self.plant_listener:
+            self.plant_listener.unsubscribe()
+            self.logger.info("Plant snapshot listener unsubscribed.")
+        if self.sensor_listener:
+            self.sensor_listener.unsubscribe()
+            self.logger.info("Sensor snapshot listener unsubscribed.")
+        if self.schedule_listener:
+            self.schedule_listener.unsubscribe()
+            self.logger.info("Schedule snapshot listener unsubscribed.")
+        if self.pump_listener:
+            self.pump_listener.unsubscribe()
+            self.logger.info("Pump snapshot listener unsubscribed.")
 
     async def initialize_plants(self):
         try:
@@ -55,7 +80,7 @@ class DatabaseService:
             plants_json = await self.redis_client.get("all_plants")
             redis_plants = json.loads(plants_json) if plants_json else None
 
-            new_plants = await Plants.get_plants_by_controller_id(self.controller_id)
+            new_plants = Plants.get_plants_by_controller_id(self.controller_id)
 
             if new_plants:
                 self.logger.info("Plants in mongodb found, updating Redis")
@@ -73,8 +98,6 @@ class DatabaseService:
     async def run(self):
         while not self.stop_event.is_set():
             try:
-                current_time = time.time()
-
                 # Check if network is available
                 if not await self.network_is_available():
                     self.logger.warning(
@@ -83,10 +106,8 @@ class DatabaseService:
                     await asyncio.sleep(1)
                     continue
 
-                # Check for new data every 10 seconds
-                if current_time - self.last_check_time >= 10:
-                    await self.check_for_new_data()
-                    self.last_check_time = current_time
+                # Since we are using snapshot listeners now, we no longer need to poll for new data.
+                # await self.check_for_new_data()
 
                 await self.save_sensor_data()
                 await self.save_watering_logs()
@@ -156,10 +177,6 @@ class DatabaseService:
                     "Transaction failed. Data remains in Redis for retry."
                 )
 
-        except (NetworkTimeout, ConnectionFailure) as e:
-            self.logger.error(f"Network error: {e}")
-            self.network_available.clear()
-            return False, {}
         except Exception as e:
             self.logger.error(f"Unexpected error: {e}")
             self.increment_exception_count()
@@ -174,24 +191,8 @@ class DatabaseService:
             inserted_count = await Logs.process_logs(logs)
             await self.redis_client.ltrim("logs", inserted_count, -1)
             self.logger.info(f"Inserted {inserted_count} logs into the database")
-
         except Exception as e:
             self.logger.error(f"Error processing logs: {str(e)}")
-
-    async def network_is_available(self):
-        try:
-            # Try to connect to a known IP address (e.g., Google's DNS server)
-            reader, writer = await asyncio.wait_for(
-                asyncio.open_connection("8.8.8.8", 53), timeout=5
-            )
-            writer.close()
-            await writer.wait_closed()
-            return True
-        except (asyncio.TimeoutError, OSError, ConnectionRefusedError):
-            return False
-        except Exception as e:
-            self.logger.error(f"Error checking network availability: {e}")
-            return False
 
     def increment_exception_count(self):
         self.exception_count += 1
@@ -216,7 +217,7 @@ class DatabaseService:
         self.logger.info("Finished checking for new data.")
 
     async def check_for_new_plants(self):
-        plants = await Plants.get_plants_by_controller_id(self.controller_id)
+        plants = Plants.get_plants_by_controller_id(self.controller_id)
         if not plants:
             self.logger.warning("No plants found for this controller.")
         await self.irrigation_service.update_plants(plants)
@@ -231,13 +232,13 @@ class DatabaseService:
             await self.irrigation_service.update_sensor_types(sensor_types)
 
     async def check_for_new_schedules(self):
-        schedules = await Schedules.get_schedules_by_controller(self.controller_id)
+        schedules = Schedules.get_schedules_by_controller(self.controller_id)
         if not schedules:
             self.logger.warning("No schedules found for this controller.")
         await self.irrigation_service.update_schedules(schedules)
 
     async def check_for_new_pumps(self):
-        pumps = await Pumps.get_pumps_by_controller(self.controller_id)
+        pumps = Pumps.get_pumps_by_controller(self.controller_id)
         if not pumps:
             self.logger.warning("No pumps found for this controller.")
         await self.irrigation_service.update_pumps(pumps)
@@ -247,3 +248,88 @@ class DatabaseService:
 
     async def wait_until_healthy(self):
         await self.healthy.wait()
+
+    # --- Snapshot Listener Implementations for All Data Types ---
+
+    # Plants listener
+    def register_plants_listener(self):
+        query = Plants.get_collection().where(
+            filter=FieldFilter("controllerID", "==", self.controller_id)
+        )
+        self.plant_listener = query.on_snapshot(self.plant_snapshot_callback)
+        self.logger.info("Plant snapshot listener registered.")
+
+    def plant_snapshot_callback(self, docs, changes, read_time):
+        self.logger.info("Plant snapshot update received.")
+
+        async def async_callback():
+            plants = await Plants.get_plants_by_controller_id(self.controller_id)
+            if not plants:
+                self.logger.warning("No plants found for this controller.")
+            await self.irrigation_service.update_plants(plants)
+
+        asyncio.run_coroutine_threadsafe(async_callback(), self.loop)
+
+    # Sensors listener
+    def register_sensors_listener(self):
+        query = Sensors.get_collection().where(
+            filter=FieldFilter("controllerID", "==", self.controller_id)
+        )
+        self.sensor_listener = query.on_snapshot(self.sensor_snapshot_callback)
+        self.logger.info("Sensor snapshot listener registered.")
+
+    def sensor_snapshot_callback(self, docs, changes, read_time):
+        self.logger.info("Sensor snapshot update received.")
+        try:
+            sensors = Sensors.get_sensors_by_controller(self.controller_id)
+            sensor_types = (
+                {sensor["sensorID"]: sensor["type"] for sensor in sensors}
+                if sensors
+                else {}
+            )
+            asyncio.run_coroutine_threadsafe(
+                self.sensor_service.update_sensors(sensors), self.loop
+            )
+            asyncio.run_coroutine_threadsafe(
+                self.irrigation_service.update_sensor_types(sensor_types), self.loop
+            )
+        except Exception as e:
+            self.logger.error(f"Error processing sensor snapshot: {e}")
+
+    # Schedules listener
+    def register_schedules_listener(self):
+        query = Schedules.get_collection().where(
+            filter=FieldFilter("controllerID", "==", self.controller_id)
+        )
+        self.schedule_listener = query.on_snapshot(self.schedule_snapshot_callback)
+        self.logger.info("Schedule snapshot listener registered.")
+
+    def schedule_snapshot_callback(self, docs, changes, read_time):
+        self.logger.info("Schedule snapshot update received.")
+
+        async def async_callback():
+            schedules = await Schedules.get_schedules_by_controller(self.controller_id)
+            if not schedules:
+                self.logger.warning("No schedules found for this controller.")
+            await self.irrigation_service.update_schedules(schedules)
+
+        asyncio.run_coroutine_threadsafe(async_callback(), self.loop)
+
+    # Pumps listener
+    def register_pumps_listener(self):
+        query = Pumps.get_collection().where(
+            filter=FieldFilter("controllerID", "==", self.controller_id)
+        )
+        self.pump_listener = query.on_snapshot(self.pump_snapshot_callback)
+        self.logger.info("Pump snapshot listener registered.")
+
+    def pump_snapshot_callback(self, docs, changes, read_time):
+        self.logger.info("Pump snapshot update received.")
+
+        async def async_callback():
+            pumps = await Pumps.get_pumps_by_controller(self.controller_id)
+            if not pumps:
+                self.logger.warning("No pumps found for this controller.")
+            await self.irrigation_service.update_pumps(pumps)
+
+        asyncio.run_coroutine_threadsafe(async_callback(), self.loop)
