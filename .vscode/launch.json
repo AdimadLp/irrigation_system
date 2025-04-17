@@ -5,14 +5,29 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python Debugger: Current File with Arguments",
+            "name": "Python Debugger: Main File in test mode",
             "type": "debugpy",
             "request": "launch",
-            "program": "${file}",
+            "program": "app/main.py",
             "console": "integratedTerminal",
             "args": [
-                "${command:pickArgs}"
+                "-test"
             ]
+        },
+        {
+            "name": "Python: Module",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "app.main", // Use "module" instead of "program"
+            "args": [
+                "-test"
+            ], // Add arguments here
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": { // Ensure environment variables like ATLAS_URI are loaded if needed
+                // "ATLAS_URI": "your_mongodb_uri" 
+            },
+            "envFile": "${workspaceFolder}/.env" // Or point to your .env file
         }
     ]
 }

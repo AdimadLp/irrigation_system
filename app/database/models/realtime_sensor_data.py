@@ -1,6 +1,6 @@
 from motor.motor_asyncio import AsyncIOMotorCollection
-from ..database import db_connection
-from logging_config import setup_logger
+from app.database.database import db_connection
+from app.logging_config import setup_logger
 from pymongo import UpdateOne
 
 logger = setup_logger(__name__)

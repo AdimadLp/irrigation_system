@@ -1,9 +1,10 @@
 import asyncio
 from datetime import datetime, date
-from logging_config import setup_logger
+from app.logging_config import setup_logger
 import json
 import time
-from database.models.plants import Plants
+from app.database.models.plants import Plants
+
 
 class IrrigationService:
     def __init__(self, controller_id, redis_client, stop_event, test=False):
@@ -22,6 +23,7 @@ class IrrigationService:
         self.test = test
         if test is False:
             import RPi.GPIO as GPIO
+
             GPIO.setmode(GPIO.BCM)
             self.GPIO = GPIO
 
@@ -53,7 +55,7 @@ class IrrigationService:
     async def stop(self):
         self.logger.info("Stopping irrigation service")
         self.stop_event.set()
-        
+
         if hasattr(self, "check_irrigation_task"):
             self.check_irrigation_task.cancel()
             try:
@@ -65,10 +67,14 @@ class IrrigationService:
             for pump in self.pumps:
                 try:
                     self.GPIO.setup(pump["gpioPort"], self.GPIO.OUT)
-                    self.GPIO.output(pump["gpioPort"], self.GPIO.HIGH)  # Set GPIO port to HIGH
+                    self.GPIO.output(
+                        pump["gpioPort"], self.GPIO.HIGH
+                    )  # Set GPIO port to HIGH
                     self.GPIO.cleanup(pump["gpioPort"])  # Free the GPIO port
                 except Exception as e:
-                    self.logger.error(f"Error setting GPIO port {pump['gpioPort']} to HIGH: {str(e)}")
+                    self.logger.error(
+                        f"Error setting GPIO port {pump['gpioPort']} to HIGH: {str(e)}"
+                    )
 
         self.logger.info("Irrigation service stopped")
 
@@ -79,12 +85,14 @@ class IrrigationService:
     async def initialize_last_watered_times(self):
         try:
             if not self.plants:
-                self.logger.warning("No plants available. Skipping initialization of last watered times.")
+                self.logger.warning(
+                    "No plants available. Skipping initialization of last watered times."
+                )
                 return
 
             redis_logs = await self.redis_client.lrange("watering_logs", 0, -1)
             redis_logs = [json.loads(log) for log in redis_logs]
-            
+
             plant_ids = [plant["plantID"] for plant in self.plants]
             redis_plant_ids = set(log["plantID"] for log in redis_logs)
             mongodb_plant_ids = set(plant_ids) - redis_plant_ids
@@ -94,19 +102,26 @@ class IrrigationService:
                 plant_id = log["plantID"]
                 if plant_id in plant_ids and plant_id not in self.last_watered_times:
                     self.last_watered_times[plant_id] = log["timestamp"]
-            self.logger.debug(f"Initialized last watered times for {len(redis_logs)} plants from Redis")
+            self.logger.debug(
+                f"Initialized last watered times for {len(redis_logs)} plants from Redis"
+            )
 
             # Get last watering times from MongoDB for remaining plants
             if mongodb_plant_ids:
-                mongodb_times = await Plants.get_last_watering_times(list(mongodb_plant_ids))
+                mongodb_times = await Plants.get_last_watering_times(
+                    list(mongodb_plant_ids)
+                )
                 if mongodb_times is not None:
                     self.last_watered_times.update(mongodb_times)
-                    self.logger.debug(f"Initialized last watered times for {len(mongodb_times)} plants from MongoDB")
+                    self.logger.debug(
+                        f"Initialized last watered times for {len(mongodb_times)} plants from MongoDB"
+                    )
                 else:
                     self.logger.debug(f"mongodb_times is none")
 
-
-            self.logger.info(f"Initialized last watered times for {len(self.last_watered_times)} plants")
+            self.logger.info(
+                f"Initialized last watered times for {len(self.last_watered_times)} plants"
+            )
         except Exception as e:
             self.logger.error(f"Error initializing last watered times: {str(e)}")
 
@@ -114,9 +129,11 @@ class IrrigationService:
         try:
             # Simulating irrigation process
             self.logger.info(f"Irrigating plant {plant['plantID']}")
-            
-            pump_id = plant['pumpIDs'][0]
-            pump = next((p for p in self.pumps if p["plantID"] == plant['plantID']), None)  # Get the pump from self.pumps
+
+            pump_id = plant["pumpIDs"][0]
+            pump = next(
+                (p for p in self.pumps if p["plantID"] == plant["plantID"]), None
+            )  # Get the pump from self.pumps
 
             if pump is None:
                 self.logger.error(f"Could not find pump with id {pump_id}")
@@ -124,8 +141,12 @@ class IrrigationService:
 
             flow_rate = pump["flowRate"]
 
-            irrigation_time = 60 * plant['waterRequirement'] / flow_rate  # Calculate irrigation time in seconds
-            self.logger.debug(f"Watering plant {plant['plantID']} with pump {pump_id} with {flow_rate}ml of flowrate for {irrigation_time}s on gpio port {pump['gpioPort']}")
+            irrigation_time = (
+                60 * plant["waterRequirement"] / flow_rate
+            )  # Calculate irrigation time in seconds
+            self.logger.debug(
+                f"Watering plant {plant['plantID']} with pump {pump_id} with {flow_rate}ml of flowrate for {irrigation_time}s on gpio port {pump['gpioPort']}"
+            )
             if not self.test:
 
                 self.GPIO.setup(pump["gpioPort"], self.GPIO.OUT)
@@ -133,7 +154,6 @@ class IrrigationService:
                 await asyncio.sleep(irrigation_time)
                 self.GPIO.output(pump["gpioPort"], self.GPIO.HIGH)  # Stop the pump
                 self.GPIO.cleanup(pump["gpioPort"])  # Free the GPIO port
-
 
             # Create watering log
             watering_log = {
@@ -180,10 +200,37 @@ class IrrigationService:
 
     def during_time(self, schedule):
         now = datetime.now()
-        return (
-            now.strftime("%A") in schedule["weekdays"]
-            and schedule["startTime"].time() <= now.time()
-        )
+        current_weekday = now.strftime("%A")
+        current_time = now.time()
+
+        # Convert startTime string to time object
+        try:
+            if isinstance(schedule["startTime"], str):
+                schedule_start_time = datetime.strptime(
+                    schedule["startTime"], "%H:%M"
+                ).time()
+            elif isinstance(
+                schedule["startTime"], datetime.time
+            ):  # Handle if already converted
+                schedule_start_time = schedule["startTime"]
+            else:
+                self.logger.error(
+                    f"Unexpected type for startTime in schedule {schedule.get('scheduleID', 'N/A')}: {type(schedule['startTime'])}"
+                )
+                return False
+        except ValueError:
+            self.logger.error(
+                f"Invalid time format for startTime in schedule {schedule.get('scheduleID', 'N/A')}: {schedule['startTime']}"
+            )
+            return False  # Cannot compare if format is wrong
+
+        schedule_weekdays = schedule["weekdays"]
+
+        weekday_match = current_weekday in schedule_weekdays
+        time_match = schedule_start_time <= current_time
+
+        result = weekday_match and time_match
+        return result
 
     async def is_threshold_met(self, threshold):
         try:
@@ -206,7 +253,7 @@ class IrrigationService:
         except Exception as e:
             self.logger.error(f"Error fetching or processing sensor data: {str(e)}")
         return False
-    
+
     async def get_last_watering_time(self, plant_id):
         try:
             watering_logs = await self.redis_client.lrange("watering_logs", 0, -1)
@@ -222,6 +269,7 @@ class IrrigationService:
         plant_schedules = [
             s for s in self.schedules if s["plantID"] == plant["plantID"]
         ]
+
         last_watered_unix = self.last_watered_times.get(plant["plantID"])
         now = datetime.now()
 
@@ -241,7 +289,7 @@ class IrrigationService:
                     self.logger.debug(f"Plant {plant['plantID']} already watered today")
             else:
                 self.logger.debug(
-                    f"Current time is not within schedule for plant {plant['plantID']}"
+                    f"Current time is not within schedule {schedule["scheduleID"]} for plant {plant['plantID']}"
                 )
         return False
 

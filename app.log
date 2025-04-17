@@ -1,58 +1,95 @@
-2025-03-02 18:37:55,071 - irrigation_service.py - update_plants - INFO - Updated plants: 3 plants
-2025-03-02 18:37:55,084 - irrigation_service.py - update_sensor_types - INFO - Updated sensor types: 2 sensors
-2025-03-02 18:37:55,085 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
-2025-03-02 18:38:05,311 - database_service.py - check_for_new_data - INFO - Checking for new data...
-2025-03-02 18:38:05,338 - irrigation_service.py - update_pumps - INFO - Updated pumps: 3 pumps
-2025-03-02 18:38:05,342 - database_service.py - check_for_new_schedules - WARNING - No schedules found for this controller.
-2025-03-02 18:38:05,343 - irrigation_service.py - update_schedules - INFO - Updated schedules: 0 schedules
-2025-03-02 18:38:05,343 - irrigation_service.py - update_sensor_types - INFO - Updated sensor types: 2 sensors
-2025-03-02 18:38:05,494 - irrigation_service.py - update_plants - INFO - Updated plants: 3 plants
-2025-03-02 18:38:05,495 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
-2025-03-02 18:38:15,721 - database_service.py - check_for_new_data - INFO - Checking for new data...
-2025-03-02 18:38:15,749 - irrigation_service.py - update_plants - INFO - Updated plants: 3 plants
-2025-03-02 18:38:15,755 - database_service.py - check_for_new_schedules - WARNING - No schedules found for this controller.
-2025-03-02 18:38:15,756 - irrigation_service.py - update_schedules - INFO - Updated schedules: 0 schedules
-2025-03-02 18:38:15,757 - irrigation_service.py - update_sensor_types - INFO - Updated sensor types: 2 sensors
-2025-03-02 18:38:15,759 - irrigation_service.py - update_pumps - INFO - Updated pumps: 3 pumps
-2025-03-02 18:38:15,759 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
-2025-03-02 18:38:25,990 - database_service.py - check_for_new_data - INFO - Checking for new data...
-2025-03-02 18:38:26,019 - database_service.py - check_for_new_schedules - WARNING - No schedules found for this controller.
-2025-03-02 18:38:26,024 - irrigation_service.py - update_schedules - INFO - Updated schedules: 0 schedules
-2025-03-02 18:38:26,025 - irrigation_service.py - update_plants - INFO - Updated plants: 3 plants
-2025-03-02 18:38:26,026 - irrigation_service.py - update_sensor_types - INFO - Updated sensor types: 2 sensors
-2025-03-02 18:38:26,026 - irrigation_service.py - update_pumps - INFO - Updated pumps: 3 pumps
-2025-03-02 18:38:26,027 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
-2025-03-02 18:38:36,254 - database_service.py - check_for_new_data - INFO - Checking for new data...
-2025-03-02 18:38:36,281 - irrigation_service.py - update_plants - INFO - Updated plants: 3 plants
-2025-03-02 18:38:36,285 - irrigation_service.py - update_sensor_types - INFO - Updated sensor types: 2 sensors
-2025-03-02 18:38:36,285 - irrigation_service.py - update_pumps - INFO - Updated pumps: 3 pumps
-2025-03-02 18:38:36,288 - database_service.py - check_for_new_schedules - WARNING - No schedules found for this controller.
-2025-03-02 18:38:36,289 - irrigation_service.py - update_schedules - INFO - Updated schedules: 0 schedules
-2025-03-02 18:38:36,289 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
-2025-03-02 18:38:40,035 - main.py - handle_shutdown - INFO - Received signal 2. Initiating shutdown...
-2025-03-02 18:38:40,035 - main.py - stop_services - INFO - Stopping all services...
-2025-03-02 18:38:40,036 - sensor_service.py - stop - INFO - Stopping sensor service
-2025-03-02 18:38:40,037 - irrigation_service.py - stop - INFO - Stopping irrigation service
-2025-03-02 18:38:40,037 - database_service.py - stop - INFO - Stopping database service
-2025-03-02 18:38:40,038 - irrigation_service.py - check_for_irrigation - INFO - Irrigation check loop cancelled
-2025-03-02 18:38:40,038 - irrigation_service.py - check_for_irrigation - INFO - Irrigation check loop ended
-2025-03-02 18:38:40,038 - irrigation_service.py - stop - INFO - Irrigation service stopped
-2025-03-02 18:38:40,206 - main.py - handle_shutdown - INFO - Received signal 2. Initiating shutdown...
-2025-03-02 18:38:40,206 - main.py - stop_services - INFO - Stopping all services...
-2025-03-02 18:38:40,207 - sensor_service.py - stop - INFO - Stopping sensor service
-2025-03-02 18:38:40,207 - irrigation_service.py - stop - INFO - Stopping irrigation service
-2025-03-02 18:38:40,208 - irrigation_service.py - stop - INFO - Irrigation service stopped
-2025-03-02 18:38:40,209 - database_service.py - stop - INFO - Stopping database service
-2025-03-02 18:38:40,358 - main.py - stop_services - INFO - Stopping all services...
-2025-03-02 18:38:40,359 - sensor_service.py - stop - INFO - Stopping sensor service
-2025-03-02 18:38:40,359 - irrigation_service.py - stop - INFO - Stopping irrigation service
-2025-03-02 18:38:40,360 - irrigation_service.py - stop - INFO - Irrigation service stopped
-2025-03-02 18:38:40,360 - database_service.py - stop - INFO - Stopping database service
-2025-03-02 18:38:40,565 - main.py - handle_shutdown - INFO - Received signal 2. Initiating shutdown...
-2025-03-02 18:38:40,565 - main.py - stop_services - INFO - Stopping all services...
-2025-03-02 18:38:40,566 - sensor_service.py - stop - INFO - Stopping sensor service
-2025-03-02 18:38:40,567 - irrigation_service.py - stop - INFO - Stopping irrigation service
-2025-03-02 18:38:40,567 - irrigation_service.py - stop - INFO - Irrigation service stopped
-2025-03-02 18:38:40,568 - database_service.py - stop - INFO - Stopping database service
-2025-03-02 18:38:41,360 - main.py - run - INFO - All services stopped. Exiting.
-2025-03-02 18:38:41,361 - main.py - main - INFO - Program terminated.
+2025-04-17 23:28:52,733 - irrigation_service.py - update_pumps - INFO - Updated pumps: 0 pumps
+2025-04-17 23:28:52,735 - irrigation_service.py - update_schedules - INFO - Updated schedules: 1 schedules
+2025-04-17 23:28:52,736 - database_service.py - check_for_new_sensors - WARNING - No sensors found for this controller.
+2025-04-17 23:28:52,736 - irrigation_service.py - update_plants - INFO - Updated plants: 1 plants
+2025-04-17 23:28:52,737 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
+2025-04-17 23:29:02,917 - database_service.py - check_for_new_data - INFO - Checking for new data...
+2025-04-17 23:29:02,939 - irrigation_service.py - update_plants - INFO - Updated plants: 1 plants
+2025-04-17 23:29:02,946 - irrigation_service.py - update_schedules - INFO - Updated schedules: 1 schedules
+2025-04-17 23:29:02,946 - database_service.py - check_for_new_pumps - WARNING - No pumps found for this controller.
+2025-04-17 23:29:02,947 - irrigation_service.py - update_pumps - INFO - Updated pumps: 0 pumps
+2025-04-17 23:29:02,947 - database_service.py - check_for_new_sensors - WARNING - No sensors found for this controller.
+2025-04-17 23:29:02,948 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
+2025-04-17 23:29:13,141 - database_service.py - check_for_new_data - INFO - Checking for new data...
+2025-04-17 23:29:13,160 - irrigation_service.py - update_plants - INFO - Updated plants: 1 plants
+2025-04-17 23:29:13,166 - irrigation_service.py - update_schedules - INFO - Updated schedules: 1 schedules
+2025-04-17 23:29:13,167 - database_service.py - check_for_new_pumps - WARNING - No pumps found for this controller.
+2025-04-17 23:29:13,167 - irrigation_service.py - update_pumps - INFO - Updated pumps: 0 pumps
+2025-04-17 23:29:13,168 - database_service.py - check_for_new_sensors - WARNING - No sensors found for this controller.
+2025-04-17 23:29:13,169 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
+2025-04-17 23:29:23,365 - database_service.py - check_for_new_data - INFO - Checking for new data...
+2025-04-17 23:29:23,382 - database_service.py - check_for_new_pumps - WARNING - No pumps found for this controller.
+2025-04-17 23:29:23,387 - irrigation_service.py - update_pumps - INFO - Updated pumps: 0 pumps
+2025-04-17 23:29:23,388 - irrigation_service.py - update_plants - INFO - Updated plants: 1 plants
+2025-04-17 23:29:23,389 - irrigation_service.py - update_schedules - INFO - Updated schedules: 1 schedules
+2025-04-17 23:29:23,389 - database_service.py - check_for_new_sensors - WARNING - No sensors found for this controller.
+2025-04-17 23:29:23,390 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
+2025-04-17 23:29:33,573 - database_service.py - check_for_new_data - INFO - Checking for new data...
+2025-04-17 23:29:33,593 - irrigation_service.py - update_plants - INFO - Updated plants: 1 plants
+2025-04-17 23:29:33,596 - database_service.py - check_for_new_pumps - WARNING - No pumps found for this controller.
+2025-04-17 23:29:33,597 - irrigation_service.py - update_pumps - INFO - Updated pumps: 0 pumps
+2025-04-17 23:29:33,600 - irrigation_service.py - update_schedules - INFO - Updated schedules: 1 schedules
+2025-04-17 23:29:33,601 - database_service.py - check_for_new_sensors - WARNING - No sensors found for this controller.
+2025-04-17 23:29:33,602 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
+2025-04-17 23:29:43,798 - database_service.py - check_for_new_data - INFO - Checking for new data...
+2025-04-17 23:29:43,817 - irrigation_service.py - update_plants - INFO - Updated plants: 1 plants
+2025-04-17 23:29:43,821 - database_service.py - check_for_new_sensors - WARNING - No sensors found for this controller.
+2025-04-17 23:29:43,825 - irrigation_service.py - update_schedules - INFO - Updated schedules: 1 schedules
+2025-04-17 23:29:43,826 - database_service.py - check_for_new_pumps - WARNING - No pumps found for this controller.
+2025-04-17 23:29:43,826 - irrigation_service.py - update_pumps - INFO - Updated pumps: 0 pumps
+2025-04-17 23:29:43,827 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
+2025-04-17 23:29:54,021 - database_service.py - check_for_new_data - INFO - Checking for new data...
+2025-04-17 23:29:54,039 - database_service.py - check_for_new_pumps - WARNING - No pumps found for this controller.
+2025-04-17 23:29:54,041 - irrigation_service.py - update_pumps - INFO - Updated pumps: 0 pumps
+2025-04-17 23:29:54,045 - irrigation_service.py - update_schedules - INFO - Updated schedules: 1 schedules
+2025-04-17 23:29:54,046 - database_service.py - check_for_new_sensors - WARNING - No sensors found for this controller.
+2025-04-17 23:29:54,047 - irrigation_service.py - update_plants - INFO - Updated plants: 1 plants
+2025-04-17 23:29:54,047 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
+2025-04-17 23:30:04,250 - database_service.py - check_for_new_data - INFO - Checking for new data...
+2025-04-17 23:30:04,270 - irrigation_service.py - update_plants - INFO - Updated plants: 1 plants
+2025-04-17 23:30:04,277 - database_service.py - check_for_new_pumps - WARNING - No pumps found for this controller.
+2025-04-17 23:30:04,278 - irrigation_service.py - update_pumps - INFO - Updated pumps: 0 pumps
+2025-04-17 23:30:04,278 - database_service.py - check_for_new_sensors - WARNING - No sensors found for this controller.
+2025-04-17 23:30:04,279 - irrigation_service.py - update_schedules - INFO - Updated schedules: 1 schedules
+2025-04-17 23:30:04,279 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
+2025-04-17 23:30:14,478 - database_service.py - check_for_new_data - INFO - Checking for new data...
+2025-04-17 23:30:14,498 - database_service.py - check_for_new_pumps - WARNING - No pumps found for this controller.
+2025-04-17 23:30:14,502 - irrigation_service.py - update_pumps - INFO - Updated pumps: 0 pumps
+2025-04-17 23:30:14,503 - irrigation_service.py - update_schedules - INFO - Updated schedules: 1 schedules
+2025-04-17 23:30:14,504 - irrigation_service.py - update_plants - INFO - Updated plants: 1 plants
+2025-04-17 23:30:14,505 - database_service.py - check_for_new_sensors - WARNING - No sensors found for this controller.
+2025-04-17 23:30:14,506 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
+2025-04-17 23:30:24,792 - database_service.py - check_for_new_data - INFO - Checking for new data...
+2025-04-17 23:30:24,814 - irrigation_service.py - update_plants - INFO - Updated plants: 1 plants
+2025-04-17 23:30:24,816 - database_service.py - check_for_new_pumps - WARNING - No pumps found for this controller.
+2025-04-17 23:30:24,816 - irrigation_service.py - update_pumps - INFO - Updated pumps: 0 pumps
+2025-04-17 23:30:24,817 - database_service.py - check_for_new_sensors - WARNING - No sensors found for this controller.
+2025-04-17 23:30:24,817 - irrigation_service.py - update_schedules - INFO - Updated schedules: 1 schedules
+2025-04-17 23:30:24,818 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
+2025-04-17 23:30:35,009 - database_service.py - check_for_new_data - INFO - Checking for new data...
+2025-04-17 23:30:35,029 - database_service.py - check_for_new_pumps - WARNING - No pumps found for this controller.
+2025-04-17 23:30:35,032 - irrigation_service.py - update_pumps - INFO - Updated pumps: 0 pumps
+2025-04-17 23:30:35,033 - irrigation_service.py - update_schedules - INFO - Updated schedules: 1 schedules
+2025-04-17 23:30:35,034 - database_service.py - check_for_new_sensors - WARNING - No sensors found for this controller.
+2025-04-17 23:30:35,035 - irrigation_service.py - update_plants - INFO - Updated plants: 1 plants
+2025-04-17 23:30:35,036 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
+2025-04-17 23:30:45,237 - database_service.py - check_for_new_data - INFO - Checking for new data...
+2025-04-17 23:30:45,253 - database_service.py - check_for_new_pumps - WARNING - No pumps found for this controller.
+2025-04-17 23:30:45,253 - irrigation_service.py - update_pumps - INFO - Updated pumps: 0 pumps
+2025-04-17 23:30:45,257 - irrigation_service.py - update_plants - INFO - Updated plants: 1 plants
+2025-04-17 23:30:45,258 - irrigation_service.py - update_schedules - INFO - Updated schedules: 1 schedules
+2025-04-17 23:30:45,258 - database_service.py - check_for_new_sensors - WARNING - No sensors found for this controller.
+2025-04-17 23:30:45,258 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
+2025-04-17 23:30:45,393 - database.py - connect - INFO - Connected to MongoDB successfully.
+2025-04-17 23:30:55,449 - database_service.py - check_for_new_data - INFO - Checking for new data...
+2025-04-17 23:30:55,466 - irrigation_service.py - update_pumps - INFO - Updated pumps: 1 pumps
+2025-04-17 23:30:55,470 - irrigation_service.py - update_plants - INFO - Updated plants: 1 plants
+2025-04-17 23:30:55,473 - irrigation_service.py - update_schedules - INFO - Updated schedules: 1 schedules
+2025-04-17 23:30:55,474 - database_service.py - check_for_new_sensors - WARNING - No sensors found for this controller.
+2025-04-17 23:30:55,475 - database_service.py - check_for_new_data - INFO - Finished checking for new data.
+2025-04-17 23:31:05,662 - database_service.py - check_for_new_data - INFO - Checking for new data...
+2025-04-17 23:31:05,679 - irrigation_service.py - update_plants - INFO - Updated plants: 1 plants
+2025-04-17 23:31:05,683 - irrigation_service.py - update_schedules - INFO - Updated schedules: 1 schedules
+2025-04-17 23:31:05,685 - database_service.py - check_for_new_sensors - WARNING - No sensors found for this controller.
+2025-04-17 23:31:05,686 - irrigation_service.py - update_pumps - INFO - Updated pumps: 1 pumps
+2025-04-17 23:31:05,687 - database_service.py - check_for_new_data - INFO - Finished checking for new data.

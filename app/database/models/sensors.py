@@ -1,6 +1,6 @@
 from motor.motor_asyncio import AsyncIOMotorCollection
-from ..database import db_connection
-from logging_config import setup_logger
+from app.database.database import db_connection
+from app.logging_config import setup_logger
 import json
 from pymongo import UpdateOne
 
@@ -13,7 +13,7 @@ class Sensors:
         if not db_connection.is_connected():
             return None
         return db_connection.db.sensors
-    
+
     @classmethod
     async def create(cls, sensor_data):
         collection = await cls.get_collection()
@@ -95,5 +95,7 @@ class Sensors:
         else:
             logger.error(f"Sensor with ID {sensorID} not found")
             return None
+
+
 async def create_new_sensors(plant_data):
     return await Sensors.create(plant_data)

@@ -396,3 +396,566 @@
 2025-03-02 16:54:21,965 - database.py - connect - ERROR - Failed to connect to MongoDB: The DNS query name does not exist: _mongodb._tcp.cluster0.pdaqcm3.mongodb.net.. Retrying in 5 seconds...
 2025-03-02 16:54:26,979 - database.py - connect - ERROR - Failed to connect to MongoDB: The DNS query name does not exist: _mongodb._tcp.cluster0.pdaqcm3.mongodb.net.. Retrying in 5 seconds...
 2025-03-02 16:54:31,992 - database.py - connect - ERROR - Failed to connect to MongoDB: The DNS query name does not exist: _mongodb._tcp.cluster0.pdaqcm3.mongodb.net.. Retrying in 5 seconds...
+2025-04-17 18:18:53,892 - main.py - main - CRITICAL - Critical error in main: No module named 'adafruit_dht'
+2025-04-17 18:19:31,929 - database_service.py - initialize_plants - ERROR - Error initializing plants: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:31,975 - irrigation_service.py - initialize_last_watered_times - ERROR - Error initializing last watered times: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:32,083 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:32,086 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:33,108 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:33,113 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:34,134 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:34,138 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:35,162 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:35,166 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:36,191 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:36,193 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:19:36,195 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:37,217 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:37,218 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:19:37,221 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:38,242 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:38,243 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:19:38,246 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:39,269 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:39,270 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:19:39,273 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:40,293 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:40,294 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:19:40,296 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:41,317 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:41,319 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:19:41,322 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:42,469 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:42,470 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:19:42,473 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:43,497 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:43,498 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:19:43,501 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:44,519 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:44,520 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:19:44,523 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:45,544 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:45,546 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:19:45,553 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:46,577 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:46,580 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:19:46,584 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:47,607 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:47,608 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:19:47,612 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:48,636 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:48,637 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:19:48,640 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:49,659 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:49,660 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:19:49,663 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:50,685 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:50,686 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:19:50,691 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:51,711 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:51,712 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:19:51,715 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:52,778 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:52,780 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:19:52,787 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:53,810 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:53,812 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:19:53,819 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:54,841 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:54,842 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:19:54,844 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:55,863 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:55,864 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:19:55,867 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:56,891 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:56,892 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:19:56,896 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:57,924 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:57,926 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:19:57,933 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:58,953 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:58,954 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:19:58,957 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:59,975 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:19:59,976 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:19:59,979 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:20:00,999 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:20:01,000 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:20:01,005 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:20:02,027 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:20:02,028 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:20:02,034 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:20:03,089 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:20:03,091 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:20:03,094 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:20:04,115 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:20:04,117 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:20:04,119 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:20:05,136 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:20:05,138 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:20:05,140 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:20:06,162 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:20:06,163 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:20:06,166 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:20:07,187 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:20:07,188 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:20:07,193 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:20:08,214 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:20:08,215 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:20:08,221 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:20:09,249 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:20:09,252 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:20:09,259 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:20:10,283 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:20:10,284 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:20:10,287 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:20:11,311 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:20:11,313 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:20:11,319 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:20:12,346 - database_service.py - save_sensor_data - ERROR - Unexpected error: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:20:12,347 - database_service.py - increment_exception_count - ERROR - Too many errors within a short period. Marking as unhealthy.
+2025-04-17 18:20:12,353 - database_service.py - save_watering_logs - ERROR - Error processing watering logs: Error Multiple exceptions: [Errno 111] Connect call failed ('::1', 6379, 0, 0), [Errno 111] Connect call failed ('127.0.0.1', 6379) connecting to localhost:6379.
+2025-04-17 18:44:42,673 - main.py - main - CRITICAL - Critical error in main: No module named 'adafruit_dht'
+2025-04-17 18:52:45,463 - main.py - initialize_controller - ERROR - Error initializing controller: IrrigationControllers.get_highest_id() missing 1 required positional argument: 'cls'
+2025-04-17 18:53:58,584 - main.py - initialize_controller - ERROR - Error initializing controller: IrrigationControllers.get_highest_id() missing 1 required positional argument: 'cls'
+2025-04-17 18:55:51,363 - main.py - initialize_controller - ERROR - Error initializing controller: IrrigationControllers.get_highest_id() missing 1 required positional argument: 'cls'
+2025-04-17 18:57:09,151 - main.py - initialize_controller - ERROR - Error initializing controller: IrrigationControllers.get_highest_id() missing 1 required positional argument: 'cls'
+2025-04-17 18:57:51,770 - main.py - initialize_controller - ERROR - Error initializing controller: IrrigationControllers.get_highest_id() missing 1 required positional argument: 'cls'
+2025-04-17 18:59:04,085 - main.py - initialize_controller - ERROR - Error initializing controller: Collection objects do not implement truth value testing or bool(). Please compare with None instead: collection is not None
+2025-04-17 20:02:05,157 - main.py - initialize_controller - ERROR - Error initializing controller: Collection objects do not implement truth value testing or bool(). Please compare with None instead: collection is not None
+2025-04-17 21:10:32,448 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:10:37,452 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:10:42,456 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:10:47,460 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:10:52,465 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:10:57,472 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:11:02,479 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:11:07,484 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:11:12,488 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:11:17,491 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:11:22,495 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:11:27,499 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:11:32,504 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:11:37,511 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:11:42,516 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:11:47,519 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:11:52,523 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:11:57,527 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:12:02,530 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:12:07,533 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:12:12,537 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:12:17,541 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:12:22,549 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:12:27,555 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:12:32,558 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:12:37,563 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:12:42,569 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:12:47,574 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:12:52,578 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:12:57,582 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:13:02,588 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:13:07,593 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:13:12,599 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:13:17,603 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:13:22,608 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:13:27,611 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:13:32,616 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:13:37,620 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:13:42,624 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:13:47,630 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:13:52,636 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:13:57,640 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:14:02,646 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:14:07,650 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:14:12,652 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:14:17,657 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:14:22,661 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:14:27,664 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:14:32,669 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:14:37,675 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:14:42,680 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:14:47,685 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:14:52,689 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:14:57,696 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:15:02,700 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:15:07,705 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:15:12,708 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:15:17,713 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:15:22,717 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:15:27,721 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:15:32,726 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:15:37,730 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:15:42,734 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:15:47,738 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:15:52,742 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:15:57,745 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:16:02,750 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:16:07,752 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:16:12,756 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:16:17,761 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:16:22,766 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:16:27,772 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:16:32,776 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:16:37,781 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:16:42,786 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:16:47,790 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:33:20,248 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'dict' object has no attribute 'scheduleID'
+2025-04-17 21:33:25,253 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'dict' object has no attribute 'scheduleID'
+2025-04-17 21:33:30,258 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'dict' object has no attribute 'scheduleID'
+2025-04-17 21:33:35,262 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'dict' object has no attribute 'scheduleID'
+2025-04-17 21:33:40,265 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'dict' object has no attribute 'scheduleID'
+2025-04-17 21:33:45,269 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'dict' object has no attribute 'scheduleID'
+2025-04-17 21:34:32,479 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:34:43,027 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:34:48,033 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:34:53,037 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:34:58,040 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:35:03,045 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:35:08,048 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:35:13,052 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:35:18,055 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:35:23,059 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:35:28,065 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:35:33,071 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:35:38,075 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:35:43,080 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:35:48,084 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:35:53,089 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:35:58,094 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:36:03,098 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:36:08,103 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:36:13,106 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:36:18,112 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:36:23,118 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:36:28,124 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:36:33,129 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:36:38,134 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:36:43,138 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:36:48,144 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:36:53,148 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:36:58,152 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:37:03,156 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:37:08,160 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:37:13,167 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:37:18,173 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:37:23,177 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:37:28,182 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:37:33,187 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:37:38,193 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:37:43,198 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:37:48,201 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:37:53,207 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:37:58,211 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:38:03,217 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:38:08,223 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:48:27,126 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:53:16,175 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:53:34,770 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:53:39,797 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:53:44,804 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:53:49,809 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:53:54,813 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:53:59,827 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:54:04,836 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:54:09,840 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:54:14,844 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:54:19,849 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:54:24,855 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:54:48,000 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:57:27,510 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:57:36,449 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:57:43,955 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:57:51,370 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:57:58,546 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:58:15,053 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:58:26,314 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:58:37,530 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 21:58:45,911 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:03:08,330 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:08:40,043 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:08:45,048 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:08:50,051 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:08:55,054 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:09:00,058 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:09:05,062 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:09:10,067 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:09:15,071 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:09:20,074 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:09:25,078 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:09:30,082 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:09:35,085 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:09:40,090 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:09:45,093 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:09:50,096 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:09:55,099 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:10:00,103 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:10:05,110 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:10:10,115 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:10:15,119 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:10:20,122 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:10:25,126 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:10:30,132 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:10:35,137 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:10:40,142 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:10:45,148 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: 'str' object has no attribute 'time'
+2025-04-17 22:10:54,520 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: '<=' not supported between instances of 'str' and 'datetime.time'
+2025-04-17 22:10:59,525 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: '<=' not supported between instances of 'str' and 'datetime.time'
+2025-04-17 22:11:04,528 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: '<=' not supported between instances of 'str' and 'datetime.time'
+2025-04-17 22:15:25,692 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: '<=' not supported between instances of 'str' and 'datetime.time'
+2025-04-17 22:15:30,697 - irrigation_service.py - check_for_irrigation - ERROR - Error in check_for_irrigation: '<=' not supported between instances of 'str' and 'datetime.time'
+2025-04-17 22:18:39,493 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:19:01,198 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:20:05,360 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:23:35,062 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:45:45,214 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:45:53,016 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:45:58,024 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:46:03,029 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:46:08,034 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:46:13,039 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:46:18,044 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:46:23,049 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:46:28,055 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:46:33,064 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:46:38,071 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:46:43,076 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:46:48,082 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:46:53,086 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:46:58,092 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:47:03,098 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:47:08,104 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:47:13,111 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:47:18,115 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:47:23,119 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:47:28,126 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:47:33,131 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:47:38,139 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:47:43,144 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:47:48,151 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:47:53,157 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:47:58,161 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:48:03,166 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:48:08,173 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:48:13,178 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:48:18,183 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:48:23,189 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:48:28,193 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:48:33,200 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:48:38,206 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:48:43,212 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:48:48,218 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:48:53,224 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:48:58,231 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:49:03,237 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:49:08,241 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:49:13,247 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:49:18,254 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:49:23,260 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:49:28,267 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:49:33,272 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:49:38,277 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:49:43,283 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:49:48,287 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:49:53,292 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:49:58,299 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:50:03,307 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:50:08,312 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:50:13,318 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:50:18,330 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:50:23,338 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:50:28,347 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:50:33,356 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:50:38,361 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:50:43,366 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:50:48,371 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:50:53,380 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:50:58,386 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:51:03,391 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:51:08,397 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:51:13,403 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:51:18,409 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:51:23,416 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:51:28,422 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:51:33,427 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:51:38,431 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:51:43,436 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:51:48,442 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:51:53,449 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:51:58,455 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:52:03,459 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:52:08,469 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:52:13,480 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:52:18,486 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:52:23,490 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:52:28,496 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:52:33,500 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:52:38,506 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:52:43,510 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:52:48,514 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:52:53,519 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:52:58,525 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:53:03,532 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:53:08,545 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:53:13,551 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:53:18,558 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:53:23,567 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:53:28,573 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:53:33,577 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:53:38,582 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:53:43,588 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:53:48,593 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:53:53,599 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:53:58,604 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:54:03,610 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:54:08,616 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:54:13,621 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:54:18,627 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:54:23,635 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:54:28,642 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:54:33,646 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:54:38,652 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:54:43,659 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:54:48,665 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:54:53,670 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:54:58,676 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:55:03,682 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:55:08,687 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:55:13,693 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:55:18,701 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:55:23,705 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:55:28,711 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:55:33,715 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:55:38,719 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:55:43,726 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:55:48,730 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:55:53,737 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:55:58,742 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:56:03,748 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:56:08,753 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:56:13,758 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:56:18,763 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:56:23,767 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:56:28,773 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:56:33,779 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:56:38,786 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:56:43,792 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:56:48,798 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:56:53,805 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:56:58,810 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:57:03,815 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:57:08,819 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:57:13,823 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:57:18,830 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:57:23,837 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:57:28,843 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:57:33,848 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:57:38,854 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:57:43,861 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:57:48,868 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:57:53,875 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:57:58,880 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:58:03,887 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:58:08,893 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:58:13,898 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:58:18,904 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:58:23,908 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:58:28,913 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:58:33,916 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:58:38,921 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:58:43,927 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:58:48,931 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:58:53,936 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:58:58,943 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:59:03,949 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:59:08,955 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:59:13,960 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:59:18,965 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:59:23,970 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:59:28,975 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:59:33,981 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:59:38,986 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:59:43,991 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:59:48,998 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:59:54,005 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 22:59:59,013 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:00:04,018 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:00:09,022 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:00:14,028 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:00:19,033 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:00:24,038 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:00:29,042 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:00:34,047 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:00:39,054 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:00:44,060 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:00:49,068 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:00:54,075 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:00:59,081 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:01:04,086 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:01:09,092 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:01:14,102 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:01:19,107 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:01:24,113 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:01:29,118 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:01:34,124 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:01:39,130 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:01:44,135 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:01:49,141 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:01:54,146 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:01:59,151 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:02:04,157 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:02:09,163 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:02:14,169 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:02:19,175 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:02:24,185 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:02:29,192 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:02:34,199 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:02:39,204 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:02:44,211 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:02:49,216 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:02:54,223 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:02:59,227 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:03:04,232 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:03:09,239 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:03:14,244 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:03:19,250 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:03:24,256 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:03:29,262 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:03:34,267 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:03:39,271 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:03:44,276 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:03:49,283 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:03:54,292 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:03:59,298 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:04:04,304 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:04:09,311 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:04:14,318 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:04:19,325 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:04:24,332 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:04:29,338 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:04:34,344 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:04:39,351 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:04:44,357 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:04:49,361 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:04:54,367 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:04:59,374 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:05:04,380 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:05:09,386 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:05:14,393 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:05:19,398 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:05:24,404 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:05:29,409 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:05:34,416 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:05:39,422 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:05:44,428 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:05:49,435 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:05:54,442 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:05:59,448 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:06:04,453 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:06:09,458 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:06:14,462 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:06:19,468 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:06:24,474 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:06:29,479 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:06:34,486 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:06:39,492 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2
+2025-04-17 23:11:32,524 - irrigation_service.py - irrigate_plant - ERROR - Could not find pump with id 2

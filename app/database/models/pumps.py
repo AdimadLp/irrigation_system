@@ -8,7 +8,7 @@ class Pumps:
         if not db_connection.is_connected():
             return None
         return db_connection.db.pumps
-    
+
     @classmethod
     async def create(cls, pump_data):
         collection = await cls.get_collection()
@@ -16,7 +16,7 @@ class Pumps:
             return None
         result = await collection.insert_one(pump_data)
         return result.inserted_id
-    
+
     @classmethod
     async def get_pumps_by_controller(cls, controller_id):
         collection = await cls.get_collection()
@@ -24,7 +24,14 @@ class Pumps:
             return None
         cursor = collection.find(
             {"controllerID": controller_id},
-            {"plantID": 1, "gpioPort": 1, "type": 1, "status": 1, "flowRate": 1, "_id": 0}
+            {
+                "plantID": 1,
+                "gpioPort": 1,
+                "type": 1,
+                "status": 1,
+                "flowRate": 1,
+                "_id": 0,
+            },
         )
         return await cursor.to_list(length=None)
 
@@ -40,9 +47,7 @@ class Pumps:
         collection = await cls.get_collection()
         if collection is None:
             return None
-        result = await collection.update_one(
-            {"pumpID": pump_id}, {"$set": update_data}
-        )
+        result = await collection.update_one({"pumpID": pump_id}, {"$set": update_data})
         return result.modified_count
 
     @classmethod
@@ -52,5 +57,7 @@ class Pumps:
             return None
         result = await collection.delete_one({"pumpID": pump_id})
         return result.deleted_count
+
+
 async def create_new_pump(plant_data):
     return await Pumps.create(plant_data)

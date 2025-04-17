@@ -1,20 +1,41 @@
-from app.database.models import Schedules
-import app.database.connection
+from app.database.models.schedules import (
+    get_highest_id,
+    create_new_schedule,
+)  # Import the new function
+from app.database.database import db_connection
 from datetime import datetime
+import asyncio
 
-# Create a new plant instance
-new_schedule = Schedules(
-    controllerID=1,
-    scheduleID=3,
-    weekdays=["Monday", "Wednesday", "Friday"],
-    startTime=datetime.strptime("17:00", "%H:%M"),
-    endTime=datetime.strptime("23:59", "%H:%M"),
-    type="interval",
-    plantID=1,
-    threshold=40,
-)
 
-# Save the new plant to the database
-new_schedule.save()
+async def main():
+    # Connect to the database
+    await db_connection.connect()
 
-print("New schedule added to the database.")
+    # Schedule data dictionary
+    schedule_data = {
+        "controllerID": 3,
+        "scheduleID": await get_highest_id() + 1,  # Get the next available schedule ID
+        "weekdays": ["Thursday"],  # List of weekdays
+        "startTime": "21:15",  # Store as string
+        "type": "interval",
+        "plantID": 4,
+        "threshold": 40,
+    }
+
+    # Create and save the new schedule to the database
+    # The create_new_schedule function returns the inserted_id
+    inserted_id = await create_new_schedule(schedule_data)
+
+    # Fetch the document using the id or modify create_new_schedule to return the document
+    # For now, just printing the ID
+    if inserted_id:
+        print(
+            f"New schedule added to the database with id: {inserted_id}."
+        )  # Print the returned ID
+    else:
+        print("Failed to add new schedule.")
+
+
+# Run the main function
+if __name__ == "__main__":
+    asyncio.run(main())

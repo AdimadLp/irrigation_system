@@ -1,14 +1,14 @@
 import asyncio
 import signal
 import redis.asyncio as redis
-from logging_config import setup_logger
-from services.irrigation_service import IrrigationService
-from services.sensor_service import SensorService
-from services.database_service import DatabaseService
-from database.models import IrrigationControllers
+from .logging_config import setup_logger
+from app.services.irrigation_service import IrrigationService
+from app.services.sensor_service import SensorService
+from app.services.database_service import DatabaseService
+from app.database.models import IrrigationControllers
 import tracemalloc
 import traceback
-from database.database import db_connection
+from app.database.database import db_connection
 import argparse
 
 tracemalloc.start()

@@ -17,7 +17,6 @@ class Plants:
         result = await collection.insert_one(plant_data)
         return str(result.inserted_id)
 
-
     @classmethod
     async def get_by_id(cls, plant_id):
         collection = await cls.get_collection()
@@ -26,13 +25,31 @@ class Plants:
         return await collection.find_one({"plantID": plant_id})
 
     @classmethod
+    async def get_highest_id(cls):
+        collection = await cls.get_collection()
+        if collection is None:
+            return None
+        # Sort the plants by plantID in descending order and get the first one
+        last_plant = await collection.find_one(sort=[("plantID", -1)])
+        if last_plant is None:
+            return 0
+        else:
+            return last_plant["plantID"]
+
+    @classmethod
     async def get_plants_by_controller_id(cls, controller_id):
         collection = await cls.get_collection()
         if collection is None:
             return None
         cursor = collection.find(
             {"controllerID": controller_id},
-            {"plantID": 1, "sensorIDs": 1, "pumpIDs": 1, "waterRequirement": 1, "_id": 0}
+            {
+                "plantID": 1,
+                "sensorIDs": 1,
+                "pumpIDs": 1,
+                "waterRequirement": 1,
+                "_id": 0,
+            },
         )
         return await cursor.to_list(length=None)
 
@@ -84,12 +101,22 @@ class Plants:
             return None
         cursor = collection.find(
             {"plantID": {"$in": plant_ids}},
-            {"plantID": 1, "wateringHistory": {"$slice": 1}}
+            {"plantID": 1, "wateringHistory": {"$slice": 1}},
         )
         results = await cursor.to_list(length=None)
         return {
-            plant["plantID"]: plant["wateringHistory"][0]["timestamp"] if plant.get("wateringHistory") else None
+            plant["plantID"]: (
+                plant["wateringHistory"][0]["timestamp"]
+                if plant.get("wateringHistory")
+                else None
+            )
             for plant in results
         }
+
+
 async def create_new_plant(plant_data):
     return await Plants.create(plant_data)
+
+
+async def get_highest_id():
+    return await Plants.get_highest_id()

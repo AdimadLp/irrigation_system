@@ -5,8 +5,10 @@ import asyncio
 
 
 def get_device_name():
-    # return socket.gethostname()
-    return "pop-os"
+    return socket.gethostname()
+
+
+# return "pop-os"
 
 
 def get_ip_address():
@@ -20,14 +22,13 @@ class IrrigationControllers:
             return None
         return db_connection.db.irrigation_controllers
 
+    @classmethod
     async def get_highest_id(cls):
         collection = await cls.get_collection()
-        if not collection:
+        if collection is None:
             return None
         # Sort the controllers by controllerID in descending order and get the first one
-        last_controller = await collection.find_one(
-            sort=[("controllerID", -1)]
-        )
+        last_controller = await collection.find_one(sort=[("controllerID", -1)])
         if last_controller is None:
             return 0
         else:
@@ -45,9 +46,7 @@ class IrrigationControllers:
         if collection is None:
             return None
         # Check if a controller with the same name already exists
-        existing_controller = await collection.find_one(
-            {"deviceName": deviceName}
-        )
+        existing_controller = await collection.find_one({"deviceName": deviceName})
 
         if existing_controller:
             print(f"Controller with Name {deviceName} already exists.")
