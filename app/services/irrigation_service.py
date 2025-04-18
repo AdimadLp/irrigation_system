@@ -289,7 +289,7 @@ class IrrigationService:
                     self.logger.debug(f"Plant {plant['plantID']} already watered today")
             else:
                 self.logger.debug(
-                    f"Current time is not within schedule {schedule["scheduleID"]} for plant {plant['plantID']}"
+                    f"Current time is not within schedule {schedule['scheduleID']} for plant {plant['plantID']}"
                 )
         return False
 
