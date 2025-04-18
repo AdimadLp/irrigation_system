@@ -68,6 +68,22 @@ class IrrigationControllers:
 
         if existing_controller:
             print(f"Controller with Name {deviceName} already exists.")
+            # Check if the IP address has changed
+            if existing_controller.get("ipAddress") != ipAddress:
+                print(
+                    f"Updating IP address for {deviceName} from {existing_controller.get('ipAddress')} to {ipAddress}"
+                )
+                await collection.update_one(
+                    {"deviceName": deviceName},
+                    {
+                        "$set": {"ipAddress": ipAddress, "status": status}
+                    },  # Also update status to ensure it's active
+                )
+            elif existing_controller.get("status") != status:
+                print(f"Updating status for {deviceName} to {status}")
+                await collection.update_one(
+                    {"deviceName": deviceName}, {"$set": {"status": status}}
+                )
             return existing_controller["controllerID"]
         else:
             # Create a new controller instance
