@@ -12,7 +12,25 @@ def get_device_name():
 
 
 def get_ip_address():
-    return socket.gethostbyname(socket.gethostname())
+    s = None
+    try:
+        # Create a socket object
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        # Connect to an external server (doesn't actually send data)
+        # Using a public DNS server like Google's
+        s.connect(("8.8.8.8", 80))
+        # Get the socket's own address
+        ip_address = s.getsockname()[0]
+    except socket.error:
+        # Fallback if unable to connect (e.g., no network)
+        try:
+            ip_address = socket.gethostbyname(socket.gethostname())
+        except socket.gaierror:
+            ip_address = "127.0.0.1"  # Default fallback
+    finally:
+        if s:
+            s.close()
+    return ip_address
 
 
 class IrrigationControllers:
