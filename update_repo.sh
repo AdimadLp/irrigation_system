@@ -10,7 +10,7 @@ has_repo_changed() {
 
 update_repo() {
     # Pull updates from the remote repository
-      /usr/bin/git pull --rebase
+      /usr/bin/git pull
 }
 
 restart_service() {
