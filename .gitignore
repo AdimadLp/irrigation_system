@@ -1,6 +1,7 @@
 .venv/
 *.pyc
 .env
+
 # Logs
 app.log
 app.log.*
