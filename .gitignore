@@ -3,5 +3,6 @@
 .env
 
 # Logs
-app.log
+*.log
 app.log.*
+*.lock
