@@ -8,3 +8,7 @@ concurrent-log-handler
 redis
 motor>=3.6
 types-RPi.GPIO
+# filepath: website/requirements.txt
+Flask
+redis
+gunicorn
