@@ -16,6 +16,7 @@ update_repo() {
 restart_service() {
     # Restart the service
     sudo /usr/bin/systemctl restart irrigation.service
+    sudo /usr/bin/systemctl restart website.service
 }
 
 check_and_update_repo() {
