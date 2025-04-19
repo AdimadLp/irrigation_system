@@ -1,0 +1,4 @@
+# filepath: website/requirements.txt
+Flask
+redis
+gunicorn
