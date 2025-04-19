@@ -10,12 +10,11 @@ async def main():
     await db_connection.connect()
     plant_data = {
         "plantID": await get_highest_id() + 1,  # Get the next available plant ID
-        "plantName": "Aloe Vera",
-        "plantType": "Succulent",
-        "location": "Schreibtisch",
-        "controllerID": 3,  # Assuming you have a controller with ID 1
+        "plantName": "Basilikum",
+        "plantType": "",
+        "location": "Fensterbrett Keller",
+        "controllerID": 4,  # Assuming you have a controller with ID 1
         "sensorIDs": [],  # List of associated sensor IDs
-        "pumpIDs": [2],  # List of associated pump IDs
         "waterRequirement": 100,  # Water requirement in milliliters
         "imagePath": "https://www.123zimmerpflanzen.de/media/catalog/product/cache/7e47a816da2f8f1d082e569b4e2be5e7/s/p/spathiphyllum_sweet_rocco.jpg",
     }

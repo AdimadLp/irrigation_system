@@ -184,6 +184,11 @@ async def main():
     )
     args = parser.parse_args()
 
+    if args.test:
+        logger.info("Starting the controller in test mode.")
+    else:
+        logger.info("Starting the controller in normal mode.")
+
     try:
         controller = await MainController.create(test_mode=args.test)
         await controller.run()

@@ -8,9 +8,9 @@ async def main():
     await db_connection.connect()
     # Create a new plant instance
     sensor_data = {
-        "sensorID": 6,
+        "sensorID": 7,
         "sensorName": "Room Humidity Sensor",
-        "controllerID": 4,
+        "controllerID": 3,
         "gpioPort": 5,
         "type": "Humidity",
     }
