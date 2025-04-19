@@ -73,6 +73,30 @@ class SensorService:
                         }
                     )
             return sensor_data
+        else:
+            # Simulate sensor data for testing
+            sensor_data = []
+            for sensor in self.sensors:
+                self.logger.info(
+                    f"Simulating data for sensor {sensor['sensorID']} of type {sensor['type']}"
+                )
+                if sensor["type"] == "Temperature":
+                    sensor_data.append(
+                        {
+                            "sensorID": sensor["sensorID"],
+                            "value": 25.0,  # Simulated temperature
+                            "timestamp": time.time(),
+                        }
+                    )
+                elif sensor["type"] == "Humidity":
+                    sensor_data.append(
+                        {
+                            "sensorID": sensor["sensorID"],
+                            "value": 60.0,  # Simulated humidity
+                            "timestamp": time.time(),
+                        }
+                    )
+            return sensor_data
 
     async def update_sensors(self, new_sensors):
         self.sensors = new_sensors
