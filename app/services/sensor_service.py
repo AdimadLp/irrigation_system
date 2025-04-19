@@ -38,7 +38,7 @@ class SensorService:
         while not self.stop_event.is_set():
             try:
                 new_data = await self.read_sensor_data()
-                await asyncio.sleep(1)  # Read data every hour
+                await asyncio.sleep(300)  # Read data every hour
 
                 if new_data:  # Only push if there's data
                     for data in new_data:
