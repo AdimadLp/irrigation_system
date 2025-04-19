@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 # Configure Redis connection using environment variables or defaults
 REDIS_HOST = os.environ.get("REDIS_HOST", "localhost")
-REDIS_PORT = int(os.environ.get("REDIS_PORT", 6379))
+REDIS_PORT = int(os.environ.get("REDIS_PORT", "redis"))
 REDIS_DB = int(os.environ.get("REDIS_DB", 0))
 
 try:
