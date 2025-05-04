@@ -262,13 +262,47 @@ class DatabaseService:
     def plant_snapshot_callback(self, docs, changes, read_time):
         self.logger.info("Plant snapshot update received.")
 
-        async def async_callback():
-            plants = await Plants.get_plants_by_controller_id(self.controller_id)
-            if not plants:
-                self.logger.warning("No plants found for this controller.")
-            await self.irrigation_service.update_plants(plants)
+        # Log details about the changes
+        for change in changes:
+            if change.type.name == "ADDED":
+                self.logger.info(f"Plant added: {change.document.id}")
+            elif change.type.name == "MODIFIED":
+                self.logger.info(f"Plant modified: {change.document.id}")
+            elif change.type.name == "REMOVED":
+                self.logger.info(f"Plant removed: {change.document.id}")
 
-        asyncio.run_coroutine_threadsafe(async_callback(), self.loop)
+        async def async_callback():
+            try:
+                plants = await Plants.get_plants_by_controller_id(self.controller_id)
+
+                # Log plant IDs for better debugging
+                plant_ids = [plant.get("plantID") for plant in plants] if plants else []
+                self.logger.info(
+                    f"New Snapshot Plants: {len(plants) if plants else 0} plants, IDs: {plant_ids}"
+                )
+
+                if not plants:
+                    self.logger.warning("No plants found for this controller.")
+
+                # Use plants or [] to ensure we never pass None
+                await self.irrigation_service.update_plants(plants or [])
+                self.logger.info("Successfully updated plants in irrigation service")
+            except Exception as e:
+                self.logger.error(
+                    f"Error in plant snapshot callback: {str(e)}", exc_info=True
+                )
+
+        # Get future object to add completion callback
+        future = asyncio.run_coroutine_threadsafe(async_callback(), self.loop)
+
+        # Add callback to handle completion and catch errors
+        def done_callback(fut):
+            try:
+                fut.result()  # This will raise any exception that occurred
+            except Exception as e:
+                self.logger.error(f"Async plant callback failed: {str(e)}")
+
+        future.add_done_callback(done_callback)
 
     # Sensors listener
     def register_sensors_listener(self):
