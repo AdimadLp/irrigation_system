@@ -1,6 +1,6 @@
 import asyncio
-from app.logging_config import setup_logger
-from app.database.models import (
+from server_app.logging_config import setup_logger
+from server_app.database.models import (
     Plants,
     Sensors,
     Schedules,
@@ -9,21 +9,17 @@ from app.database.models import (
     Logs,
 )
 import time
-from pymongo.errors import NetworkTimeout, ConnectionFailure
-import json
 
 
 class DatabaseService:
     def __init__(
         self,
         controller_id,
-        redis_client,
         sensor_service,
         irrigation_service,
         stop_event,
     ):
         self.controller_id = controller_id
-        self.redis_client = redis_client
         self.sensor_service = sensor_service
         self.irrigation_service = irrigation_service
         self.stop_event = stop_event
@@ -39,6 +35,13 @@ class DatabaseService:
         self.network_available.set()
         self.last_check_time = 0
 
+        # In-memory data structures
+        self.plants_cache = []  # Stores list of plant dicts
+        self.watering_logs_queue = []  # Stores list of watering log dicts
+        self.sensor_data_queue = []  # Stores list of sensor data JSON strings
+        self.logs_queue = []  # Stores list of log JSON strings
+        self.data_lock = asyncio.Lock()  # To protect concurrent access to queues
+
     async def start(self):
         self.logger.info("Starting database service")
         self.healthy.set()
@@ -52,29 +55,19 @@ class DatabaseService:
     async def initialize_plants(self):
         try:
             self.logger.info("Initializing plants")
-            plants_json = await self.redis_client.get("all_plants")
-            redis_plants = json.loads(plants_json) if plants_json else None
-
             new_plants = await Plants.get_plants_by_controller_id(self.controller_id)
 
             if new_plants:
-                self.logger.info("Plants in mongodb found, updating Redis")
-                await self.redis_client.set("all_plants", json.dumps(new_plants))
+                self.logger.info("Plants in mongodb found, updating internal cache")
+                async with self.data_lock:
+                    self.plants_cache = new_plants
                 await self.irrigation_service.update_plants(new_plants)
             else:
-                # No plants found in MongoDB for this controller
                 self.logger.warning(
-                    f"No plants found in MongoDB for controller {self.controller_id}. Deleting plants from Redis."
+                    f"No plants found in MongoDB for controller {self.controller_id}. Clearing internal cache."
                 )
-                # Delete plants from Redis
-                deleted_count = await self.redis_client.delete("all_plants")
-                if deleted_count > 0:
-                    self.logger.info(
-                        f"Successfully deleted {deleted_count} plants from Redis."
-                    )
-                else:
-                    self.logger.info("No plants key found in Redis to delete.")
-                # Update the irrigation service with an empty list
+                async with self.data_lock:
+                    self.plants_cache = []
                 await self.irrigation_service.update_plants([])
 
         except Exception as e:
@@ -101,7 +94,6 @@ class DatabaseService:
 
                 await self.save_sensor_data()
                 await self.save_watering_logs()
-                # await self.save_logs()
                 await asyncio.sleep(1)
             except asyncio.TimeoutError:
                 pass
@@ -123,13 +115,16 @@ class DatabaseService:
 
     async def save_watering_logs(self):
         try:
-            watering_logs = await self.redis_client.lrange("watering_logs", 0, -1)
-            if not watering_logs:
+            async with self.data_lock:
+                if not self.watering_logs_queue:
+                    return
+                logs_to_process = list(self.watering_logs_queue)
+
+            if not logs_to_process:
                 return
 
             watering_data = []
-            for log in watering_logs:
-                log_data = json.loads(log)
+            for log_data in logs_to_process:
                 plant_id = log_data["plantID"]
                 timestamp = log_data["timestamp"]
                 watering_data.append((plant_id, timestamp))
@@ -138,39 +133,52 @@ class DatabaseService:
             updated_count = await Plants.bulk_update_watering_history(watering_data)
             self.logger.info(f"Updated watering history for {updated_count} plants")
 
-            # Remove processed logs from Redis
-            await self.redis_client.ltrim("watering_logs", len(watering_logs), -1)
-            self.logger.info(f"Processed {len(watering_logs)} watering logs")
+            async with self.data_lock:
+                self.watering_logs_queue = self.watering_logs_queue[
+                    len(logs_to_process) :
+                ]
+
+            self.logger.info(f"Processed {len(logs_to_process)} watering logs")
 
         except Exception as e:
             self.logger.error(f"Error processing watering logs: {str(e)}")
 
     async def save_sensor_data(self):
         try:
-            sensor_data_list = await self.redis_client.lrange(
-                "sensor_data", 0, self.batch_size - 1
-            )
+            sensor_data_list_batch = []
+            async with self.data_lock:
+                if not self.sensor_data_queue:
+                    return {}
+                count_to_process = min(len(self.sensor_data_queue), self.batch_size)
+                sensor_data_list_batch = self.sensor_data_queue[:count_to_process]
 
-            if not sensor_data_list:
+            if not sensor_data_list_batch:
                 return {}
 
             success, latest_readings = await Sensors.process_sensor_data_batch(
-                sensor_data_list
+                sensor_data_list_batch
             )
             await RealtimeSensorData.update_realtime_sensor_data(latest_readings)
 
             if success:
-                await self.redis_client.ltrim("sensor_data", len(sensor_data_list), -1)
-                self.logger.info(f"Removed {len(sensor_data_list)} items from Redis")
+                async with self.data_lock:
+                    self.sensor_data_queue = self.sensor_data_queue[
+                        len(sensor_data_list_batch) :
+                    ]
+                self.logger.info(
+                    f"Removed {len(sensor_data_list_batch)} sensor data items from queue"
+                )
             else:
                 self.logger.warning(
-                    "Transaction failed. Data remains in Redis for retry."
+                    "Transaction failed. Data remains in queue for retry."
                 )
 
+            """
         except (NetworkTimeout, ConnectionFailure) as e:
             self.logger.error(f"Network error: {e}")
             self.network_available.clear()
             return False, {}
+            """
         except Exception as e:
             self.logger.error(f"Unexpected error: {e}")
             self.increment_exception_count()
@@ -178,31 +186,24 @@ class DatabaseService:
 
     async def save_logs(self):
         try:
-            logs = await self.redis_client.lrange("logs", 0, self.batch_size - 1)
-            if not logs:
+            logs_batch = []
+            async with self.data_lock:
+                if not self.logs_queue:
+                    return
+                count_to_process = min(len(self.logs_queue), self.batch_size)
+                logs_batch = self.logs_queue[:count_to_process]
+
+            if not logs_batch:
                 return
 
-            inserted_count = await Logs.process_logs(logs)
-            await self.redis_client.ltrim("logs", inserted_count, -1)
+            inserted_count = await Logs.process_logs(logs_batch)
+
+            async with self.data_lock:
+                self.logs_queue = self.logs_queue[inserted_count:]
             self.logger.info(f"Inserted {inserted_count} logs into the database")
 
         except Exception as e:
             self.logger.error(f"Error processing logs: {str(e)}")
-
-    async def network_is_available(self):
-        try:
-            # Try to connect to a known IP address (e.g., Google's DNS server)
-            reader, writer = await asyncio.wait_for(
-                asyncio.open_connection("8.8.8.8", 53), timeout=5
-            )
-            writer.close()
-            await writer.wait_closed()
-            return True
-        except (asyncio.TimeoutError, OSError, ConnectionRefusedError):
-            return False
-        except Exception as e:
-            self.logger.error(f"Error checking network availability: {e}")
-            return False
 
     def increment_exception_count(self):
         self.exception_count += 1
@@ -230,7 +231,12 @@ class DatabaseService:
         plants = await Plants.get_plants_by_controller_id(self.controller_id)
         if not plants:
             self.logger.warning("No plants found for this controller.")
-        await self.irrigation_service.update_plants(plants)
+            async with self.data_lock:
+                self.plants_cache = []
+        else:
+            async with self.data_lock:
+                self.plants_cache = plants
+        await self.irrigation_service.update_plants(plants if plants else [])
 
     async def check_for_new_sensors(self):
         sensors = await Sensors.get_sensors_by_controller(self.controller_id)
@@ -258,3 +264,22 @@ class DatabaseService:
 
     async def wait_until_healthy(self):
         await self.healthy.wait()
+
+    async def add_watering_log(self, log_data: dict):
+        async with self.data_lock:
+            self.watering_logs_queue.append(log_data)
+        self.logger.debug(f"Added watering log to queue: {log_data}")
+
+    async def add_sensor_data_item(self, sensor_data_json: str):
+        async with self.data_lock:
+            self.sensor_data_queue.append(sensor_data_json)
+        self.logger.debug(f"Added sensor data to queue: {sensor_data_json[:50]}...")
+
+    async def add_log_item(self, log_json: str):
+        async with self.data_lock:
+            self.logs_queue.append(log_json)
+        self.logger.debug(f"Added general log to queue: {log_json[:50]}...")
+
+    async def get_cached_plants(self):
+        async with self.data_lock:
+            return list(self.plants_cache)

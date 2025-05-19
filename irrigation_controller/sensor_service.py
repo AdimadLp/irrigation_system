@@ -1,7 +1,7 @@
 import asyncio
 import time
 import json
-from app.logging_config import setup_logger
+from server_app.logging_config import setup_logger
 
 
 class SensorService:

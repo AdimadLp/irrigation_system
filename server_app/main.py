@@ -1,17 +1,13 @@
 import asyncio
 import signal
-import redis.asyncio as redis
-from app.logging_config import setup_logger
-from app.services.irrigation_service import IrrigationService
-from app.services.sensor_service import SensorService
-from app.services.database_service import DatabaseService
-from app.database.models import IrrigationControllers
-import tracemalloc
+from server_app.logging_config import setup_logger
+from irrigation_controller.irrigation_service import IrrigationService
+from irrigation_controller.sensor_service import SensorService
+from server_app.services.database_service import DatabaseService
+from server_app.database.models import IrrigationControllers
 import traceback
-from app.database.database import db_connection
+from server_app.database.database import db_connection
 import argparse
-
-tracemalloc.start()
 
 logger = setup_logger("main")
 
@@ -20,9 +16,6 @@ class MainController:
     def __init__(self, test_mode=False):
         self.controller_id = None
         self.stop_event = asyncio.Event()
-        self.redis_client = redis.Redis.from_url(
-            "redis://localhost", encoding="utf-8", decode_responses=True
-        )
         self.sensor_service = None
         self.irrigation_service = None
         self.database_service = None
@@ -39,14 +32,13 @@ class MainController:
         await db_connection.connect()
         self.controller_id = await self.initialize_controller()
         self.sensor_service = SensorService(
-            self.controller_id, self.redis_client, self.stop_event, self.test_mode
+            self.controller_id, self.stop_event, self.test_mode
         )
         self.irrigation_service = IrrigationService(
-            self.controller_id, self.redis_client, self.stop_event, self.test_mode
+            self.controller_id, self.stop_event, self.test_mode
         )
         self.database_service = DatabaseService(
             self.controller_id,
-            self.redis_client,
             self.sensor_service,
             self.irrigation_service,
             self.stop_event,
@@ -77,10 +69,6 @@ class MainController:
             self.irrigation_service.stop(),
             self.database_service.stop(),
         )
-        await self.close_redis()
-
-    async def close_redis(self):
-        await self.redis_client.aclose()
 
     async def check_service_health(self):
         services = [

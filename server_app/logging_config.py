@@ -1,6 +1,4 @@
 import logging
-from logging.handlers import RotatingFileHandler
-import sys
 import os
 from concurrent_log_handler import ConcurrentRotatingFileHandler
 import inspect

@@ -1,9 +1,9 @@
 import asyncio
 from datetime import datetime, date
-from app.logging_config import setup_logger
+from server_app.logging_config import setup_logger
 import json
 import time
-from app.database.models.plants import Plants
+from server_app.database.models.plants import Plants
 
 
 class IrrigationService:
@@ -209,9 +209,7 @@ class IrrigationService:
                 schedule_start_time = datetime.strptime(
                     schedule["startTime"], "%H:%M"
                 ).time()
-            elif isinstance(
-                schedule["startTime"], datetime.time
-            ):  # Handle if already converted
+            elif isinstance(schedule["startTime"], time):  # Handle if already converted
                 schedule_start_time = schedule["startTime"]
             else:
                 self.logger.error(
