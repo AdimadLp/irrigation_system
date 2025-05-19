@@ -1,0 +1,6 @@
+[project]
+dependencies = [
+    "adafruit-circuitpython-dht>=4.0.8 ; platform_machine == 'armv7l' and sys_platform == 'linux'",
+    "rpi-gpio>=0.7.1 ; platform_machine == 'armv7l' and sys_platform == 'linux'",
+    "types-rpi-gpio>=0.7.0.20250318",
+]
