@@ -1,6 +1,6 @@
 # Irrigation System
 
-This project uses various sensors and services to manage and control an irrigation system.
+This project uses various microcontrollers with sensors and actuators to manage and control an irrigation system.
 
 ## Project Structure
 ```bash
@@ -47,7 +47,6 @@ irrigation_system/
 ├── .env
 ├── app.log
 ├── error.log
-├── Readme.md
-├── requirements.txt
-└── update_repo.sh
+├── README.md
+└── pyproject.toml
 ```
